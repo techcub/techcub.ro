@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { buildSeo } from '../lib/seo';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title: string;
@@ -19,6 +20,7 @@ const seo = buildSeo({ title, description, path: Astro.url.pathname });
     <title>{seo.title}</title>
     <meta name="description" content={seo.description} />
     <link rel="canonical" href={seo.canonical} />
+    <ClientRouter />
   </head>
   <body>
     <slot />

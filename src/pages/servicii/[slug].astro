@@ -1,7 +1,6 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
-import { BRAND_NAME } from '../../lib/brand';
 
 export async function getStaticPaths() {
   const servicii = await getCollection('servicii');
@@ -13,11 +12,15 @@ export async function getStaticPaths() {
 }
 
 const { serviciu } = Astro.props;
+const { Content } = await render(serviciu);
 ---
 
 <PageLayout title={serviciu.data.titlu} description={serviciu.data.rezumat}>
   <article class="p-8 max-w-2xl mx-auto">
     <h1 class="text-3xl font-bold">{serviciu.data.titlu}</h1>
     <p class="text-lg opacity-70 mt-4">{serviciu.data.rezumat}</p>
+    <div class="mt-6 prose">
+      <Content />
+    </div>
   </article>
 </PageLayout>
