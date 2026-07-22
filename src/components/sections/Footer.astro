@@ -1,8 +1,22 @@
 ---
-import { BRAND_NAME, LEGAL_NAME, LEGAL_CUI, LEGAL_REG_COM, LEGAL_ADDRESS } from '../../lib/brand';
+import { BRAND_NAME, LEGAL_NAME, LEGAL_CUI, LEGAL_REG_COM, LEGAL_ADDRESS, SOCIAL_LINKS } from '../../lib/brand';
 ---
 
-<footer class="p-6 text-sm text-center opacity-70">
+<footer class="p-6 text-sm text-center opacity-70 border-t border-black/10 mt-12">
+  <div class="flex justify-center gap-5 mb-4">
+    {SOCIAL_LINKS.map((item) => (
+      <a 
+        href={item.url} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="hover:opacity-100 opacity-80 transition font-medium text-xs uppercase tracking-wider"
+        aria-label={item.name}
+      >
+        {item.name}
+      </a>
+    ))}
+  </div>
+
   <p>&copy; {new Date().getFullYear()} {BRAND_NAME}</p>
   <p class="mt-1">{LEGAL_NAME} · CUI: {LEGAL_CUI} · Reg. Com.: {LEGAL_REG_COM}</p>
   <p class="mt-1">{LEGAL_ADDRESS}</p>
