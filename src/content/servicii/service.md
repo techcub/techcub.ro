@@ -1,6 +1,5 @@
 ---
 titlu: "Service"
-slug: "service"
 rezumat: "Mentenanță laptop și desktop, asamblare PC la comandă."
 icon: "wrench"
 ordine: 2

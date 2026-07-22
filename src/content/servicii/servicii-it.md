@@ -1,6 +1,5 @@
 ---
 titlu: "Servicii IT"
-slug: "servicii-it"
 rezumat: "Suport și administrare IT, Google Workspace & Microsoft 365."
 icon: "globe"
 ordine: 3
