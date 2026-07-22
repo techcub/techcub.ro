@@ -1,0 +1,59 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, CONTACT_PHONE, LEGAL_NAME, LEGAL_CUI, LEGAL_REG_COM, LEGAL_ADDRESS } from '../lib/brand';
+---
+
+<PageLayout title="Politică de confidențialitate" description="Cum sunt prelucrate datele cu caracter personal pe acest site.">
+  <article class="p-8 max-w-2xl mx-auto py-12 prose">
+    <h1 class="text-3xl font-bold">Politică de confidențialitate</h1>
+    <p class="text-sm opacity-60">Ultima actualizare: iulie 2026</p>
+
+    <h2>Cine prelucrează datele</h2>
+    <p>
+      Operator: {LEGAL_NAME}, CUI {LEGAL_CUI}, Nr. Reg. Com. {LEGAL_REG_COM}, cu sediul în {LEGAL_ADDRESS}.
+      Contact: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, {CONTACT_PHONE}.
+    </p>
+
+    <h2>Ce date colectăm</h2>
+    <p>
+      Acest site nu are formular de contact și nu colectează date prin intermediul paginilor.
+      Când ne scrii prin email sau ne suni, primim datele pe care alegi să ni le oferi (nume,
+      adresă de email, număr de telefon, conținutul mesajului), strict pentru a-ți răspunde la
+      solicitare.
+    </p>
+
+    <h2>Statistici de trafic</h2>
+    <p>
+      Folosim Cloudflare Web Analytics pentru a înțelege câți vizitatori accesează site-ul.
+      Acest serviciu nu folosește cookie-uri, nu urmărește vizitatorii individual și nu
+      colectează date cu caracter personal — datele sunt agregate și anonime.
+    </p>
+
+    <h2>Cât timp păstrăm datele</h2>
+    <p>
+      Mesajele primite prin email sunt păstrate atât timp cât este necesar pentru derularea
+      relației cu tine sau conform obligațiilor legale (ex. evidențe contabile), apoi șterse.
+    </p>
+
+    <h2>Drepturile tale</h2>
+    <p>
+      Conform GDPR, ai dreptul de acces, rectificare, ștergere, restricționare a prelucrării și
+      portabilitate a datelor tale. Ne poți contacta oricând la adresa de mai sus pentru a-ți
+      exercita aceste drepturi.
+    </p>
+
+    <h2>Autoritatea de supraveghere</h2>
+    <p>
+      Dacă consideri că drepturile tale au fost încălcate, poți depune o plângere la
+      <a href="https://www.dataprotection.ro" target="_blank" rel="noopener">ANSPDCP</a>.
+    </p>
+
+    <h2>Soluționarea litigiilor</h2>
+    <p>
+      Conform O.U.G. nr. 34/2014 și Regulamentului (UE) nr. 524/2013, te poți adresa
+      <a href="https://anpc.ro" target="_blank" rel="noopener">ANPC</a> sau platformei europene
+      de <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">soluționare online a litigiilor (SOL)</a>
+      pentru orice neînțelegere legată de serviciile oferite.
+    </p>
+  </article>
+</PageLayout>
