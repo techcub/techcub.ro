@@ -1,13 +1,25 @@
-@import 'tailwindcss';
-@plugin '@tailwindcss/typography';
+@import "tailwindcss";
 
-:root {
-  --color-ink: #14181f;
-  --color-paper: #f7f6f3;
-  --color-accent: #2b5df2;
-}
+@layer base {
+  :root {
+    --color-paper: #f7f6f3;
+    --color-card: #f7f6f3;
+    --color-ink: #14181f;
+    --color-border: rgba(0, 0, 0, 0.08);
+    --color-border-hover: #14181f;
+  }
 
-html {
-  background: var(--color-paper);
-  color: var(--color-ink);
+  html.dark {
+    --color-paper: #18191c;
+    --color-card: #202226;
+    --color-ink: #f0f1f3;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-border-hover: #ffffff;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
 }

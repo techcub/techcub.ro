@@ -13,11 +13,11 @@ const { titlu, rezumat, slug, icon } = Astro.props;
 
 <a 
   href={`/servicii/${slug}`} 
-  class="p-6 rounded-2xl border border-black/10 hover:border-black/30 transition flex items-start gap-4 group bg-white"
+  class="p-6 rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] transition-all duration-200 hover:border-[var(--color-border-hover)] hover:shadow-md flex items-start gap-4 group"
 >
   <Icon name={icon} />
   <div>
-    <h3 class="text-xl font-bold group-hover:underline">{titlu}</h3>
-    <p class="opacity-70 mt-1 text-sm">{rezumat}</p>
+    <h3 class="text-xl font-bold group-hover:underline text-[var(--color-ink)]">{titlu}</h3>
+    <p class="opacity-70 mt-1 text-sm text-[var(--color-ink)]">{rezumat}</p>
   </div>
 </a>
