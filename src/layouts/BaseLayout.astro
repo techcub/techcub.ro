@@ -6,10 +6,11 @@ import { ClientRouter } from 'astro:transitions';
 interface Props {
   title: string;
   description: string;
+  ogImage?: string;
 }
 
-const { title, description } = Astro.props;
-const seo = buildSeo({ title, description, path: Astro.url.pathname });
+const { title, description, ogImage } = Astro.props;
+const seo = buildSeo({ title, description, path: Astro.url.pathname, ogImage });
 ---
 
 <!doctype html>
@@ -20,6 +21,18 @@ const seo = buildSeo({ title, description, path: Astro.url.pathname });
     <title>{seo.title}</title>
     <meta name="description" content={seo.description} />
     <link rel="canonical" href={seo.canonical} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={seo.title} />
+    <meta property="og:description" content={seo.description} />
+    <meta property="og:url" content={seo.canonical} />
+    <meta property="og:image" content={seo.ogImage} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={seo.title} />
+    <meta name="twitter:description" content={seo.description} />
+    <meta name="twitter:image" content={seo.ogImage} />
+
     <ClientRouter />
   </head>
   <body>

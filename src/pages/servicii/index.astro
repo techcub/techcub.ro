@@ -8,15 +8,17 @@ const serviciiOrdonate = servicii.sort((a, b) => a.data.ordine - b.data.ordine);
 ---
 
 <PageLayout title="Servicii" description="Toate serviciile noastre, într-un singur loc.">
-  <h1 class="text-4xl font-bold p-8">Servicii</h1>
+  <section class="p-8 max-w-2xl mx-auto py-8">
+    <h1 class="text-4xl font-bold mb-8">Servicii</h1>
 
-  <section class="grid gap-6 p-8 sm:grid-cols-2">
-    {serviciiOrdonate.map((serviciu) => (
-      <ServiceCard 
-        titlu={serviciu.data.titlu}
-        rezumat={serviciu.data.rezumat}
-        slug={serviciu.data.slug}
-      />
-    ))}
+    <div class="flex flex-col gap-4">
+      {serviciiOrdonate.map((serviciu) => (
+        <ServiceCard 
+          titlu={serviciu.data.titlu}
+          rezumat={serviciu.data.rezumat}
+          slug={serviciu.data.slug}
+        />
+      ))}
+    </div>
   </section>
 </PageLayout>

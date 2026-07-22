@@ -1,22 +1,31 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import { BRAND_NAME, CONTACT_EMAIL, CONTACT_PHONE } from '../lib/brand';
+import { CONTACT_EMAIL, CONTACT_PHONE } from '../lib/brand';
 ---
 
 <PageLayout title="Contact" description="Scrie-mi sau sună-mă pentru orice întrebare.">
-  <section class="p-8 max-w-xl mx-auto">
+  <section class="p-8 max-w-2xl mx-auto py-12">
     <h1 class="text-4xl font-bold">Contact</h1>
-    <p class="text-lg opacity-70 mt-4">
-      Scrie-mi sau sună-mă, îți răspund cât de repede pot.
+    <p class="text-lg opacity-70 mt-3">
+      Ai un proiect în minte sau o problemă tehnică? Scrie-mi sau sună-mă.
     </p>
 
-    <div class="mt-8 space-y-2">
-      <p>
-        Email: <a href={`mailto:${CONTACT_EMAIL}`} class="underline">{CONTACT_EMAIL}</a>
-      </p>
-      <p>
-        Telefon: <a href={`tel:${CONTACT_PHONE}`} class="underline">{CONTACT_PHONE}</a>
-      </p>
+    <div class="mt-8 flex flex-col gap-4">
+      <a 
+        href={`mailto:${CONTACT_EMAIL}`} 
+        class="rounded-lg border p-6 block hover:opacity-70 transition"
+      >
+        <span class="text-xs font-semibold uppercase tracking-wider opacity-60">Email</span>
+        <p class="text-xl font-medium mt-1">{CONTACT_EMAIL}</p>
+      </a>
+
+      <a 
+        href={`tel:${CONTACT_PHONE}`} 
+        class="rounded-lg border p-6 block hover:opacity-70 transition"
+      >
+        <span class="text-xs font-semibold uppercase tracking-wider opacity-60">Telefon</span>
+        <p class="text-xl font-medium mt-1">{CONTACT_PHONE}</p>
+      </a>
     </div>
   </section>
 </PageLayout>
