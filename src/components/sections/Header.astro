@@ -1,12 +1,10 @@
 ---
 import { BRAND_NAME } from '../../lib/brand';
-
 const navItems = [
   { href: '/', label: 'Acasă' },
   { href: '/servicii', label: 'Servicii' },
   { href: '/contact', label: 'Contact' },
 ];
-
 const currentPath = Astro.url.pathname;
 ---
 
@@ -21,6 +19,7 @@ const currentPath = Astro.url.pathname;
       return (
         <a 
           href={item.href} 
+          aria-current={isActive ? 'page' : undefined}
           class:list={[
             'transition',
             isActive ? 'font-semibold opacity-100' : 'opacity-70 hover:opacity-100'

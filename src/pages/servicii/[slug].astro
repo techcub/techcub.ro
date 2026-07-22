@@ -4,7 +4,6 @@ import PageLayout from '../../layouts/PageLayout.astro';
 
 export async function getStaticPaths() {
   const servicii = await getCollection('servicii');
-
   return servicii.map((serviciu) => ({
     params: { slug: serviciu.data.slug },
     props: { serviciu },
