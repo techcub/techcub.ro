@@ -6,7 +6,7 @@ const servicii = await getCollection('servicii');
 const serviciiOrdonate = servicii.sort((a, b) => a.data.ordine - b.data.ordine);
 ---
 
-<header class="border-b border-black/10 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+<header class="border-b border-black/10 bg-[var(--color-paper)] sticky top-0 z-50">
   <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="/" class="font-bold text-lg tracking-tight">Tech cu Bogdan</a>
     
@@ -20,9 +20,9 @@ const serviciiOrdonate = servicii.sort((a, b) => a.data.ordine - b.data.ordine);
         </button>
         
         <div class="absolute right-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200">
-          <div class="w-80 p-2 bg-white rounded-2xl border border-black/10 shadow-xl flex flex-col gap-1">
+          <div class="w-80 p-2 bg-[var(--color-paper)] rounded-2xl border border-black/10 shadow-xl flex flex-col gap-1">
             {serviciiOrdonate.map((s) => (
-              <a href={`/servicii/${s.id}`} class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition">
+              <a href={`/servicii/${s.id}`} class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-black/5 transition">
                 <Icon name={s.data.icon} class="w-4 h-4" />
                 <div>
                   <div class="text-sm font-bold text-gray-900">{s.data.titlu}</div>
