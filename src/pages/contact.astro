@@ -15,7 +15,7 @@ import { CONTACT_EMAIL, CONTACT_PHONE, SOCIAL_LINKS } from '../lib/brand';
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="p-6 bg-[var(--color-card)] rounded-2xl border border-[var(--color-border)] shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between group">
+      <div class="p-6 bg-(--color-card) rounded-2xl border border-(--color-border) shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between group">
         <div>
           <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -30,14 +30,14 @@ import { CONTACT_EMAIL, CONTACT_PHONE, SOCIAL_LINKS } from '../lib/brand';
         <div class="mt-6 flex items-center gap-3">
           <a 
             href={`mailto:${CONTACT_EMAIL}`}
-            class="flex-1 text-center py-2.5 px-4 bg-[var(--color-ink)] text-[var(--color-paper)] text-sm font-medium rounded-lg hover:opacity-90 transition"
+            class="flex-1 text-center py-2.5 px-4 bg-(--color-ink) text-(--color-paper) text-sm font-medium rounded-lg hover:opacity-90 transition"
           >
             Trimite Mail
           </a>
           <button 
             id="copy-email-btn"
             data-email={CONTACT_EMAIL}
-            class="py-2.5 px-4 bg-[var(--color-paper)] border border-[var(--color-border)] hover:bg-black/5 dark:hover:bg-white/10 text-sm font-medium rounded-lg transition relative"
+            class="py-2.5 px-4 bg-(--color-paper) border border-(--color-border) hover:bg-black/5 dark:hover:bg-white/10 text-sm font-medium rounded-lg transition relative"
             title="Copiază adresa de email"
           >
             <span id="copy-text">Copiază</span>
@@ -45,7 +45,7 @@ import { CONTACT_EMAIL, CONTACT_PHONE, SOCIAL_LINKS } from '../lib/brand';
         </div>
       </div>
 
-      <div class="p-6 bg-[var(--color-card)] rounded-2xl border border-[var(--color-border)] shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between group">
+      <div class="p-6 bg-(--color-card) rounded-2xl border border-(--color-border) shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between group">
         <div>
           <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -60,7 +60,7 @@ import { CONTACT_EMAIL, CONTACT_PHONE, SOCIAL_LINKS } from '../lib/brand';
         <div class="mt-6 flex items-center gap-3">
           <a 
             href={`tel:${CONTACT_PHONE.replace(/\s+/g, '')}`}
-            class="flex-1 text-center py-2.5 px-4 bg-[var(--color-ink)] text-[var(--color-paper)] text-sm font-medium rounded-lg hover:opacity-90 transition"
+            class="flex-1 text-center py-2.5 px-4 bg-(--color-ink) text-(--color-paper) text-sm font-medium rounded-lg hover:opacity-90 transition"
           >
             Sună-mă
           </a>

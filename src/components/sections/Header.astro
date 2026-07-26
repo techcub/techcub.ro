@@ -7,7 +7,7 @@ const servicii = await getCollection('servicii');
 const serviciiOrdonate = servicii.sort((a, b) => a.data.ordine - b.data.ordine);
 ---
 
-<header class="border-b border-[var(--color-border)] bg-[var(--color-paper)] sticky top-0 z-50 transition-colors">
+<header class="border-b border-(--color-border) bg-(--color-paper) sticky top-0 z-50 transition-colors">
   <div class="max-w-2xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="/" class="font-bold text-lg tracking-tight">{BRAND_NAME}</a>
     
@@ -29,7 +29,7 @@ const serviciiOrdonate = servicii.sort((a, b) => a.data.ordine - b.data.ordine);
   id="servicii-panel"
   class="absolute top-full pt-2 opacity-0 translate-y-2 pointer-events-none transition-all duration-200 left-1/2 -translate-x-1/2 sm:left-auto sm:right-0 sm:translate-x-0"
 >
-  <div class="w-[min(20rem,calc(100vw-2rem))] p-2 bg-[var(--color-paper)] rounded-2xl border border-[var(--color-border)] shadow-xl flex flex-col gap-1">
+  <div class="w-[min(20rem,calc(100vw-2rem))] p-2 bg-(--color-paper) rounded-2xl border border-(--color-border) shadow-xl flex flex-col gap-1">
             {serviciiOrdonate.map((s) => (
               <a 
                 href={`/servicii/${s.id}`} 
@@ -53,7 +53,7 @@ const serviciiOrdonate = servicii.sort((a, b) => a.data.ordine - b.data.ordine);
       <button 
         id="theme-toggle" 
         type="button" 
-        class="p-2 rounded-xl border border-[var(--color-border)] hover:bg-black/5 dark:hover:bg-white/10 transition"
+        class="p-2 rounded-xl border border-(--color-border) hover:bg-black/5 dark:hover:bg-white/10 transition"
         aria-label="Activează tema întunecată"
       >
         <svg id="sun-icon" class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
