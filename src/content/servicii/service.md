@@ -1,6 +1,6 @@
 ---
 titlu: "Service"
-rezumat: "Mentenanță laptop și desktop, asamblare PC la comandă."
+rezumat: "Reparații și upgrade-uri pentru laptopuri și desktop-uri, în Cluj-Napoca."
 icon: "wrench"
 ordine: 2
 ---

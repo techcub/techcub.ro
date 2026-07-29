@@ -1,6 +1,6 @@
 ---
 titlu: "Servicii IT"
-rezumat: "Suport și administrare IT, Google Workspace & Microsoft 365."
+rezumat: "Suport IT direct pentru firme mici: email, conturi, dispozitive și rețea."
 icon: "globe"
 ordine: 3
 ---

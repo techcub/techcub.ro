@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
+import WebDevelopmentPage from '../../components/WebDevelopmentPage.astro';
 
 export async function getStaticPaths() {
   const servicii = await getCollection('servicii');
@@ -15,11 +16,15 @@ const { Content } = await render(serviciu);
 ---
 
 <PageLayout title={serviciu.data.titlu} description={serviciu.data.rezumat}>
-  <article class="p-8 max-w-2xl mx-auto">
-    <h1 class="text-3xl font-bold">{serviciu.data.titlu}</h1>
-    <p class="text-lg opacity-70 mt-4">{serviciu.data.rezumat}</p>
-    <div class="mt-6 prose">
-      <Content />
-    </div>
-  </article>
+  {serviciu.id === 'dezvoltare-web' ? (
+    <WebDevelopmentPage />
+  ) : (
+    <article class="p-8 max-w-2xl mx-auto">
+      <h1 class="text-3xl font-bold">{serviciu.data.titlu}</h1>
+      <p class="text-lg opacity-70 mt-4">{serviciu.data.rezumat}</p>
+      <div class="mt-6 prose">
+        <Content />
+      </div>
+    </article>
+  )}
 </PageLayout>

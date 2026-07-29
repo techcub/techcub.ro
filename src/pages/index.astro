@@ -7,20 +7,31 @@ const servicii = await getCollection('servicii');
 const serviciiOrdonate = servicii.sort((a, b) => a.data.ordine - b.data.ordine);
 ---
 
-<PageLayout title="Acasă" description="Site-uri și soluții IT construite pe măsură.">
+<PageLayout title="Acasă" description="Site-uri rapide și suport IT direct pentru firme mici și profesioniști independenți.">
   <section class="p-8 max-w-4xl mx-auto py-16 text-center">
     <h1 class="text-4xl sm:text-5xl font-bold tracking-tight">
-      Soluții digitale și servicii IT
+      Tehnologie care îți susține afacerea, nu îți consumă timpul
     </h1>
     <p class="text-lg opacity-70 mt-4 max-w-2xl mx-auto">
-      Dezvoltare web rapidă, mentenanță tehnică și infrastructură IT stabilă pentru afacerea ta.
+      Construiesc site-uri rapide și ofer suport IT direct pentru firme mici, echipe și profesioniști independenți. Intervenții on-site în Cluj-Napoca, suport la distanță oriunde în România.
     </p>
+    <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+      <a href="/contact" class="inline-block bg-[var(--color-ink)] text-[var(--color-paper)] px-6 py-3 rounded-lg font-medium hover:opacity-90 transition">
+        Spune-mi ce ai nevoie
+      </a>
+      <a href="/servicii" class="inline-block border border-[var(--color-border)] px-6 py-3 rounded-lg font-medium hover:bg-black/5 dark:hover:bg-white/10 transition">
+        Vezi serviciile
+      </a>
+    </div>
   </section>
 
   <section class="max-w-2xl mx-auto p-8 border-t border-black/10">
-    <h2 class="text-2xl font-bold mb-3">Salut, sunt Bogdan</h2>
+    <h2 class="text-2xl font-bold mb-3">Pentru cine lucrez</h2>
     <p class="opacity-80 leading-relaxed">
-      Pasiunea mea pentru tehnologie s-a transformat în dorința de a ajuta afacerile și persoanele fizice să aibă o prezență digitală impecabilă și echipamente funcționale. Mă concentrez pe soluții curate, fără aplicații greoaie sau complicații inutile, oferind sfaturi sincere și suport direct.
+      Lucrez cu firme mici, echipe și profesioniști independenți care au nevoie ca tehnologia să funcționeze fără să devină încă un proiect intern.
+    </p>
+    <p class="opacity-80 leading-relaxed mt-4">
+      Fie că ai nevoie de un site mai bun, de ordine în conturi și echipamente sau de o intervenție tehnică punctuală, lucrezi direct cu mine. Îți explic ce merită făcut, ce poate aștepta și cât costă înainte să încep.
     </p>
   </section>
 
@@ -50,8 +61,8 @@ const serviciiOrdonate = servicii.sort((a, b) => a.data.ordine - b.data.ordine);
         <p class="opacity-70 mt-1">Știi exact cât costă înainte să încep, fără reparații "descoperite" ulterior fără acordul tău.</p>
       </div>
       <div>
-        <h3 class="font-semibold">Cod modern & site-uri ultra-rapide</h3>
-        <p class="opacity-70 mt-1">Construiesc pe tehnologii moderne, cu puțin JavaScript și o suprafață redusă de atac.</p>
+        <h3 class="font-semibold">Soluții potrivite, fără complexitate inutilă</h3>
+        <p class="opacity-70 mt-1">Aleg instrumentele care rezolvă problema și rămân ușor de folosit și întreținut, fără costuri sau funcții puse doar „ca să fie”.</p>
       </div>
       <div>
         <h3 class="font-semibold">Locație & Flexibilitate</h3>
@@ -61,10 +72,10 @@ const serviciiOrdonate = servicii.sort((a, b) => a.data.ordine - b.data.ordine);
   </section>
 
   <section class="max-w-2xl mx-auto p-8 border-t border-black/10 text-center">
-    <h2 class="text-2xl font-bold mb-4">Hai să discutăm</h2>
-    <p class="opacity-70 mb-6">Spune-mi ce probleme ai sau ce vrei să construiești, și îți răspund cu o soluție concretă.</p>
-    <a href="/contact" class="inline-block bg-(--color-ink) text-(--color-paper) px-6 py-3 rounded-lg font-medium hover:opacity-90 transition">
-      Cere o ofertă
+    <h2 class="text-2xl font-bold mb-4">Spune-mi ce ai nevoie</h2>
+    <p class="opacity-70 mb-6">Vrei un site nou, ai nevoie de suport IT sau ai o problemă tehnică de rezolvat? Trimite-mi câteva detalii și îți spun direct care este următorul pas.</p>
+    <a href="/contact" class="inline-block bg-[var(--color-ink)] text-[var(--color-paper)] px-6 py-3 rounded-lg font-medium hover:opacity-90 transition">
+      Contactează-mă
     </a>
   </section>
 </PageLayout>

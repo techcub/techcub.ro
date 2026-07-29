@@ -1,6 +1,6 @@
 ---
 titlu: "Dezvoltare web"
-rezumat: "Site-uri rapide, construite pe măsură."
+rezumat: "Site-uri rapide și clare, construite pentru afacerea ta."
 icon: "code"
 ordine: 1
 ---
