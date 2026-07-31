@@ -1,0 +1,49 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { CONTACT_EMAIL, CONTACT_PHONE, LEGAL_ADDRESS, LEGAL_CUI, LEGAL_NAME, LEGAL_REG_COM } from '../lib/brand';
+---
+
+<PageLayout title="Termeni și condiții" description="Condițiile generale aplicabile utilizării site-ului și serviciilor Tech cu Bogdan.">
+  <article class="p-8 max-w-2xl mx-auto py-12 prose text-left">
+    <h1 class="text-3xl font-bold">Termeni și condiții</h1>
+    <p class="text-sm opacity-60">Ultima actualizare: iulie 2026</p>
+
+    <h2>1. Furnizorul serviciilor</h2>
+    <p>Serviciile prezentate pe techcub.ro sunt oferite de {LEGAL_NAME}, CUI {LEGAL_CUI}, Nr. Reg. Com. {LEGAL_REG_COM}, cu sediul în {LEGAL_ADDRESS}, denumit în continuare „Furnizorul”. Contact: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, <a href={`tel:${CONTACT_PHONE.replace(/\s+/g, '')}`}>{CONTACT_PHONE}</a>.</p>
+
+    <h2>2. Rolul site-ului</h2>
+    <p>Site-ul prezintă servicii de dezvoltare web, service pentru laptopuri și desktopuri, precum și administrare și suport IT. Informațiile publicate au caracter general și nu reprezintă, prin ele însele, o ofertă contractuală fermă.</p>
+    <p>Trimiterea unui email, a unui mesaj sau inițierea unui apel nu înseamnă încheierea automată a unui contract. Contractul se încheie când părțile confirmă în scris lucrarea, obiectul, prețul sau modul de calcul al acestuia și, după caz, termenul de execuție. Oferta, comanda acceptată ori contractul individual prevalează dacă diferă de acești termeni.</p>
+
+    <h2>3. Serviciile</h2>
+    <p>Conținutul și rezultatele concrete, etapele, livrabilele, termenele, intervențiile incluse și eventualele servicii recurente se stabilesc pentru fiecare proiect sau lucrare. Orice activitate suplimentară față de cele convenite se execută numai după informarea clientului și acceptarea costului aferent.</p>
+    <p>Termenele comunicate presupun furnizarea la timp de către client a accesului, informațiilor, materialelor și aprobărilor necesare. O întârziere cauzată de lipsa acestora poate determina decalarea proporțională a termenului.</p>
+
+    <h2>4. Prețul, piesele și plata</h2>
+    <p>Prețul și condițiile de plată sunt cele din oferta sau confirmarea transmisă clientului. Dacă pentru stabilirea soluției este necesară o diagnoză taxabilă, costul acesteia este comunicat înainte. Piesele, licențele, abonamentele și serviciile furnizate de terți nu sunt incluse decât dacă acest lucru este menționat expres.</p>
+    <p>În cazul reparațiilor, înlocuirea componentelor și depășirea estimării inițiale se fac numai cu acordul clientului. Bunurile și serviciile beneficiază de garanțiile prevăzute de lege, precum și de eventualele garanții comerciale menționate în documentele lucrării.</p>
+
+    <h2>5. Obligațiile clientului</h2>
+    <p>Clientul trebuie să ofere informații corecte, să dețină drepturile și autorizațiile necesare asupra echipamentelor, conturilor, datelor și materialelor puse la dispoziție și să păstreze copii de siguranță actuale înaintea unei intervenții. Dacă realizarea copiei de siguranță face parte din serviciul comandat, acest lucru trebuie convenit expres.</p>
+    <p>Pentru intervențiile la distanță, clientul autorizează accesul numai pe durata și în limitele necesare lucrării. Datele de acces trebuie revocate sau schimbate după finalizarea intervenției atunci când natura contului permite acest lucru.</p>
+
+    <h2>6. Dezvoltare web și drepturi de proprietate intelectuală</h2>
+    <p>Clientul răspunde pentru legalitatea și exactitatea textelor, imaginilor, mărcilor și celorlalte materiale pe care le furnizează. Drepturile asupra livrabilelor realizate special pentru client se transmit sau se licențiază în limitele stabilite în oferta ori contractul individual și după plata integrală a sumelor datorate.</p>
+    <p>Componentele preexistente, instrumentele generale și materialele terților rămân supuse drepturilor și licențelor proprii. În lipsa unei clauze exprese, serviciile de găzduire, mentenanță, actualizare, administrare a domeniului și licențele recurente nu sunt incluse în dezvoltarea inițială.</p>
+
+    <h2>7. Limitarea răspunderii</h2>
+    <p>Serviciile sunt prestate cu diligență profesională, în limitele agreate. Furnizorul nu răspunde pentru defecțiuni preexistente, incompatibilități sau restricții ale producătorilor și nici pentru indisponibilitatea ori modificarea serviciilor oferite de terți. Nicio prevedere din acești termeni nu exclude și nu limitează drepturile consumatorilor sau răspunderea care nu poate fi exclusă prin lege.</p>
+
+    <h2>8. Dreptul de retragere al consumatorilor</h2>
+    <p>Dacă un consumator încheie la distanță sau în afara spațiilor comerciale un contract pentru servicii, acesta are, în condițiile legii, dreptul să se retragă în termen de 14 zile de la încheierea contractului. Retragerea se poate comunica neechivoc la <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+    <p>Dacă consumatorul solicită începerea prestării înainte de expirarea celor 14 zile, în caz de retragere datorează suma proporțională cu serviciile prestate până la acel moment. Dreptul de retragere se pierde după executarea integrală a serviciului numai dacă prestarea a început cu acordul prealabil expres al consumatorului și după confirmarea că a luat cunoștință de această consecință. Excepțiile prevăzute de lege se aplică, după caz.</p>
+
+    <h2>9. Reclamații și litigii</h2>
+    <p>Orice sesizare privind serviciile poate fi transmisă la <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Părțile vor încerca soluționarea amiabilă înainte de a se adresa instanței.</p>
+    <p>Consumatorii pot contacta <a href="https://anpc.ro/" target="_blank" rel="noopener noreferrer">ANPC</a> și pot utiliza procedura de <a href="https://anpc.ro/sal/" target="_blank" rel="noopener noreferrer">soluționare alternativă a litigiilor (SAL)</a>. Contractelor li se aplică legea română, fără a fi afectate normele imperative de protecție de care beneficiază consumatorul.</p>
+
+    <h2>10. Utilizarea site-ului și modificarea termenilor</h2>
+    <p>Conținutul site-ului poate fi consultat în scop informativ. Preluarea ori reutilizarea sa este permisă numai în limitele legii sau cu acordul titularului drepturilor.</p>
+    <p>Acești termeni pot fi actualizați când se modifică serviciile sau cadrul legal. Versiunea aplicabilă unui contract este cea acceptată la încheierea sa, împreună cu documentele contractuale individuale; publicarea unei versiuni noi pe site nu modifică retroactiv contractele deja încheiate.</p>
+  </article>
+</PageLayout>
