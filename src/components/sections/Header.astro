@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Icon from '../Icon.astro';
+import Logo from '../Logo.astro';
 import { BRAND_NAME } from '../../lib/brand';
 
 const servicii = await getCollection('servicii');
@@ -9,7 +10,9 @@ const serviciiOrdonate = servicii.sort((a, b) => a.data.ordine - b.data.ordine);
 
 <header class="border-b border-(--color-border) bg-(--color-paper) sticky top-0 z-50 transition-colors">
   <div class="max-w-2xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="/" class="font-bold text-lg tracking-tight">{BRAND_NAME}</a>
+    <a href="/" class="text-(--color-ink)" aria-label={`${BRAND_NAME} — pagina principală`}>
+      <Logo class="h-14 w-auto" />
+    </a>
     
     <nav class="flex items-center gap-6">
       <div class="relative">

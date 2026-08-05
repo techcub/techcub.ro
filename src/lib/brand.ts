@@ -14,7 +14,7 @@ export const SOCIAL_LINKS = {
   linkedin: 'https://linkedin.com/company/techcubogdan',
   whatsapp: 'https://wa.me/40774497894',
   facebook: 'https://www.facebook.com/techcub.ro/',
-  instagram: 'https://www.instagram.com/techcubogdan/'
+  instagram: 'https://www.instagram.com/techcub.ro/'
 };
 
 export const SOCIAL_PROFILES = Object.values(SOCIAL_LINKS);
