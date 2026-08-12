@@ -8,12 +8,13 @@ interface Props {
   description: string;
   ogImage?: string;
   noindex?: boolean;
+  titleTemplate?: boolean;
 }
 
-const { title, description, ogImage, noindex } = Astro.props;
+const { title, description, ogImage, noindex, titleTemplate } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} ogImage={ogImage} noindex={noindex}>
+<BaseLayout title={title} description={description} ogImage={ogImage} noindex={noindex} titleTemplate={titleTemplate}>
   <Header />
   <main>
     <slot />

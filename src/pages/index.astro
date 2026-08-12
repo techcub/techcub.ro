@@ -1,8 +1,9 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import { BRAND_NAME } from '../lib/brand';
 ---
 
-<PageLayout title="Acasă" description="Site-uri rapide și suport IT direct pentru firme mici și profesioniști independenți.">
+<PageLayout title={BRAND_NAME} titleTemplate={false} description="Dezvoltare web, service calculatoare și servicii IT pentru firme mici și profesioniști independenți din Cluj-Napoca și din România.">
   <section class="overflow-hidden">
     <div class="mx-auto grid max-w-5xl items-center gap-12 px-6 pb-16 pt-16 sm:pb-24 sm:pt-24 lg:grid-cols-[1fr_0.9fr]">
       <div class="home-reveal">

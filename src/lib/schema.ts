@@ -28,3 +28,18 @@ export function buildLocalBusinessSchema() {
     },
   };
 }
+
+export function buildWebsiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
+    url: SITE_URL,
+    name: BRAND_NAME,
+    alternateName: 'techcub.ro',
+    inLanguage: 'ro-RO',
+    publisher: {
+      '@id': `${SITE_URL}/#business`,
+    },
+  };
+}

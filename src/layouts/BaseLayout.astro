@@ -1,18 +1,22 @@
 ---
 import '../styles/global.css';
 import { buildSeo } from '../lib/seo';
-import { buildLocalBusinessSchema } from '../lib/schema';
+import { buildLocalBusinessSchema, buildWebsiteSchema } from '../lib/schema';
+import { BRAND_NAME } from '../lib/brand';
 
 interface Props {
   title: string;
   description: string;
   ogImage?: string;
   noindex?: boolean;
+  titleTemplate?: boolean;
 }
 
-const { title, description, ogImage, noindex = false } = Astro.props;
-const seo = buildSeo({ title, description, path: Astro.url.pathname, ogImage });
-const schema = buildLocalBusinessSchema();
+const { title, description, ogImage, noindex = false, titleTemplate = true } = Astro.props;
+const seo = buildSeo({ title, description, path: Astro.url.pathname, ogImage, titleTemplate });
+const schema = Astro.url.pathname === '/'
+  ? [buildLocalBusinessSchema(), buildWebsiteSchema()]
+  : buildLocalBusinessSchema();
 ---
 
 <!doctype html>
@@ -27,6 +31,7 @@ const schema = buildLocalBusinessSchema();
     {noindex && <meta name="robots" content="noindex, follow" />}
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={BRAND_NAME} />
     <meta property="og:title" content={seo.title} />
     <meta property="og:description" content={seo.description} />
     <meta property="og:url" content={seo.canonical} />
