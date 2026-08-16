@@ -20,6 +20,7 @@ import {
 } from './scripts/site-url-agreement.mjs';
 import { SITE_NAME, THEME_COLOR } from './src/config/branding.ts';
 import { renderFaviconPng, renderFaviconIco } from './src/lib/favicon/raster.ts';
+import { renderOgPng } from './src/lib/og/raster.ts';
 
 /**
  * Load `.env` into `process.env` before anything below reads it.
@@ -226,7 +227,6 @@ function ogCards() {
     name: 'og-cards',
     hooks: {
       'astro:build:done': async ({ dir, logger }) => {
-        const { renderOgPng } = await import('./src/lib/og/raster.ts');
         const out = fileURLToPath(dir);
         const siteUrl = process.env.SITE_URL || SITE_URL_FALLBACK;
         const domain = new URL(siteUrl).host;
