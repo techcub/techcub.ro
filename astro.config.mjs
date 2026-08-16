@@ -233,8 +233,16 @@ function ogCards() {
 
         // Collect one entry per distinct card path; several pages can point at
         // the same card (the default one, most obviously).
+        const files = await htmlFiles(out);
+        const homePage = join(out, 'index.html');
+        files.sort((left, right) => {
+          if (left === homePage) return -1;
+          if (right === homePage) return 1;
+          return left.localeCompare(right);
+        });
+
         const wanted = new Map();
-        for (const file of await htmlFiles(out)) {
+        for (const file of files) {
           const html = await readFile(file, 'utf8');
           const image = meta(html, 'og:image');
           if (!image) continue;
