@@ -9,6 +9,7 @@ import icon from 'astro-icon';
 import tailwindcss from '@tailwindcss/vite';
 import vercel from '@astrojs/vercel';
 import netlify from '@astrojs/netlify';
+import { createIndex, close } from 'pagefind';
 import i18nConfig from './src/config/i18n.config.ts';
 import { SITE_URL_FALLBACK } from './src/config/site-url.ts';
 import {
@@ -114,7 +115,6 @@ function pagefind() {
       'astro:build:done': async ({ dir, logger }) => {
         const sitePath = fileURLToPath(dir);
         const outputPath = join(sitePath, 'pagefind');
-        const { createIndex, close } = await import('pagefind');
         const { index } = await createIndex();
         const { page_count } = await index.addDirectory({ path: sitePath });
         await index.writeFiles({ outputPath });
