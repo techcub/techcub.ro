@@ -1,0 +1,54 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import { businessConfig } from '@/config/business.config';
+import type { Locale } from '@/i18n';
+
+interface Section {
+  title: string;
+  paragraphs: readonly string[];
+}
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  updated: string;
+  sections: readonly Section[];
+  languageAlternates: Record<string, string>;
+}
+
+const { title, description, updated, sections, languageAlternates } = Astro.props;
+const address = [
+  businessConfig.legal.address.street,
+  businessConfig.legal.address.city,
+  businessConfig.legal.address.state,
+  businessConfig.legal.address.country,
+].filter(Boolean).join(', ');
+
+const replacements: Record<string, string> = {
+  '{LEGAL_NAME}': businessConfig.legal.name,
+  '{CUI}': businessConfig.legal.taxId,
+  '{REGISTRATION}': businessConfig.legal.registrationNumber,
+  '{ADDRESS}': address,
+  '{EMAIL}': businessConfig.email,
+  '{PHONE}': businessConfig.phoneDisplay,
+};
+
+const interpolate = (value: string) =>
+  Object.entries(replacements).reduce((result, [key, replacement]) => result.replaceAll(key, replacement), value);
+---
+
+<PageLayout title={title} description={description} languageAlternates={languageAlternates} footerBackground="secondary">
+  <section class="bg-background py-[var(--space-section)]">
+    <article class="prose mx-auto max-w-3xl px-[var(--space-gutter)] text-left">
+      <h1>{title}</h1>
+      <p class="text-sm text-foreground-muted">{updated}</p>
+      {sections.map((section) => (
+        <section>
+          <h2>{section.title}</h2>
+          {section.paragraphs.map((paragraph) => <p set:html={interpolate(paragraph)} />)}
+        </section>
+      ))}
+    </article>
+  </section>
+</PageLayout>

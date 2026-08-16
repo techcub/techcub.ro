@@ -1,0 +1,31 @@
+---
+interface Props {
+  locale: string;
+  class?: string;
+}
+
+const { locale, class: className } = Astro.props;
+---
+
+{locale === 'ro' ? (
+  <svg class={className} viewBox="0 0 24 16" aria-hidden="true">
+    <rect width="8" height="16" fill="#002B7F" />
+    <rect x="8" width="8" height="16" fill="#FCD116" />
+    <rect x="16" width="8" height="16" fill="#CE1126" />
+  </svg>
+) : locale === 'en' ? (
+  <svg class={className} viewBox="0 0 38 20" aria-hidden="true">
+    <rect width="38" height="20" fill="#fff" />
+    <path stroke="#B22234" stroke-width="2" d="M0 1h38M0 5h38M0 9h38M0 13h38M0 17h38" />
+    <rect width="15" height="11" fill="#3C3B6E" />
+    <g fill="#fff">
+      <circle cx="2" cy="2" r=".7" /><circle cx="5" cy="2" r=".7" /><circle cx="8" cy="2" r=".7" /><circle cx="11" cy="2" r=".7" /><circle cx="14" cy="2" r=".7" />
+      <circle cx="3.5" cy="5" r=".7" /><circle cx="6.5" cy="5" r=".7" /><circle cx="9.5" cy="5" r=".7" /><circle cx="12.5" cy="5" r=".7" />
+      <circle cx="2" cy="8" r=".7" /><circle cx="5" cy="8" r=".7" /><circle cx="8" cy="8" r=".7" /><circle cx="11" cy="8" r=".7" /><circle cx="14" cy="8" r=".7" />
+    </g>
+  </svg>
+) : (
+  <svg class={className} viewBox="0 0 24 16" aria-hidden="true">
+    <rect width="24" height="16" rx="2" fill="currentColor" opacity=".18" />
+  </svg>
+)}

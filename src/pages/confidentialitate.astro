@@ -1,0 +1,5 @@
+---
+import LegalPageView from '@/components/pages/views/LegalPageView.astro';
+import { legalContent } from '@/config/legal-content';
+---
+<LegalPageView locale="ro" {...legalContent.ro.privacy} languageAlternates={{ ro: '/confidentialitate', en: '/en/privacy' }} />

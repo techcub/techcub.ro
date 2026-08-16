@@ -1,0 +1,1495 @@
+{
+  "nav": {
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "selectLanguage": "Select language",
+    "currentLanguage": "Current language",
+    "mainNav": "Main navigation",
+    "mobileNav": "Mobile navigation",
+    "toggleMenu": "Toggle menu",
+    "sectionNavigate": "Navigate",
+    "searchSite": "Search this site",
+    "sectionLanguage": "Language",
+    "sectionConnect": "Follow us",
+    "items": {
+      "home": "Home",
+      "services": "Services",
+      "projects": "Projects",
+      "blog": "Blog",
+      "about": "About",
+      "contact": "Contact"
+    }
+  },
+  "common": {
+    "readMore": "Read more",
+    "loading": "Loading…",
+    "backToTop": "Back to top",
+    "search": "Search",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "next": "Next",
+    "previous": "Previous",
+    "home": "Home",
+    "map": "Map",
+    "mapConsentPrompt": "Accept cookies to load the interactive map.",
+    "viewOnGoogleMaps": "View on Google Maps",
+    "googleMaps": "Google Maps",
+    "progress": "Progress",
+    "browseByTag": "Browse by tag",
+    "togglePassword": "Toggle password visibility",
+    "breadcrumb": "Breadcrumb",
+    "copyCode": "Copy code to clipboard",
+    "dismiss": "Dismiss",
+    "notifications": "Notifications",
+    "closeDialog": "Close dialog",
+    "tabs": "Tabs",
+    "verticalTabs": "Vertical tabs"
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Latest articles and updates",
+    "readingTime": "{minutes} min read",
+    "publishedOn": "Published on {date}",
+    "updatedOn": "Updated on {date}",
+    "writtenBy": "Written by {author}",
+    "tagsLabel": "Tags",
+    "featured": "Featured",
+    "draft": "Draft",
+    "noPostsFound": "No posts found.",
+    "tableOfContents": "Table of contents",
+    "shareThisPost": "Share this post",
+    "relatedPosts": "Related Posts",
+    "share": "Share:",
+    "shareOn": "Share on {platform}",
+    "copyLink": "Copy link",
+    "metaTitle": "Blog",
+    "metaDescription": "Practical articles about IT support, security, systems management and web development for individuals and small organizations.",
+    "heroBadge": "Articles and resources",
+    "heroDescription": "Practical ideas about technology, IT support, security and web development.",
+    "allPosts": "All posts",
+    "noPosts": "No posts found",
+    "pageMetaTitle": "Blog — Page {page}",
+    "pageMetaDescription": "Page {page} of {total} — articles about IT support, security, IT management and web development.",
+    "pageBadge": "Page {page} of {total}",
+    "newestPosts": "Newest posts",
+    "tagMetaTitle": "#{tag} — Blog",
+    "tagMetaDescription": "Posts tagged \"{tag}\".",
+    "tagBadge": "Tag",
+    "tagCountOne": "{count} post tagged \"{tag}\".",
+    "tagCountOther": "{count} posts tagged \"{tag}\".",
+    "tagEmpty": "No posts found for this tag.",
+    "tagBackToAll": "Back to all posts",
+    "onThisPage": "On this page",
+    "tocShow": "Show",
+    "tocHide": "Hide",
+    "backToBlog": "Back to Blog",
+    "updated": "Updated",
+    "rssFeed": "RSS Feed",
+    "cta": {
+      "heading": "Need help?",
+      "description": "Tell me what you need to solve. The first conversation is free and carries no obligation.",
+      "button": "Send a message"
+    }
+  },
+  "comments": {
+    "title": "Comments",
+    "loadError": "Comments failed to load. Please refresh and try again.",
+    "requiresJs": "Comments require JavaScript to load."
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Things I've built",
+    "viewProject": "View project",
+    "viewSource": "View source",
+    "noProjectsFound": "No projects found.",
+    "carouselChooseSlide": "Choose slide",
+    "carouselNextSlide": "Next slide",
+    "carouselPreviousSlide": "Previous slide",
+    "galleryLabel": "Media lightbox",
+    "galleryClose": "Close lightbox",
+    "galleryNextImage": "Next image",
+    "galleryPreviousImage": "Previous image",
+    "metaTitle": "Projects",
+    "metaDescription": "Projects and implementation examples created by Tech cu Bogdan.",
+    "heroBadge": "Selected work",
+    "heroDescription": "Work I'm most proud of.",
+    "allProjects": "All projects",
+    "pageMetaTitle": "Projects — Page {page}",
+    "pageMetaDescription": "Page {page} of {total} — projects and implementation examples created by Tech cu Bogdan.",
+    "pageBadge": "Page {page} of {total}",
+    "tagMetaTitle": "#{tag} — Projects",
+    "tagMetaDescription": "Projects tagged \"{tag}\".",
+    "tagBadge": "Tag",
+    "tagCountOne": "{count} project tagged \"{tag}\".",
+    "tagCountOther": "{count} projects tagged \"{tag}\".",
+    "tagEmpty": "No projects found for this tag.",
+    "tagBackToAll": "Back to all projects",
+    "backToProjects": "Back to Projects",
+    "moreProjects": "More projects",
+    "ctaBadge": "Let's talk",
+    "ctaHeading": "Let's talk about what you need",
+    "ctaLead": "Every website I build is its own custom design, made with the care you see here. Tell me what you have in mind.",
+    "ctaPrimary": "Send a message",
+    "ctaSecondary": "More about me",
+    "closingHeading": "Have a project in mind?",
+    "closingLead": "Whether it's a new build or something that needs a fresh perspective — I'd love to hear about it."
+  },
+  "pagination": {
+    "page": "Page {current} of {total}",
+    "label": "Pagination",
+    "previousPage": "Previous page",
+    "nextPage": "Next page",
+    "morePages": "More pages"
+  },
+  "errors": {
+    "pageNotFound": "Page not found",
+    "pageNotFoundMessage": "The page you're looking for doesn't exist or has moved.",
+    "goHome": "Go to homepage",
+    "metaTitle": "Page not found",
+    "metaDescription": "This page has moved, been removed, or never existed in the first place.",
+    "badge": "404 — page not found",
+    "titleLead": "Page not",
+    "titleHighlight": "found.",
+    "description": "This page has moved, been removed, or never existed in the first place. Let's get you back on track.",
+    "backHome": "Back to home",
+    "browseBlog": "Browse the blog",
+    "tryInstead": "Try one of these instead",
+    "projectsDesc": "Web development, computer repair, IT support and IT management.",
+    "blogDesc": "Notes on design, code, and the craft.",
+    "contactTitle": "Contact",
+    "contactDesc": "Start a conversation about your project."
+  },
+  "newsletter": {
+    "heading": "Subscribe to the newsletter",
+    "description": "Get the latest posts in your inbox.",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "subscribing": "Subscribing…",
+    "success": "Thanks for subscribing!",
+    "genericError": "Something went wrong",
+    "notConfigured": "Not configured yet — set RESEND_API_KEY and RESEND_SEGMENT_ID to switch this on. Only you can see this line.",
+    "unavailable": "Signups are not available right now.",
+    "error": "Subscription failed. Please try again."
+  },
+  "contact": {
+    "heading": "Get in touch",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send message",
+    "sending": "Sending…",
+    "success": "Message sent successfully!",
+    "genericError": "Something went wrong",
+    "notConfigured": "Not configured yet — set RESEND_API_KEY to switch this on. Only you can see this line.",
+    "unavailable": "This form is not available right now.",
+    "error": "Failed to send message. Please try again."
+  },
+  "search": {
+    "placeholder": "Search posts, projects, and pages…",
+    "inputLabel": "Search query",
+    "resultsLabel": "Search results",
+    "hint": "Start typing to search the site.",
+    "noResults": "No results for “{query}”",
+    "unavailable": "The search index is generated at build time and isn’t available in <code class=\"rounded bg-secondary px-1.5 py-0.5 text-xs\">astro dev</code>.<br />Run <code class=\"rounded bg-secondary px-1.5 py-0.5 text-xs\">pnpm build &amp;&amp; pnpm preview</code> to try it locally."
+  },
+  "video": {
+    "playLabel": "Play video: {title}",
+    "watchOn": "Watch on YouTube"
+  },
+  "footer": {
+    "copyright": "© {year} {siteName}",
+    "groups": {
+      "site": "Site",
+      "topics": "Topics",
+      "projects": "Projects",
+      "questions": "Got questions?"
+    },
+    "followOn": "Follow us on {platform}"
+  },
+  "pages": {
+    "about": {
+      "meta": {
+        "title": "About Bogdan Murășan",
+        "description": "The story, experience and working approach behind Tech cu Bogdan. Web development and IT services delivered directly and carefully."
+      },
+      "hero": {
+        "badge": "About me",
+        "intro": "I'm Bogdan Murășan. I turn a long-standing passion for technology into carefully delivered web and IT services.",
+        "titleLead": "Technology approached",
+        "typingWords": [
+          "with attention to detail.",
+          "properly, not approximately.",
+          "responsibly.",
+          "close to the client."
+        ],
+        "typingWordsMobile": [
+          "carefully.",
+          "properly.",
+          "responsibly."
+        ],
+        "description": "A free, open-source Astro 7 starter theme to build anything on."
+      },
+      "story": {
+        "badge": "Where it started",
+        "heading": "From floppy disks and Windows XP to Tech cu Bogdan",
+        "paragraphs": [
+          "My interest in technology started in childhood, in the age of floppy disks. I copied games, experimented with computers and built my own Windows XP installation images.",
+          "For years I was, and still am, the person family and friends call when something technical stops working. I have now worked professionally in IT for three years, and Tech cu Bogdan is the next step in developing that experience independently.",
+          "I genuinely enjoy the work. I want each service to be built carefully, without taking on more than I can deliver and without treating anything as a given."
+        ],
+        "facts": [
+          {
+            "title": "Professional experience",
+            "text": "3 years in the IT industry"
+          },
+          {
+            "title": "Based in",
+            "text": "Cluj-Napoca, with remote support available"
+          }
+        ]
+      },
+      "whatYouGet": {
+        "badge": "How I work",
+        "heading": "Attention to detail is not optional",
+        "lead": "I prefer to understand the problem, set realistic boundaries and finish the work properly.",
+        "items": [
+          {
+            "icon": "component",
+            "title": "I do not assume",
+            "description": "I verify the information and context before choosing a solution."
+          },
+          {
+            "icon": "layout",
+            "title": "I work methodically",
+            "description": "I prefer correct, documented and traceable implementations."
+          },
+          {
+            "icon": "palette",
+            "title": "I notice details",
+            "description": "I check small things that could become larger problems later."
+          },
+          {
+            "icon": "book-open",
+            "title": "Realistic scope",
+            "description": "I do not accept more work than I can deliver to the promised standard."
+          },
+          {
+            "icon": "image",
+            "title": "You keep control",
+            "description": "Your accounts, licences and equipment remain yours."
+          },
+          {
+            "icon": "globe",
+            "title": "Direct communication",
+            "description": "You speak with the same person who analyses and carries out the work."
+          },
+          {
+            "icon": "search",
+            "title": "Independent recommendations",
+            "description": "I do not sell licences or equipment or push unnecessary purchases."
+          },
+          {
+            "icon": "trending-up",
+            "title": "Continuous learning",
+            "description": "Technology changes, and training does not end with a certificate."
+          },
+          {
+            "icon": "server",
+            "title": "Close client relationship",
+            "description": "I understand the context before treating the problem as a simple ticket."
+          }
+        ]
+      },
+      "principles": {
+        "badge": "Working principles",
+        "heading": "Three rules that guide my work",
+        "lead": "These are the criteria I use when making decisions in a project or IT intervention.",
+        "items": [
+          {
+            "icon": "zap",
+            "title": "Take nothing for granted",
+            "description": "Verify before assuming and look for the cause, not only the symptom."
+          },
+          {
+            "icon": "award",
+            "title": "As close to correct as possible",
+            "description": "Absolute perfection does not exist, but the standard can remain high."
+          },
+          {
+            "icon": "rocket",
+            "title": "By the book, not improvised",
+            "description": "I prefer verifiable processes and maintainable implementations."
+          }
+        ]
+      },
+      "openSource": {
+        "badge": "Experience and training",
+        "heading": "A practical foundation that keeps developing",
+        "description": "I have three years of professional IT experience and continue to expand my skills through practice, documentation and structured training.",
+        "button": "Talk to me",
+        "cards": [
+          {
+            "title": "Professional experience",
+            "text": "Three years of official work in IT, built on practical experience that started much earlier."
+          },
+          {
+            "title": "Google Network Architecture",
+            "text": "A Google certificate completed through Coursera, focused on network architecture and fundamentals."
+          },
+          {
+            "title": "Current directions",
+            "text": "Web development, technical support, Microsoft 365 and Google Workspace administration, security and device management."
+          }
+        ]
+      },
+      "cta": {
+        "badge": "Let's talk",
+        "heading": "Have a technical problem or a project in mind?",
+        "description": "The first discussion is free and comes with no obligations. I will tell you directly whether I can help and what comes next.",
+        "button": "Send a message"
+      }
+    },
+    "services": {
+      "overviewMeta": {
+        "title": "IT services and web development",
+        "description": "Web development, computer repair, IT support and IT management for individuals, professionals and small teams in Cluj-Napoca or remotely."
+      },
+      "overview": {
+        "hero": {
+          "badge": "Services",
+          "titleLead": "Technology should help.",
+          "titleHighlight": "Not get in your way.",
+          "description": "From a new website and a laptop that will not start to accounts, security and managing your entire IT environment. You get one point of contact and a solution that fits your situation.",
+          "primary": "Explore services",
+          "secondary": "Talk to me"
+        },
+        "services": {
+          "badge": "What I can do for you",
+          "heading": "Four services, based on what you need",
+          "lead": "You can contact me for a one-off intervention or ongoing work. You do not need to be a large company or have an internal IT department.",
+          "cards": [
+            {
+              "eyebrow": "Online presence",
+              "title": "Web development",
+              "description": "Modern, fast websites built around your goals, from structure and design through to launch.",
+              "features": [
+                "Design tailored to your identity and content",
+                "High-performance development with Astro",
+                "Technical SEO, accessibility and optimisation",
+                "Domain, hosting and launch configuration"
+              ],
+              "cta": "Explore this service"
+            },
+            {
+              "eyebrow": "Diagnostics and repairs",
+              "title": "Computer repair",
+              "description": "Diagnostics, repairs and upgrades for laptops and desktops, clearly explained before any work begins.",
+              "features": [
+                "Hardware and software diagnostics",
+                "Repairs and component replacement",
+                "Memory and storage upgrades",
+                "Cleaning, reinstallation and optimisation"
+              ],
+              "cta": "Explore this service"
+            },
+            {
+              "eyebrow": "Help when something goes wrong",
+              "title": "IT support",
+              "description": "Practical help with everyday IT problems, remotely or through an on-site visit in Cluj-Napoca.",
+              "features": [
+                "Operating system, application and peripheral issues",
+                "Computer and account configuration",
+                "End-user assistance",
+                "One-off interventions with no mandatory plan"
+              ],
+              "cta": "Explore this service"
+            },
+            {
+              "eyebrow": "Prevention and control",
+              "title": "IT management",
+              "description": "Ongoing configuration and management of the accounts, devices and digital services used in your work.",
+              "features": [
+                "Microsoft 365 and Google Workspace",
+                "Accounts, permissions and secure access",
+                "Device security and management",
+                "MDM, policies, backup and documentation"
+              ],
+              "cta": "Explore this service"
+            }
+          ]
+        },
+        "process": {
+          "badge": "How we work",
+          "heading": "A simple, transparent process",
+          "lead": "The first conversation is free and without obligation.",
+          "steps": [
+            {
+              "title": "Conversation",
+              "description": "You explain the situation, your goal and what is not working today."
+            },
+            {
+              "title": "Assessment",
+              "description": "I clarify the issue, the technical context and the realistic options."
+            },
+            {
+              "title": "Proposal",
+              "description": "You receive the recommendation, work plan and costs before we begin."
+            },
+            {
+              "title": "Implementation",
+              "description": "I complete the work and explain what was done and what comes next."
+            }
+          ]
+        },
+        "cta": {
+          "heading": "Not sure which service you need?",
+          "description": "Tell me about the situation. Together we will establish whether you need a one-off intervention, a project or ongoing IT management.",
+          "primary": "Send a message",
+          "secondary": "About me"
+        }
+      },
+      "meta": {
+        "title": "Web development and optimisation",
+        "description": "Freelance web design, development, and optimisation: sleek, lightning-fast custom Astro websites. A free first talk, one clear proposal, one fixed price."
+      },
+      "includedLabel": "What you get",
+      "hero": {
+        "badge": "Services",
+        "titleLead": "Web design, development,",
+        "titleHighlight": "and optimisation",
+        "description": "Three services, one product: a sleek, lightning-fast custom Astro website you're proud to put your name on.",
+        "jumpLabels": [
+          "Web design",
+          "Web development",
+          "Web optimisation"
+        ]
+      },
+      "design": {
+        "badge": "Design",
+        "heading": "Web design",
+        "paragraphs": [
+          "Web design is how your website looks and feels: the layout, the colours, the images, and the way visitors find their way around.",
+          "I design every website around your business — your brand, your content, and the customers you want to reach — so it makes a strong first impression and guides people straight to what matters. Clean, modern, and made to work on every screen, from a desktop monitor to a phone."
+        ],
+        "included": [
+          {
+            "lead": "A design that's yours",
+            "text": "shaped around your business, your brand, and the customers you want to reach."
+          },
+          {
+            "lead": "A strong first impression",
+            "text": "a clean, modern look that shows people who you are the moment your page opens."
+          },
+          {
+            "lead": "Clear navigation",
+            "text": "a layout that guides visitors straight to what matters to them."
+          },
+          {
+            "lead": "A design for every screen",
+            "text": "looks and works beautifully on phone, tablet, and desktop."
+          },
+          {
+            "lead": "Your content at its best",
+            "text": "your words and images given a layout that makes them easy to read and good to look at."
+          }
+        ],
+        "ctaLabel": "Discuss a design project"
+      },
+      "development": {
+        "badge": "Development",
+        "heading": "Web development",
+        "paragraphs": [
+          "Web development is the building of your website: turning the design into the code that runs in your visitor's browser.",
+          "I build with Astro, a modern framework trusted for some of the fastest websites online. That makes your site quick to load, safe, and easy to look after for years to come. And it's yours from day one, with the code, the domain, and the hosting all in your name."
+        ],
+        "included": [
+          {
+            "lead": "A lightning-fast website",
+            "text": "built with Astro, the framework behind some of the fastest websites online."
+          },
+          {
+            "lead": "A secure, reliable website",
+            "text": "one that stays safe and keeps working, year after year."
+          },
+          {
+            "lead": "Full ownership",
+            "text": "the code, the domain, and the hosting all in your name from day one."
+          },
+          {
+            "lead": "Care after launch",
+            "text": "your website kept updated and secure with the monthly care plan, while you run your business."
+          },
+          {
+            "lead": "Room to grow",
+            "text": "space to add new pages and features whenever your business needs them."
+          }
+        ],
+        "ctaLabel": "See recent projects"
+      },
+      "performance": {
+        "badge": "Optimisation",
+        "heading": "Web optimisation",
+        "paragraphs": [
+          "Web optimisation is the work that makes your website perform: loading quickly, ranking well in search, and working for everyone.",
+          "I build speed, SEO, and accessibility in from the very first line, not as an afterthought. That means your website is easy for Google to find and understand, opens fast for every visitor, and can be used by everyone who lands on it."
+        ],
+        "included": [
+          {
+            "lead": "A website Google and AI can find",
+            "text": "built so search engines and AI assistants can read, understand, and recommend your pages."
+          },
+          {
+            "lead": "Speed on every device",
+            "text": "pages that stay quick, even on a phone or a slower connection."
+          },
+          {
+            "lead": "A website for everyone",
+            "text": "accessible for every visitor, whatever their device or ability."
+          },
+          {
+            "lead": "High performance scores",
+            "text": "strong marks on Google's own speed and quality checks (Lighthouse)."
+          },
+          {
+            "lead": "Optimisation from day one",
+            "text": "speed, SEO, and accessibility built in from the very first line."
+          }
+        ],
+        "ctaLabel": "Start a project"
+      },
+      "process": {
+        "badge": "How it works",
+        "heading": "How a project runs",
+        "lead": "From your first message to a live website.",
+        "steps": [
+          {
+            "title": "First contact",
+            "description": "You send a message through the contact form. I reply within a working day, and we plan a free, informational talk about what you need. No obligations."
+          },
+          {
+            "title": "Proposal",
+            "description": "After our talk you get one clear document: what I'll build, when it's ready, and the fixed price. You decide with everything on the table."
+          },
+          {
+            "title": "Design & build",
+            "description": "I work in short cycles. You follow the progress on a staging link, and you see your website take shape."
+          },
+          {
+            "title": "Launch & support",
+            "description": "Your website goes live on your own domain and hosting, in your name. Afterwards I stay reachable, and there's a monthly care plan if you want regular updates."
+          }
+        ]
+      },
+      "faq": {
+        "badge": "Questions",
+        "heading": "Questions and answers",
+        "lead": "The things clients ask before we start.",
+        "cards": [
+          {
+            "icon": "tag",
+            "title": "Before we start",
+            "items": [
+              {
+                "question": "What does a website cost?",
+                "answer": "Every project gets one fixed price, agreed before we start. No hourly billing, no surprises afterwards. The free talk — and the free check, if there's already a website — tells me what your project needs, and you get the price in one clear proposal."
+              },
+              {
+                "question": "How long does a project take?",
+                "answer": "That depends on the size of the website. The proposal names the timeline together with the price, so you know both before we start."
+              },
+              {
+                "question": "What happens with my current website?",
+                "answer": "It stays online until the new one is ready. Your content, your web address, and your Google rankings come along. I check your current website before our first talk, so you get clear answers from the start."
+              },
+              {
+                "question": "Do I need to arrange hosting or a domain?",
+                "answer": "No. I set up the hosting and the domain for you, in your own name. If you already have a domain, we simply keep it."
+              },
+              {
+                "question": "Do we need to meet in person?",
+                "answer": "It's not needed. Most projects run entirely by phone, video, and email. I work with clients worldwide, and time zones are rarely a problem."
+              }
+            ]
+          },
+          {
+            "icon": "user",
+            "title": "Working with me",
+            "items": [
+              {
+                "question": "Are you a company or agency?",
+                "answer": "I'm a one-person business: a freelancer, not an agency. You work directly with the person doing the work, from the first talk to the finished website. No sales team, no account managers, no handoffs."
+              },
+              {
+                "question": "Can I change the website myself after launch?",
+                "answer": "You can simply send me your changes, and the monthly care plan exists exactly for that. If you want to edit the website yourself, say so in the first talk and I set the site up for it."
+              },
+              {
+                "question": "Do you also build webshops?",
+                "answer": "No. Big online shops are the one thing I don't build. Everything else that needs a custom Astro website, I build: tell me in the first talk what you have in mind, and I'll be honest about whether I'm the right builder for it."
+              },
+              {
+                "question": "Is the website really mine?",
+                "answer": "Completely. The domain, the hosting, and the code are in your name from day one. If you ever want to move on, you take everything with you: you're never locked in."
+              },
+              {
+                "question": "What happens if something breaks after launch?",
+                "answer": "Very little can break: the website has no plugins and no database to fail. And I stay reachable after launch; for regular updates and monitoring there is the monthly care plan."
+              }
+            ]
+          }
+        ]
+      },
+      "cta": {
+        "badge": "Let's talk",
+        "heading": "Let's talk about what you need",
+        "description": "The first talk is free and informative, with no obligations: by phone, video, or email. You get honest answers, and after the talk one clear proposal with a timeline and a fixed price.",
+        "primary": "Send a message",
+        "secondary": "More about me"
+      }
+    },
+    "computerRepair": {
+      "meta": {
+        "title": "Computer repair in Cluj-Napoca",
+        "description": "Free diagnostics, repairs, maintenance and upgrades for laptops and desktops in Cluj-Napoca. Costs are confirmed before work begins."
+      },
+      "hero": {
+        "badge": "Computer repair",
+        "titleLead": "Is your laptop or computer",
+        "titleHighlight": "no longer working properly?",
+        "description": "Free diagnostics, repairs and upgrades for laptops and desktops. I explain the issue and cost before any work begins.",
+        "primary": "Request a diagnostic",
+        "secondary": "Message on WhatsApp",
+        "facts": [
+          "Free diagnostics",
+          "By appointment in Cluj-Napoca",
+          "30-day workmanship warranty"
+        ]
+      },
+      "problems": {
+        "badge": "How I can help",
+        "heading": "Common problems, clearly resolved",
+        "lead": "Tell me what you notice. We identify the cause before deciding whether and how the device is worth repairing.",
+        "items": [
+          {
+            "icon": "power",
+            "title": "Will not start",
+            "description": "No response, unexpected shutdowns or stuck during startup."
+          },
+          {
+            "icon": "gauge",
+            "title": "Runs slowly",
+            "description": "Slow startup, freezes or poor response during use."
+          },
+          {
+            "icon": "thermometer",
+            "title": "Overheats",
+            "description": "High temperatures, excessive noise or unexpected shutdowns."
+          },
+          {
+            "icon": "monitor-cog",
+            "title": "Software errors",
+            "description": "Windows, drivers or applications no longer work correctly."
+          },
+          {
+            "icon": "keyboard",
+            "title": "Display or keyboard",
+            "description": "Damaged components that need assessment and replacement."
+          },
+          {
+            "icon": "battery",
+            "title": "Battery problems",
+            "description": "Poor battery life, charging issues or a degraded battery."
+          },
+          {
+            "icon": "hard-drive",
+            "title": "Needs an upgrade",
+            "description": "SSD or RAM upgrades for better everyday performance."
+          },
+          {
+            "icon": "folder-sync",
+            "title": "Data transfer",
+            "description": "Data saving and transfer when the storage can be read safely."
+          }
+        ]
+      },
+      "services": {
+        "badge": "Services",
+        "heading": "From diagnosis to a working device",
+        "lead": "Hardware and software work for laptops and desktops, excluding board-level electronic repairs.",
+        "items": [
+          {
+            "icon": "scan-search",
+            "title": "Diagnostics and component replacement",
+            "description": "I identify the problem, check compatibility and replace modular components such as SSD, RAM, battery, display or keyboard. I do not perform soldering or circuit repairs."
+          },
+          {
+            "icon": "monitor-cog",
+            "title": "Windows and software",
+            "description": "Windows, driver and update installation, error remediation, removal of unwanted software and system startup optimisation."
+          },
+          {
+            "icon": "rocket",
+            "title": "Upgrades and assembly",
+            "description": "I recommend compatible components for your budget, install SSD or RAM and assemble complete desktop systems."
+          },
+          {
+            "icon": "fan",
+            "title": "Cleaning and maintenance",
+            "description": "Internal cleaning, cooling checks and thermal paste replacement when the model and procedure allow it."
+          }
+        ]
+      },
+      "pricing": {
+        "badge": "Guide prices",
+        "heading": "Know the cost before I begin",
+        "lead": "Initial diagnostics are free. The final price is communicated and confirmed before work begins.",
+        "rows": [
+          {
+            "service": "Initial diagnostic",
+            "price": "Free"
+          },
+          {
+            "service": "Desktop cleaning and maintenance",
+            "price": "from 150 RON"
+          },
+          {
+            "service": "Laptop cleaning and maintenance",
+            "price": "from 180 RON"
+          },
+          {
+            "service": "Gaming or complex laptop",
+            "price": "from 250 RON"
+          },
+          {
+            "service": "Windows, drivers and updates",
+            "price": "100 RON"
+          },
+          {
+            "service": "Software remediation and optimisation",
+            "price": "from 100 RON"
+          },
+          {
+            "service": "Malware removal",
+            "price": "from 150 RON"
+          },
+          {
+            "service": "SSD or RAM installation",
+            "price": "from 80 RON"
+          },
+          {
+            "service": "SSD installation with transfer or cloning",
+            "price": "from 200 RON"
+          },
+          {
+            "service": "Data saving and transfer",
+            "price": "from 100 RON"
+          },
+          {
+            "service": "Desktop assembly",
+            "price": "from 300 RON"
+          },
+          {
+            "service": "Display replacement",
+            "price": "from 200 RON"
+          },
+          {
+            "service": "Keyboard replacement",
+            "price": "from 200 RON"
+          },
+          {
+            "service": "Battery replacement",
+            "price": "from 80 RON"
+          },
+          {
+            "service": "Collection and return in Cluj-Napoca",
+            "price": "from 80 RON"
+          }
+        ],
+        "note": "Prices cover labour and may vary by model, complexity and device condition. Parts and software licences are not included."
+      },
+      "process": {
+        "badge": "How it works",
+        "heading": "No unconfirmed work or costs",
+        "lead": "Devices are accepted by appointment.",
+        "steps": [
+          {
+            "title": "Describe the problem",
+            "description": "Send the device model and the symptoms you have noticed."
+          },
+          {
+            "title": "Free diagnostic",
+            "description": "I check the device and establish the likely cause."
+          },
+          {
+            "title": "Approve the work",
+            "description": "You receive the recommendation and cost before I begin."
+          },
+          {
+            "title": "Repair and test",
+            "description": "I complete the work, test the result and explain what was done."
+          }
+        ]
+      },
+      "practical": {
+        "badge": "Practical information",
+        "heading": "What to know beforehand",
+        "items": [
+          {
+            "icon": "map-pin",
+            "title": "Drop-off by appointment",
+            "description": "The address is not a retail location. Devices are generally brought by the client; collection can be arranged separately in Cluj-Napoca."
+          },
+          {
+            "icon": "package",
+            "title": "Parts remain in your name",
+            "description": "I recommend compatible components and you normally purchase them directly, keeping the invoice and part warranty in your name."
+          },
+          {
+            "icon": "apple",
+            "title": "Apple devices",
+            "description": "Availability is confirmed after identifying the exact model and assessing the problem. Complex repairs may be referred to a specialist."
+          },
+          {
+            "icon": "shield-check",
+            "title": "Workmanship warranty",
+            "description": "Labour has a 30-day warranty for the same intervention. Client-purchased parts retain the seller's warranty."
+          }
+        ]
+      },
+      "faq": {
+        "badge": "Frequently asked questions",
+        "heading": "Before bringing your device",
+        "items": [
+          {
+            "question": "Is the diagnostic really free?",
+            "answer": "Yes. I inspect the device and explain the problem and options before you decide whether to proceed."
+          },
+          {
+            "question": "Do I buy the parts?",
+            "answer": "In most cases, yes. I identify the compatible component, while its invoice and warranty remain directly in your name."
+          },
+          {
+            "question": "How long does it take?",
+            "answer": "Diagnostics are usually completed within 1–2 business days. Repair time depends on the issue, model and part availability."
+          },
+          {
+            "question": "Do you repair logic boards or connectors?",
+            "answer": "I do not perform soldering or board-level electronic repairs. I can diagnose the issue and recommend a specialist when needed."
+          },
+          {
+            "question": "Do you accept MacBooks?",
+            "answer": "Yes, for assessment and services compatible with the available experience and tools. Hardware work is confirmed after identifying the model; complex work is referred to a specialist."
+          },
+          {
+            "question": "Is my data safe?",
+            "answer": "Back up your data before service whenever the device allows. Saving or transferring data is possible only when the storage can be read safely."
+          }
+        ]
+      },
+      "cta": {
+        "heading": "Tell me what is wrong with your device",
+        "description": "Send the model, symptoms and, if useful, a few photos. I will tell you the next step.",
+        "primary": "Message on WhatsApp",
+        "secondary": "Send a message"
+      }
+    },
+    "itSupport": {
+      "meta": {
+        "title": "IT support in Cluj-Napoca and remotely",
+        "description": "IT assistance for individuals and organizations: remote sessions, on-site support in Cluj-Napoca and prepaid hour packages."
+      },
+      "hero": {
+        "badge": "IT support",
+        "titleLead": "Is an IT problem blocking you?",
+        "titleHighlight": "Let's solve it clearly and efficiently.",
+        "description": "Help with Windows, accounts, email, applications, printers and networks. Remote worldwide or on-site in Cluj-Napoca, for individuals and organizations.",
+        "primary": "Request support",
+        "secondary": "Message on WhatsApp",
+        "facts": [
+          "For individuals and organizations",
+          "Remote or on-site",
+          "Cost confirmed upfront"
+        ]
+      },
+      "problems": {
+        "badge": "How I can help",
+        "heading": "Practical help when technology interrupts your work",
+        "lead": "We start with the symptom, identify the cause and choose the right intervention without making things unnecessarily complicated.",
+        "items": [
+          {
+            "icon": "monitor-cog",
+            "title": "Windows and applications",
+            "description": "Errors, updates, applications that will not start or settings that no longer work."
+          },
+          {
+            "icon": "mail",
+            "title": "Email on your device",
+            "description": "Setting up an existing account in Outlook or Gmail and resolving local synchronization issues."
+          },
+          {
+            "icon": "printer",
+            "title": "Printers and peripherals",
+            "description": "Connection, drivers, sharing and common troubleshooting."
+          },
+          {
+            "icon": "wifi",
+            "title": "Internet and networking",
+            "description": "Connectivity, Wi-Fi, routers and basic local networks."
+          },
+          {
+            "icon": "key-round",
+            "title": "Authentication issues",
+            "description": "Local diagnosis, MFA setup for your own account and guidance through official recovery flows."
+          },
+          {
+            "icon": "shield-alert",
+            "title": "Device security",
+            "description": "Local checks, malware removal and protection settings at device level."
+          },
+          {
+            "icon": "video",
+            "title": "Calls and collaboration",
+            "description": "Teams, Meet, Zoom, cameras, microphones and document sharing."
+          },
+          {
+            "icon": "cloud",
+            "title": "Files and cloud",
+            "description": "OneDrive, Google Drive, synchronization, sharing and file access."
+          }
+        ]
+      },
+      "services": {
+        "badge": "Ways to get support",
+        "heading": "One-off support tailored to the problem",
+        "lead": "Choose the intervention that fits the situation. Recurring needs receive a separate custom proposal, while ongoing administration remains a distinct service.",
+        "items": [
+          {
+            "icon": "screen-share",
+            "title": "Remote support",
+            "description": "A remote connection made only with your approval, for problems that can be diagnosed and solved without travel."
+          },
+          {
+            "icon": "map-pin",
+            "title": "On-site intervention",
+            "description": "For situations that require physical presence, available in Cluj-Napoca by appointment."
+          },
+          {
+            "icon": "list-checks",
+            "title": "Fixed-price tasks",
+            "description": "Predictable configurations receive a clear estimate, confirmed before the intervention begins."
+          },
+          {
+            "icon": "clock-3",
+            "title": "Recurring support",
+            "description": "For recurring requests, the number of hours and terms are agreed according to the actual requirements."
+          }
+        ]
+      },
+      "pricing": {
+        "badge": "Indicative pricing",
+        "heading": "Pay for the right type of intervention",
+        "lead": "Predictable tasks have a fixed price; diagnosis and variable situations are billed by the time required.",
+        "rows": [
+          {
+            "service": "Remote IT support",
+            "price": "RON 120 / hour"
+          },
+          {
+            "service": "On-site support in Cluj-Napoca",
+            "price": "from RON 150 / hour"
+          },
+          {
+            "service": "Email setup on a device",
+            "price": "from RON 100"
+          },
+          {
+            "service": "Application installation and setup",
+            "price": "from RON 100"
+          },
+          {
+            "service": "Printer or peripheral setup",
+            "price": "from RON 100"
+          },
+          {
+            "service": "Basic network setup",
+            "price": "from RON 200"
+          }
+        ],
+        "note": "Prices are not combined for the same task. On-site work uses the hourly rate, including operations completed during that time. Fixed prices apply to remote work or separately agreed tasks. Licences and third-party services are not included."
+      },
+      "process": {
+        "badge": "How it works",
+        "heading": "From problem to solution, without surprises",
+        "lead": "Work begins only after we establish the context and pricing method.",
+        "steps": [
+          {
+            "title": "Describe the problem",
+            "description": "Send the symptoms, affected device and impact on your activity."
+          },
+          {
+            "title": "Choose the intervention",
+            "description": "We decide whether the issue can be solved remotely or requires a visit."
+          },
+          {
+            "title": "Confirm the cost",
+            "description": "You receive the rate or estimate before work begins."
+          },
+          {
+            "title": "Resolve and verify",
+            "description": "I apply the solution, test the result with you and explain what changed."
+          }
+        ]
+      },
+      "practical": {
+        "badge": "Clear conditions",
+        "heading": "What to know before we start",
+        "items": [
+          {
+            "icon": "lock-keyhole",
+            "title": "You control remote access",
+            "description": "The connection starts only with your approval and can be stopped at any time. I do not request your passwords in messages."
+          },
+          {
+            "icon": "calendar-clock",
+            "title": "Out-of-hours availability",
+            "description": "Support may be available outside normal hours depending on availability. The price is confirmed beforehand."
+          },
+          {
+            "icon": "rotate-ccw",
+            "title": "7-day follow-up",
+            "description": "If the exact same problem returns in the same environment, I check the intervention again at no additional cost."
+          },
+          {
+            "icon": "laptop",
+            "title": "Complete computer setup",
+            "description": "Windows installation, drivers and complete preparation of a new computer are covered by the Computer repair service."
+          }
+        ]
+      },
+      "faq": {
+        "badge": "Frequently asked questions",
+        "heading": "Before requesting remote access",
+        "items": [
+          {
+            "question": "Do you support individuals too?",
+            "answer": "Yes. Support is available to individuals, professionals, practices and organizations."
+          },
+          {
+            "question": "Can every problem be solved remotely?",
+            "answer": "No. Hardware faults, cabling and some network issues require physical intervention. We establish this before connecting."
+          },
+          {
+            "question": "Can you provide same-day support?",
+            "answer": "Sometimes, but it is not guaranteed. Timing depends on the schedule, problem complexity and whether travel is required."
+          },
+          {
+            "question": "What does the 7-day follow-up cover?",
+            "answer": "The recurrence of the same problem in the configuration left at the end of the intervention. It excludes later updates, user changes and third-party service outages."
+          },
+          {
+            "question": "When do I need IT management instead of IT support?",
+            "answer": "When you need recurring administration, security policies, onboarding, monitoring and ongoing responsibility for your IT environment."
+          }
+        ]
+      },
+      "cta": {
+        "heading": "Tell me what is not working",
+        "description": "Send the problem, affected device or service and how urgent the situation is. I will tell you whether we can work remotely and what it will cost.",
+        "primary": "Message on WhatsApp",
+        "secondary": "Send a message"
+      }
+    },
+    "itManagement": {
+      "meta": {
+        "title": "IT management",
+        "description": "Microsoft 365, Google Workspace, device, backup and local network management for professionals and small organizations."
+      },
+      "hero": {
+        "badge": "IT management",
+        "titleLead": "An organized IT environment,",
+        "titleHighlight": "secured and managed correctly.",
+        "description": "Management for independent professionals, practices, offices and small organizations: accounts, devices, backup, networking and clear processes.",
+        "primary": "Request an assessment",
+        "secondary": "Message on WhatsApp",
+        "facts": [
+          "Microsoft 365 and Google Workspace",
+          "Windows, macOS, Android and iOS",
+          "Licences remain with the client"
+        ]
+      },
+      "problems": {
+        "badge": "Signs you need help",
+        "heading": "When it makes sense to have someone manage IT continuously",
+        "lead": "If these situations look familiar, this is no longer one technical issue. It is about organizing the entire working environment.",
+        "items": [
+          {
+            "icon": "user-plus",
+            "title": "A new colleague needs to be set up",
+            "description": "They need accounts, licences, file access and a correctly configured device from day one."
+          },
+          {
+            "icon": "user-minus",
+            "title": "Someone has left the team",
+            "description": "Accounts must be closed, permissions revoked and the data they accessed protected."
+          },
+          {
+            "icon": "key-round",
+            "title": "You do not know who has access",
+            "description": "Files, applications and administrative accounts are shared without a clear record."
+          },
+          {
+            "icon": "laptop",
+            "title": "Every device is configured differently",
+            "description": "Laptops and phones have different settings, updates and levels of protection."
+          },
+          {
+            "icon": "database-backup",
+            "title": "Backups exist but were never tested",
+            "description": "Copies appear to run, but nobody has verified whether the data can be restored."
+          },
+          {
+            "icon": "wifi",
+            "title": "Nobody is responsible for the network",
+            "description": "When Wi-Fi, the router or VPN fail, there is no saved configuration or responsible person."
+          },
+          {
+            "icon": "smartphone",
+            "title": "You cannot control a lost device",
+            "description": "There is no MDM solution to lock, wipe, enforce rules or revoke access remotely."
+          },
+          {
+            "icon": "receipt-text",
+            "title": "Licences are not tracked",
+            "description": "It is unclear which subscriptions are active, who uses them and whether unused licences are still being paid for."
+          }
+        ]
+      },
+      "services": {
+        "badge": "What I manage",
+        "heading": "Accounts, devices and core infrastructure",
+        "lead": "The setup follows the client's size and work, without forcing a provider or resold licence bundle.",
+        "items": [
+          {
+            "icon": "cloud-cog",
+            "title": "Microsoft 365 and Google Workspace",
+            "description": "Domains, DNS, users, licences, groups, permissions, security and email or file migrations."
+          },
+          {
+            "icon": "user-round-check",
+            "title": "Onboarding and offboarding",
+            "description": "Creating and revoking access, assigning licences and preparing devices through a documented process."
+          },
+          {
+            "icon": "smartphone",
+            "title": "Device management",
+            "description": "Policies and enrolment through Intune, Google Endpoint Management, Apple Business Manager, Mosyle or Jamf as appropriate."
+          },
+          {
+            "icon": "shield-check",
+            "title": "Baseline security and compliance",
+            "description": "MFA, access rules, updates, encryption, device protection and reducing unnecessary privileges."
+          },
+          {
+            "icon": "database-backup",
+            "title": "Backup and restoration",
+            "description": "Solution selection and setup, alert monitoring and periodic restoration tests without reading client content."
+          },
+          {
+            "icon": "network",
+            "title": "Basic local network",
+            "description": "Router, Wi-Fi, DHCP, DNS, guest network, firmware, configuration backups and VPN where supported."
+          }
+        ]
+      },
+      "pricing": {
+        "badge": "Engagement models",
+        "heading": "The proposal starts with your actual environment",
+        "lead": "Cost depends on users, devices, platforms, security level, infrastructure and required response time.",
+        "rows": [
+          {
+            "service": "Initial assessment and setup",
+            "price": "project proposal"
+          },
+          {
+            "service": "Migration or implementation",
+            "price": "separate proposal"
+          },
+          {
+            "service": "Ongoing management",
+            "price": "custom monthly proposal"
+          }
+        ],
+        "note": "The first discussion is free. Technical auditing, implementation and documentation are billable services. Licences, subscriptions and equipment are purchased directly by the client from the chosen provider."
+      },
+      "process": {
+        "badge": "Onboarding process",
+        "heading": "Understand the environment before changing it",
+        "lead": "Management begins with authorized access, inventory and an agreed plan.",
+        "steps": [
+          {
+            "title": "Initial discussion",
+            "description": "We establish users, devices, platforms and priority problems."
+          },
+          {
+            "title": "Audit and inventory",
+            "description": "I review the environment, administrative access, licences, backup and network."
+          },
+          {
+            "title": "Remediation plan",
+            "description": "You receive priorities, responsibilities, costs and proposed stages."
+          },
+          {
+            "title": "Implementation and management",
+            "description": "We apply approved changes, document the environment and establish recurring routines."
+          }
+        ]
+      },
+      "practical": {
+        "badge": "Limits and responsibilities",
+        "heading": "The client remains in control",
+        "items": [
+          {
+            "icon": "receipt-text",
+            "title": "Licences purchased directly",
+            "description": "I recommend suitable solutions, while contracts, licences and invoices remain between client and provider."
+          },
+          {
+            "icon": "user-cog",
+            "title": "Authorized administrative access",
+            "description": "Management requires approved roles and documented access. Primary accounts remain under client control."
+          },
+          {
+            "icon": "server-off",
+            "title": "No enterprise infrastructure",
+            "description": "Servers, enterprise firewalls, structured cabling and complex architectures are assessed separately or referred to specialists."
+          },
+          {
+            "icon": "clock",
+            "title": "No implied 24/7 coverage",
+            "description": "Hours, response time and included support are defined in the proposal. The service does not imply permanent availability."
+          }
+        ]
+      },
+      "faq": {
+        "badge": "Frequently asked questions",
+        "heading": "Before management begins",
+        "items": [
+          {
+            "question": "Is the service only for companies?",
+            "answer": "No. It also suits independent professionals, designers, lawyers, surveyors, practices, offices and non-profits."
+          },
+          {
+            "question": "Must I buy licences from you?",
+            "answer": "No. The client buys licences and subscriptions directly. I recommend, configure and manage the selected solution."
+          },
+          {
+            "question": "Can you manage both Microsoft 365 and Google Workspace?",
+            "answer": "Yes. The platform follows the client's workflow, requirements and budget rather than a resold package."
+          },
+          {
+            "question": "Which MDM platforms can you use?",
+            "answer": "Microsoft Intune, Google Endpoint Management, Apple Business Manager with Mosyle or Jamf, depending on devices and licences."
+          },
+          {
+            "question": "Does backup monitoring guarantee data recovery?",
+            "answer": "No absolute guarantee exists. Monitoring checks execution, alerts and restoration through periodic tests, reducing the risk of an undetected failed backup."
+          },
+          {
+            "question": "How is this different from IT support?",
+            "answer": "IT support resolves one-off user requests. IT management continuously manages accounts, devices, policies, backup and core infrastructure."
+          }
+        ]
+      },
+      "cta": {
+        "heading": "Let's understand your IT environment",
+        "description": "Tell me how many users and devices you have, which platforms you use and what should work better. The first discussion is free and without obligation.",
+        "primary": "Message on WhatsApp",
+        "secondary": "Request an assessment"
+      }
+    },
+    "contact": {
+      "meta": {
+        "title": "Contact",
+        "description": "Contact Tech cu Bogdan for web development, computer repair, IT support or IT management in Cluj-Napoca and remotely."
+      },
+      "hero": {
+        "badge": "Start a project",
+        "titleLead": "Tell me how",
+        "titleHighlight": "I can help",
+        "description": "I'd love to hear from you. Send a message with the form below, or reach out on one of the other channels below."
+      },
+      "formTitle": "Project details",
+      "channelsTitle": "Other channels",
+      "channelsSubtitle": "Prefer a direct channel? Pick whichever works best.",
+      "whatsappLabel": "WhatsApp",
+      "whatsappNote": "Message us on WhatsApp",
+      "emailLabel": "Email",
+      "emailNote": "Drop us a line",
+      "socialNote": "Follow along",
+      "basedIn": "Based in {country}"
+    },
+    "home": {
+      "meta": {
+        "title": "Web development and IT services",
+        "description": "Web development, computer repair, IT support and IT management for individuals, professionals and small organizations."
+      },
+      "hero": {
+        "badge": "Technology explained simply",
+        "titleLead": "Technology that",
+        "typingWords": [
+          "works for you.",
+          "never slows you down.",
+          "stays secure.",
+          "grows with you."
+        ],
+        "typingWordsMobile": [
+          "works for you.",
+          "stays secure.",
+          "grows with you."
+        ],
+        "description": "Web development, computer repair, IT support and IT management for individuals, professionals and small organizations — in Cluj-Napoca or remotely.",
+        "descriptionMobile": "Web development and IT services for individuals, professionals and small organizations.",
+        "primary": "View services",
+        "secondary": "Talk to me"
+      },
+      "services": {
+        "badge": "How I can help",
+        "heading": "Four services, clearly explained",
+        "lead": "Choose the service that fits your situation, without unnecessary packages.",
+        "learnMore": "Learn more",
+        "cards": [
+          {
+            "icon": "layout",
+            "title": "Web development",
+            "description": "Fast, clear and manageable websites built around your goals."
+          },
+          {
+            "icon": "wrench",
+            "title": "Computer repair",
+            "description": "Diagnostics, maintenance and repairs for laptops and desktop computers."
+          },
+          {
+            "icon": "life-buoy",
+            "title": "IT support",
+            "description": "One-off help, remotely or on site, when a technical issue interrupts your work."
+          },
+          {
+            "icon": "settings",
+            "title": "IT management",
+            "description": "Accounts, devices, access, security and IT processes managed coherently."
+          }
+        ]
+      },
+      "workWithMe": {
+        "badge": "Choose more easily",
+        "heading": "Not sure which service you need?",
+        "lead": "Start with the problem you want to solve.",
+        "cards": [
+          {
+            "icon": "palette",
+            "title": "A faulty device",
+            "description": "Hardware or software issue: Computer repair."
+          },
+          {
+            "icon": "zap",
+            "title": "A one-off problem",
+            "description": "Help with a printer, application or setup: IT support."
+          },
+          {
+            "icon": "search",
+            "title": "An IT environment to manage",
+            "description": "Accounts, devices and access need ongoing management: IT management."
+          },
+          {
+            "icon": "shield-check",
+            "title": "A new or updated website",
+            "description": "A properly built online presence: Web development."
+          }
+        ],
+        "cta": "View all services"
+      },
+      "process": {
+        "badge": "How we work",
+        "heading": "From a problem to a clear solution",
+        "lead": "No unnecessary stages and no unexplained costs.",
+        "cards": [
+          {
+            "icon": "message-circle",
+            "title": "We discuss the situation",
+            "description": "You explain what needs solving and how urgent it is."
+          },
+          {
+            "icon": "clipboard-check",
+            "title": "We agree on the solution",
+            "description": "I explain the options, cost and steps before starting."
+          },
+          {
+            "icon": "check-circle",
+            "title": "We solve and verify",
+            "description": "I implement the solution and we verify the result together."
+          }
+        ]
+      },
+      "why": {
+        "badge": "Why Tech cu Bogdan",
+        "heading": "Work directly with the person solving it",
+        "lead": "Direct communication, reasoned recommendations and suitable solutions.",
+        "cards": [
+          {
+            "icon": "user",
+            "title": "One point of contact",
+            "description": "From the first discussion to the final solution, you speak directly with me."
+          },
+          {
+            "icon": "message-square",
+            "title": "Explanations before work",
+            "description": "You know what I will do, why it is needed and what it costs."
+          },
+          {
+            "icon": "scale",
+            "title": "Independent recommendations",
+            "description": "I do not sell licences or hardware or push products you do not need."
+          },
+          {
+            "icon": "map-pin",
+            "title": "Local or remote",
+            "description": "On-site work in Cluj-Napoca and remote support for suitable issues."
+          }
+        ]
+      },
+      "reviews": {
+        "badge": "Reviews",
+        "heading": "Client experiences will appear here",
+        "description": "This section is ready for Google reviews. Until the integration is active, use the direct link.",
+        "cta": "Leave a Google review"
+      },
+      "portfolio": {
+        "badge": "Selected work",
+        "heading": "Projects I've built",
+        "lead": "A selection of recent work.",
+        "viewAll": "View all projects"
+      },
+      "reviewCta": "Leave us a review on Google",
+      "aboutTeaser": {
+        "badge": "About me",
+        "heading": "I'm Bogdan Murășan",
+        "description": "I help individuals, professionals and small organizations with web development and IT services. You work directly with me from the first conversation to the final solution.",
+        "moreAboutMe": "More about me"
+      },
+      "blog": {
+        "badge": "From the blog",
+        "heading": "Featured",
+        "viewAll": "View all posts"
+      },
+      "cta": {
+        "badge": "Let's talk",
+        "heading": "Let's talk about what you need",
+        "description": "The first talk is free and informative, with no obligations. And from the first conversation to the final delivery, it's me.",
+        "primary": "Send a message",
+        "secondary": "Message me on WhatsApp"
+      }
+    }
+  }
+}

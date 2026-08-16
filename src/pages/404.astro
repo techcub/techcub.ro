@@ -1,0 +1,106 @@
+---
+/**
+ * 404 page
+ */
+import PageLayout from '@/layouts/PageLayout.astro';
+import Icon from '@/components/ui/primitives/Icon/Icon.astro';
+import Badge from '@/components/ui/data-display/Badge/Badge.astro';
+import Card from '@/components/ui/data-display/Card/Card.astro';
+import Button from '@/components/ui/form/Button/Button.astro';
+import { Hero } from '@/components/hero';
+import { t, getLocaleFromPath, localizedPath } from '@/i18n';
+
+const locale = getLocaleFromPath(Astro.url.pathname);
+
+const recoveryLinks = [
+  {
+    icon: 'sparkles',
+    title: t('nav.items.services', locale),
+    description: t('errors.projectsDesc', locale),
+    href: localizedPath('/services', locale),
+  },
+  {
+    icon: 'book',
+    title: t('blog.title', locale),
+    description: t('errors.blogDesc', locale),
+    href: localizedPath('/blog', locale),
+  },
+  {
+    icon: 'mail',
+    title: t('errors.contactTitle', locale),
+    description: t('errors.contactDesc', locale),
+    href: localizedPath('/contact', locale),
+  },
+];
+---
+
+<PageLayout
+  title={t('errors.metaTitle', locale)}
+  description={t('errors.metaDescription', locale)}
+  noindex
+  eagerReveal
+  languageAlternates={{ ro: '/', en: '/en/' }}
+>
+  <Hero layout="centered" size="sm">
+    <Badge slot="badge" variant="brand" pill>
+      <Icon name="compass" size="sm" />
+      {t('errors.badge', locale)}
+    </Badge>
+
+    <h1 slot="title">
+      {t('errors.titleLead', locale)}
+      <span class="text-brand-500">{t('errors.titleHighlight', locale)}</span>
+    </h1>
+
+    <p slot="description">
+      {t('errors.description', locale)}
+    </p>
+
+    <div slot="actions" class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+      <Button href={localizedPath('/', locale)} size="lg">
+        <Icon name="arrow-left" size="sm" />
+        {t('errors.backHome', locale)}
+      </Button>
+      <Button href={localizedPath('/blog', locale)} variant="brand-outline" size="lg">
+        {t('errors.browseBlog', locale)}
+        <Icon name="arrow-right" size="sm" />
+      </Button>
+    </div>
+  </Hero>
+
+  <!-- Recovery Section -->
+  <section class="bg-background-secondary border-border border-t py-[var(--space-section-md)]">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mb-8 text-center" data-reveal>
+        <h2 class="font-display text-foreground text-3xl font-bold md:text-4xl">
+          {t('errors.tryInstead', locale)}
+        </h2>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-3">
+        {
+          recoveryLinks.map((link, i) => (
+            <Card hover href={link.href} class="group" data-reveal data-reveal-delay={i}>
+              <div class="flex items-start gap-4">
+                <div class="from-brand-500/20 to-brand-500/5 text-brand-500 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br">
+                  <Icon name={link.icon} size="sm" />
+                </div>
+                <div class="min-w-0 flex-1">
+                  <h3 class="text-foreground text-base font-semibold">{link.title}</h3>
+                  <p class="text-foreground-muted mt-1.5 text-sm leading-relaxed">
+                    {link.description}
+                  </p>
+                </div>
+                <Icon
+                  name="arrow-up-right"
+                  size="sm"
+                  class="text-foreground-muted group-hover:text-brand-500 shrink-0 transition-colors"
+                />
+              </div>
+            </Card>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</PageLayout>

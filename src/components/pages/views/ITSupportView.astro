@@ -1,0 +1,297 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import Icon from '@/components/ui/primitives/Icon/Icon.astro';
+import Badge from '@/components/ui/data-display/Badge/Badge.astro';
+import Card from '@/components/ui/data-display/Card/Card.astro';
+import ProofTile from '@/components/ui/data-display/ProofTile/ProofTile.astro';
+import Button from '@/components/ui/form/Button/Button.astro';
+import { Hero } from '@/components/hero';
+import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
+import { businessConfig } from '@/config/business.config';
+import { defaultLocale, localizedPath, t, tData } from '@/i18n';
+
+interface Props {
+  locale?: string;
+  languageAlternates: Record<string, string>;
+  pageKey?: 'itSupport' | 'itManagement';
+  heroIcon?: string;
+  problemsIcon?: string;
+  servicesIcon?: string;
+}
+
+interface Item {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface PageData {
+  hero: {
+    badge: string;
+    titleLead: string;
+    titleHighlight: string;
+    description: string;
+    primary: string;
+    secondary: string;
+    facts: string[];
+  };
+  problems: { badge: string; heading: string; lead: string; items: Item[] };
+  services: { badge: string; heading: string; lead: string; items: Item[] };
+  pricing: {
+    badge: string;
+    heading: string;
+    lead: string;
+    rows: { service: string; price: string }[];
+    note: string;
+  };
+  process: {
+    badge: string;
+    heading: string;
+    lead: string;
+    steps: { title: string; description: string }[];
+  };
+  practical: { badge: string; heading: string; items: Item[] };
+  faq: { badge: string; heading: string; items: { question: string; answer: string }[] };
+  cta: { heading: string; description: string; primary: string; secondary: string };
+}
+
+const {
+  locale = defaultLocale,
+  languageAlternates,
+  pageKey = 'itSupport',
+  heroIcon = 'headphones',
+  problemsIcon = 'life-buoy',
+  servicesIcon = 'monitor-cog',
+} = Astro.props;
+const page = tData<PageData>(`pages.${pageKey}`, locale)!;
+const contactUrl = localizedPath('/contact', locale);
+---
+
+<PageLayout
+  title={t(`pages.${pageKey}.meta.title`, locale)}
+  description={t(`pages.${pageKey}.meta.description`, locale)}
+  languageAlternates={languageAlternates}
+  footerBackground="secondary"
+>
+  <Hero layout="centered" size="md" class="isolate" showHeroHalo>
+    <Badge slot="badge" variant="brand" pill>
+      <Icon name={heroIcon} size="sm" />{page.hero.badge}
+    </Badge>
+    <h1 slot="title">
+      <span class="text-foreground">{page.hero.titleLead}</span><br />
+      <span class="text-brand-500">{page.hero.titleHighlight}</span>
+    </h1>
+    <p slot="description">{page.hero.description}</p>
+    <Fragment slot="actions">
+      <Button size="lg" href={contactUrl}>
+        {page.hero.primary}<Icon name="arrow-right" size="sm" />
+      </Button>
+      <Button size="lg" variant="outline" href={businessConfig.whatsapp} target="_blank">
+        <Icon name="whatsapp" size="sm" />{page.hero.secondary}
+      </Button>
+    </Fragment>
+  </Hero>
+
+  <section class="border-border bg-background-secondary border-t py-8">
+    <div class="mx-auto grid max-w-5xl gap-4 px-6 sm:grid-cols-3">
+      {page.hero.facts.map((fact) => <ProofTile icon="check" title={fact} size="sm" />)}
+    </div>
+  </section>
+
+  <section class="border-border bg-background border-t py-[var(--space-section-md)]">
+    <div class="mx-auto flex max-w-6xl flex-col gap-10 px-6">
+      <div class="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center" data-reveal>
+        <Badge variant="brand" pill
+          ><Icon name={problemsIcon} size="sm" />{page.problems.badge}</Badge
+        >
+        <h2 class="font-display text-foreground text-3xl font-bold text-balance md:text-4xl">
+          {page.problems.heading}
+        </h2>
+        <p class="text-foreground-muted text-lg leading-relaxed">{page.problems.lead}</p>
+      </div>
+      <div class:list={['grid gap-5 sm:grid-cols-2', 'lg:grid-cols-4']}>
+        {
+          page.problems.items.map((item, index) => (
+            <ProofTile
+              icon={item.icon}
+              title={item.title}
+              data-reveal
+              data-reveal-delay={index % 4 || undefined}
+            >
+              {item.description}
+            </ProofTile>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="border-border bg-background-secondary border-t py-[var(--space-section-md)]">
+    <div class="mx-auto flex max-w-6xl flex-col gap-10 px-6">
+      <div class="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center" data-reveal>
+        <Badge variant="brand" pill
+          ><Icon name={servicesIcon} size="sm" />{page.services.badge}</Badge
+        >
+        <h2 class="font-display text-foreground text-3xl font-bold text-balance md:text-4xl">
+          {page.services.heading}
+        </h2>
+        <p class="text-foreground-muted text-lg leading-relaxed">{page.services.lead}</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2">
+        {
+          page.services.items.map((item, index) => (
+            <Card
+              variant="elevated"
+              padding="lg"
+              class="h-full"
+              data-reveal
+              data-reveal-delay={(index % 2) + 1}
+            >
+              <div class="bg-brand-500/10 text-brand-500 mb-5 flex size-11 items-center justify-center rounded-xl">
+                <Icon name={item.icon} size="md" />
+              </div>
+              <h3 class="font-display text-foreground text-xl font-bold">{item.title}</h3>
+              <p class="text-foreground-muted mt-3 leading-relaxed">{item.description}</p>
+            </Card>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="border-border bg-background border-t py-[var(--space-section-md)]">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="mx-auto mb-10 flex max-w-3xl flex-col items-center gap-4 text-center" data-reveal>
+        <Badge variant="brand" pill><Icon name="banknote" size="sm" />{page.pricing.badge}</Badge>
+        <h2 class="font-display text-foreground text-3xl font-bold text-balance md:text-4xl">
+          {page.pricing.heading}
+        </h2>
+        <p class="text-foreground-muted text-lg leading-relaxed">{page.pricing.lead}</p>
+      </div>
+      <Card variant="elevated" padding="none" class="overflow-hidden" data-reveal>
+        <div class="divide-border divide-y">
+          {
+            page.pricing.rows.map((row) => (
+              <div class="flex flex-col gap-1 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-7">
+                <span class="text-foreground font-medium">{row.service}</span>
+                <span class="text-brand-500 shrink-0 font-semibold">{row.price}</span>
+              </div>
+            ))
+          }
+        </div>
+      </Card>
+      <p class="text-foreground-muted mt-5 text-sm leading-relaxed">{page.pricing.note}</p>
+    </div>
+  </section>
+
+  <section class="border-border bg-background-secondary border-t py-[var(--space-section-md)]">
+    <div class="mx-auto flex max-w-6xl flex-col gap-9 px-6">
+      <div class="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center" data-reveal>
+        <Badge variant="brand" pill><Icon name="list-checks" size="sm" />{page.process.badge}</Badge
+        >
+        <h2 class="font-display text-foreground text-3xl font-bold text-balance md:text-4xl">
+          {page.process.heading}
+        </h2>
+        <p class="text-foreground-muted text-lg">{page.process.lead}</p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          page.process.steps.map((step, index) => (
+            <ProofTile
+              number={index + 1}
+              title={step.title}
+              data-reveal
+              data-reveal-delay={index || undefined}
+            >
+              {step.description}
+            </ProofTile>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="border-border bg-background border-t py-[var(--space-section-md)]">
+    <div class="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[0.7fr_1.3fr]">
+      <div class="flex flex-col gap-4" data-reveal>
+        <Badge variant="brand" pill class="self-start"
+          ><Icon name="info" size="sm" />{page.practical.badge}</Badge
+        >
+        <h2 class="font-display text-foreground text-3xl font-bold text-balance md:text-4xl">
+          {page.practical.heading}
+        </h2>
+      </div>
+      <div class="grid gap-5 sm:grid-cols-2">
+        {
+          page.practical.items.map((item, index) => (
+            <Card variant="outline" padding="lg" data-reveal data-reveal-delay={(index % 2) + 1}>
+              <Icon name={item.icon} size="md" class="text-brand-500 mb-4" />
+              <h3 class="font-display text-foreground text-lg font-bold">{item.title}</h3>
+              <p class="text-foreground-muted mt-2 text-sm leading-relaxed">{item.description}</p>
+            </Card>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="border-border bg-background-secondary border-t py-[var(--space-section-md)]">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="mb-8 flex flex-col items-center gap-4 text-center" data-reveal>
+        <Badge variant="brand" pill><Icon name="circle-help" size="sm" />{page.faq.badge}</Badge>
+        <h2 class="font-display text-foreground text-3xl font-bold md:text-4xl">
+          {page.faq.heading}
+        </h2>
+      </div>
+      <Card variant="elevated" padding="lg" data-reveal>
+        {
+          page.faq.items.map((item) => (
+            <details class="border-border border-b last:border-0">
+              <summary class="text-foreground flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-medium [&::-webkit-details-marker]:hidden">
+                {item.question}
+                <Icon
+                  name="chevron-down"
+                  size="sm"
+                  class="faq-chevron text-foreground-muted shrink-0"
+                />
+              </summary>
+              <p class="text-foreground-muted pb-5 leading-relaxed">{item.answer}</p>
+            </details>
+          ))
+        }
+      </Card>
+    </div>
+  </section>
+
+  <section class="border-border bg-background relative z-10 border-t py-[var(--space-section-md)]">
+    <div class="glitch:hidden mx-auto max-w-2xl px-6 text-center" data-reveal>
+      <h2 class="font-display text-foreground mb-4 text-4xl font-bold">{page.cta.heading}</h2>
+      <p class="text-foreground-muted mb-8 text-lg">{page.cta.description}</p>
+      <div class="flex flex-col justify-center gap-4 sm:flex-row">
+        <Button size="lg" href={businessConfig.whatsapp} target="_blank"
+          ><Icon name="whatsapp" size="sm" />{page.cta.primary}</Button
+        >
+        <Button size="lg" variant="outline" href={contactUrl}>{page.cta.secondary}</Button>
+      </div>
+    </div>
+    <LetterGlitchBand>
+      <h2 class="font-display text-foreground mb-4 text-4xl font-bold">{page.cta.heading}</h2>
+      <p class="text-foreground-muted mb-8 text-lg">{page.cta.description}</p>
+      <div class="flex flex-col justify-center gap-4 sm:flex-row">
+        <Button size="lg" href={businessConfig.whatsapp} target="_blank" class="hero-btn-brand"
+          ><Icon name="whatsapp" size="sm" />{page.cta.primary}</Button
+        >
+        <Button size="lg" variant="outline" href={contactUrl}>{page.cta.secondary}</Button>
+      </div>
+    </LetterGlitchBand>
+  </section>
+</PageLayout>
+
+<style is:global>
+  details[open] > summary .faq-chevron {
+    transform: rotate(180deg);
+  }
+  .faq-chevron {
+    transition: transform 200ms ease;
+  }
+</style>

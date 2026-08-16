@@ -1,0 +1,515 @@
+---
+/**
+ * HomeView — the landing page body.
+ *
+ * Shared by the default-locale route (`/`) and the locale-prefixed route
+ * (`/<locale>`). All copy is read from `pages.home.*` via `t()` / `tData()`,
+ * and internal links are localized with `localizedPath`. Featured projects and
+ * posts are loaded for the active locale and fall back to the default locale so
+ * the sections are never empty on a locale that hasn't translated its content
+ * yet. Each card links to the URL of the locale the content actually belongs
+ * to, so a fallback (default-locale) item still points at a real page.
+ */
+import LandingLayout from '@/layouts/LandingLayout.astro';
+import { Hero } from '@/components/hero';
+import Button from '@/components/ui/form/Button/Button.astro';
+import Badge from '@/components/ui/data-display/Badge/Badge.astro';
+import ProofTile from '@/components/ui/data-display/ProofTile/ProofTile.astro';
+import Icon from '@/components/ui/primitives/Icon/Icon.astro';
+import TypingEffect from '@/components/ui/TypingEffect.astro';
+import BlogCard from '@/components/blog/BlogCard.astro';
+import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
+import { businessConfig } from '@/config/business.config';
+import { getPostUrl, getPublishedPosts } from '@/lib/blog';
+import { t, tData, defaultLocale, localizedPath } from '@/i18n';
+
+interface Props {
+  /** Locale whose copy and content this page renders. Defaults to the site default. */
+  locale?: string;
+}
+
+interface IconCard {
+  icon: string;
+  title: string;
+  description: string;
+}
+const { locale = defaultLocale } = Astro.props;
+
+let postItems = await getPublishedPosts(locale);
+if (postItems.length === 0 && locale !== defaultLocale) {
+  postItems = await getPublishedPosts(defaultLocale);
+}
+const posts = [...postItems]
+  .sort((a, b) => {
+    if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
+    return b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf();
+  })
+  .slice(0, 3);
+
+const hero = tData<{
+  badge: string;
+  titleLead: string;
+  typingWords: string[];
+  typingWordsMobile: string[];
+  description: string;
+  descriptionMobile: string;
+  primary: string;
+  secondary: string;
+}>('pages.home.hero', locale)!;
+const workWithMe = tData<{
+  badge: string;
+  heading: string;
+  lead: string;
+  cards: IconCard[];
+  cta: string;
+}>('pages.home.workWithMe', locale)!;
+const servicesSection = tData<{
+  badge: string;
+  heading: string;
+  lead: string;
+  learnMore: string;
+  cards: IconCard[];
+}>('pages.home.services', locale)!;
+const processSection = tData<{ badge: string; heading: string; lead: string; cards: IconCard[] }>(
+  'pages.home.process',
+  locale
+)!;
+const whySection = tData<{ badge: string; heading: string; lead: string; cards: IconCard[] }>(
+  'pages.home.why',
+  locale
+)!;
+const reviewsSection = tData<{
+  badge: string;
+  heading: string;
+  description: string;
+  cta: string;
+}>('pages.home.reviews', locale)!;
+const aboutTeaser = tData<{
+  badge: string;
+  heading: string;
+  description: string;
+  moreAboutMe: string;
+}>('pages.home.aboutTeaser', locale)!;
+const blogSection = tData<{ badge: string; heading: string; viewAll: string }>(
+  'pages.home.blog',
+  locale
+)!;
+const cta = tData<{
+  badge: string;
+  heading: string;
+  description: string;
+  primary: string;
+  secondary: string;
+}>('pages.home.cta', locale)!;
+
+const servicesUrl = localizedPath('/services', locale);
+const aboutUrl = localizedPath('/about', locale);
+const contactUrl = localizedPath('/contact', locale);
+const blogUrl = localizedPath('/blog', locale);
+const whatsappUrl = businessConfig.whatsapp;
+const servicePaths = [
+  '/servicii/dezvoltare-web',
+  '/servicii/service-calculatoare',
+  '/servicii/suport-it',
+  '/servicii/administrare-it',
+];
+const englishServicePaths = [
+  '/services/web-development',
+  '/services/computer-repair',
+  '/services/it-support',
+  '/services/it-management',
+];
+const resolvedServicePaths = locale === defaultLocale ? servicePaths : englishServicePaths;
+---
+
+<LandingLayout
+  title={t('pages.home.meta.title', locale)}
+  description={t('pages.home.meta.description', locale)}
+  includePersonSchema={true}
+  includeProfessionalServiceSchema={true}
+>
+  <!-- Hero -->
+  <!-- data-header-flip-anchor: the floating header keeps its over-the-hero
+       look until this section is nearly out from under it. See the flip
+       threshold in Header.astro. -->
+  <Hero
+    layout="centered"
+    size="xl"
+    class="hero-dark-gradient"
+    fullHeight
+    showScrollIndicator
+    data-header-flip-anchor
+  >
+    <Badge slot="badge" variant="brand" pill pulse class="dark:text-brand-200">{hero.badge}</Badge>
+
+    {
+      /* 12.6vw fills the mobile column (~95-98% at 320-390px), sized to the
+        English demo strings — translated hero copy is the site owner's to
+        refit. The 3rem cap keeps the size continuous with sm:text-5xl at
+        the 640px boundary. */
+    }
+    <h1 slot="title" class="!text-[clamp(2rem,12.6vw,3rem)] sm:!text-5xl md:!text-6xl lg:!text-7xl">
+      <span class="text-brand-600 dark:text-foreground [-webkit-text-fill-color:currentColor]"
+        >{hero.titleLead}</span
+      ><br />
+      <span class="text-brand-500 [-webkit-text-fill-color:var(--color-brand-500)] sm:hidden">
+        <TypingEffect words={hero.typingWordsMobile} />
+      </span>
+      <span
+        class="text-brand-500 hidden [-webkit-text-fill-color:var(--color-brand-500)] sm:inline"
+      >
+        <TypingEffect words={hero.typingWords} />
+      </span>
+    </h1>
+
+    <p slot="description" class="!text-balance">
+      <span class="sm:hidden">{hero.descriptionMobile}</span>
+      <span class="hidden sm:inline">{hero.description}</span>
+    </p>
+
+    <Fragment slot="actions">
+      <Button size="lg" href={servicesUrl}>
+        {hero.primary}
+        <Icon name="arrow-right" size="sm" />
+      </Button>
+      <Button size="lg" variant="outline" href={contactUrl}>
+        <Icon name="message-circle" size="sm" />
+        {hero.secondary}
+        <Icon name="arrow-right" size="sm" />
+      </Button>
+    </Fragment>
+  </Hero>
+
+  <!-- Services Section -->
+  <section
+    class="bg-background-secondary border-border relative z-10 border-t py-[var(--space-section-md)]"
+  >
+    <div class="mx-auto flex max-w-6xl flex-col gap-8 px-6">
+      <div class="flex flex-col items-center gap-4 text-center" data-reveal>
+        <div class="flex flex-col items-center gap-6">
+          <Badge variant="brand" pill>
+            <Icon name="sparkles" size="sm" />
+            {servicesSection.badge}
+          </Badge>
+          <h2 class="font-display text-foreground text-3xl font-bold md:text-4xl">
+            {servicesSection.heading}
+          </h2>
+        </div>
+        <p class="text-foreground-muted mx-auto max-w-2xl text-lg">
+          {servicesSection.lead}
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          servicesSection.cards.map((card, i) => (
+            <ProofTile
+              href={localizedPath(resolvedServicePaths[i], locale)}
+              icon={card.icon}
+              title={card.title}
+              data-reveal
+              data-reveal-delay={i || undefined}
+            >
+              {card.description}
+            </ProofTile>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Work with me -->
+  <section class="bg-background border-border relative z-10 border-t py-[var(--space-section-md)]">
+    <div class="mx-auto flex max-w-6xl flex-col gap-8 px-6">
+      <div class="flex flex-col items-center gap-4 text-center" data-reveal>
+        <div class="flex flex-col items-center gap-6">
+          <Badge variant="brand" pill>
+            <Icon name="handshake" size="sm" />
+            {workWithMe.badge}
+          </Badge>
+          <h2 class="font-display text-foreground text-3xl font-bold text-balance md:text-4xl">
+            {workWithMe.heading}
+          </h2>
+        </div>
+        <p class="text-foreground-muted mx-auto max-w-2xl text-lg text-balance">
+          {workWithMe.lead}
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          workWithMe.cards.map((card, i) => (
+            <ProofTile
+              icon={card.icon}
+              title={card.title}
+              data-reveal
+              data-reveal-delay={i || undefined}
+            >
+              {card.description}
+            </ProofTile>
+          ))
+        }
+      </div>
+
+      <div class="mt-4 flex justify-center" data-reveal>
+        <Button size="lg" href={servicesUrl} class="cta-btn-brand">
+          {workWithMe.cta}
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section
+    class="bg-background-secondary border-border relative z-10 border-t py-[var(--space-section-md)]"
+  >
+    <div class="mx-auto flex max-w-6xl flex-col gap-8 px-6">
+      <div class="flex flex-col items-center gap-4 text-center" data-reveal>
+        <div class="flex flex-col items-center gap-6">
+          <Badge variant="brand" pill>
+            <Icon name="route" size="sm" />
+            {processSection.badge}
+          </Badge>
+          <h2 class="font-display text-foreground text-3xl font-bold md:text-4xl">
+            {processSection.heading}
+          </h2>
+        </div>
+        <p class="text-foreground-muted mx-auto max-w-2xl text-lg">{processSection.lead}</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        {
+          processSection.cards.map((card, i) => (
+            <ProofTile
+              icon={card.icon}
+              title={card.title}
+              data-reveal
+              data-reveal-delay={i || undefined}
+            >
+              {card.description}
+            </ProofTile>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Tech cu Bogdan -->
+  <section class="bg-background border-border relative z-10 border-t py-[var(--space-section-md)]">
+    <div class="mx-auto flex max-w-6xl flex-col gap-8 px-6">
+      <div class="flex flex-col items-center gap-4 text-center" data-reveal>
+        <div class="flex flex-col items-center gap-6">
+          <Badge variant="brand" pill>
+            <Icon name="shield-check" size="sm" />
+            {whySection.badge}
+          </Badge>
+          <h2 class="font-display text-foreground text-3xl font-bold md:text-4xl">
+            {whySection.heading}
+          </h2>
+        </div>
+        <p class="text-foreground-muted mx-auto max-w-2xl text-lg">{whySection.lead}</p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          whySection.cards.map((card, i) => (
+            <ProofTile
+              icon={card.icon}
+              title={card.title}
+              data-reveal
+              data-reveal-delay={i || undefined}
+            >
+              {card.description}
+            </ProofTile>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section
+    class="bg-background-secondary border-border relative z-10 border-t py-[var(--space-section-md)]"
+  >
+    <div class="mx-auto max-w-3xl px-6 text-center" data-reveal>
+      <Badge variant="brand" pill class="mb-6">
+        <Icon name="star" size="sm" />
+        {reviewsSection.badge}
+      </Badge>
+      <h2 class="font-display text-foreground mb-4 text-3xl font-bold md:text-4xl">
+        {reviewsSection.heading}
+      </h2>
+      <p class="text-foreground-muted mx-auto mb-8 max-w-2xl text-lg">
+        {reviewsSection.description}
+      </p>
+      <Button
+        variant="brand-outline"
+        href="https://g.page/r/Cef73P6eMiW0EBM/review"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {reviewsSection.cta}
+        <Icon name="external-link" size="sm" />
+      </Button>
+    </div>
+  </section>
+
+  <!-- About Teaser -->
+  <section class="bg-background border-border relative z-10 border-t py-[var(--space-section-md)]">
+    <div class="mx-auto max-w-4xl px-6 text-center" data-reveal>
+      <Badge variant="brand" pill class="mb-6">
+        <Icon name="user" size="sm" />
+        {aboutTeaser.badge}
+      </Badge>
+      <h2 class="font-display text-foreground mb-5 text-3xl font-bold md:text-4xl">
+        {aboutTeaser.heading}
+      </h2>
+      <p class="text-foreground-muted mx-auto mb-8 max-w-2xl text-lg leading-relaxed">
+        {aboutTeaser.description}
+      </p>
+      <Button variant="brand-outline" href={aboutUrl}>
+        {aboutTeaser.moreAboutMe}
+        <Icon name="arrow-right" size="sm" />
+      </Button>
+    </div>
+  </section>
+  <!-- Blog -->
+  <section class="bg-background border-border relative z-10 border-t py-[var(--space-section-md)]">
+    <div class="mx-auto flex max-w-6xl flex-col gap-8 px-6">
+      <div class="flex flex-col items-center gap-6 text-center" data-reveal>
+        <Badge variant="brand" pill>
+          <Icon name="book" size="sm" />
+          {blogSection.badge}
+        </Badge>
+        <h2 class="font-display text-foreground text-3xl font-bold md:text-4xl">
+          {blogSection.heading}
+        </h2>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          posts.map((post, index) => (
+            <BlogCard
+              title={post.data.title}
+              description={post.data.description}
+              href={getPostUrl(post.id, post.data.locale)}
+              publishedAt={post.data.publishedAt}
+              tags={post.data.tags}
+              author={post.data.author}
+              image={post.data.image}
+              svgSlug={post.data.svgSlug}
+              body={post.body}
+              revealDelay={index}
+              class={index === 3 ? 'hidden sm:block lg:hidden' : undefined}
+            />
+          ))
+        }
+      </div>
+
+      <div class="flex justify-center">
+        <Button variant="brand-outline" href={blogUrl}>
+          {blogSection.viewAll}
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA — `secondary` so it alternates with the `background` Blog section above and the `background` Footer below. -->
+  <section
+    class="bg-background-secondary border-border relative z-10 border-t py-[var(--space-section-md)]"
+  >
+    <!-- Mobile: flat section, no card -->
+    <div class="glitch:hidden mx-auto max-w-2xl px-6 text-center" data-reveal>
+      <Badge variant="brand" pill class="mb-6">
+        <Icon name="message-circle" size="sm" />
+        {cta.badge}
+      </Badge>
+      <h2 class="font-display text-foreground mb-4 text-4xl font-bold text-balance">
+        {cta.heading}
+      </h2>
+      <p class="text-foreground-muted mb-8 text-lg text-balance">
+        {cta.description}
+      </p>
+      <div class="flex flex-col justify-center gap-4 sm:flex-row">
+        <Button size="lg" href={contactUrl} class="cta-btn-brand">
+          {cta.primary}
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+        <Button size="lg" variant="brand-outline" href={whatsappUrl} target="_blank">
+          {cta.secondary}
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+      </div>
+    </div>
+
+    <!-- Desktop: contained LetterGlitch band with glass card -->
+    <LetterGlitchBand>
+      <h2 class="font-display text-foreground mb-4 text-4xl font-bold text-balance">
+        {cta.heading}
+      </h2>
+      <p class="text-foreground-muted mb-8 text-lg text-balance">
+        {cta.description}
+      </p>
+      <div class="flex flex-col justify-center gap-4 sm:flex-row">
+        <Button size="lg" href={contactUrl} class="hero-btn-brand">
+          {cta.primary}
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+        <Button size="lg" variant="outline" href={whatsappUrl} target="_blank">
+          {cta.secondary}
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+      </div>
+    </LetterGlitchBand>
+  </section>
+
+  <script>
+    function initCountup() {
+      const counters = document.querySelectorAll<HTMLElement>(
+        '[data-countup]:not([data-countup-init])'
+      );
+      if (counters.length === 0) return;
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            observer.unobserve(entry.target);
+            const el = entry.target as HTMLElement;
+            const target = parseInt(el.dataset.countup ?? '0', 10);
+            const suffix = el.dataset.suffix ?? '';
+            const duration = 1200;
+            const start = performance.now();
+            const tick = (now: number) => {
+              const elapsed = now - start;
+              const progress = Math.min(elapsed / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.round(eased * target) + suffix;
+              if (progress < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+          });
+        },
+        { threshold: 0.4 }
+      );
+      counters.forEach((el) => {
+        el.dataset.countupInit = 'true';
+        observer.observe(el);
+      });
+    }
+
+    initCountup();
+  </script>
+
+  <style is:global>
+    /* Widen the homepage hero description from md upward so the paragraph
+     reads on two lines instead of three on landscape phones, tablets,
+     and all laptop/desktop sizes. Scoped via the unique
+     .hero-dark-gradient class so other heroes keep the default
+     max-w-xl reading measure. */
+    @media (min-width: 768px) {
+      .hero-dark-gradient .hero-title-slot + div {
+        max-width: 48rem;
+      }
+    }
+  </style>
+</LandingLayout>

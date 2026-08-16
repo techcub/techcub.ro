@@ -1,0 +1,12 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+
+interface Props {
+  title: string;
+  languageAlternates: Record<string, string>;
+}
+
+const { title, languageAlternates } = Astro.props;
+---
+
+<PageLayout title={title} noindex languageAlternates={languageAlternates} />

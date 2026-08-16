@@ -1,0 +1,167 @@
+---
+import { t, getLocaleFromPath } from '@/i18n';
+
+interface Props {
+  title: string;
+  url: string;
+}
+
+const { title, url } = Astro.props;
+const locale = getLocaleFromPath(Astro.url.pathname);
+---
+
+<div class="flex flex-col items-center gap-3">
+  <span class="text-foreground-muted text-sm font-medium">{t('blog.share', locale)}</span>
+
+  <div class="flex items-center gap-2">
+    <button
+      type="button"
+      class="external-action-btn bg-brand-500 border-brand-500 hover:bg-brand-600 hover:border-brand-600 inline-flex h-9 w-9 items-center justify-center rounded-full border text-white transition-all"
+      aria-label={t('blog.shareOn', locale, { platform: 'Facebook' })}
+      data-destination="facebook"
+      data-title={title}
+      data-url={url}
+    >
+      <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.435H7.078v-3.492h3.047V9.414c0-3.025 1.792-4.697 4.533-4.697 1.313 0 2.686.236 2.686.236v2.972h-1.513c-1.49 0-1.956.93-1.956 1.887v2.261h3.328l-.532 3.492h-2.796V24C19.612 23.094 24 18.1 24 12.073Z"
+        ></path>
+      </svg>
+    </button>
+
+    <button
+      type="button"
+      class="external-action-btn bg-brand-500 border-brand-500 hover:bg-brand-600 hover:border-brand-600 inline-flex h-9 w-9 items-center justify-center rounded-full border text-white transition-all"
+      aria-label={t('blog.shareOn', locale, { platform: 'LinkedIn' })}
+      data-destination="linkedin"
+      data-title={title}
+      data-url={url}
+    >
+      <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+        ></path>
+      </svg>
+    </button>
+
+    <button
+      type="button"
+      class="external-action-btn bg-brand-500 border-brand-500 hover:bg-brand-600 hover:border-brand-600 inline-flex h-9 w-9 items-center justify-center rounded-full border text-white transition-all"
+      aria-label={t('blog.shareOn', locale, { platform: 'WhatsApp' })}
+      data-destination="whatsapp"
+      data-title={title}
+      data-url={url}
+    >
+      <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.148-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.002-5.45 4.436-9.884 9.89-9.884a9.82 9.82 0 017.021 2.91 9.83 9.83 0 012.9 7.025c-.003 5.45-4.436 9.884-9.927 9.884m8.413-18.297A11.82 11.82 0 0012.055 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.14 1.588 5.945L.057 24l6.305-1.654a11.9 11.9 0 005.689 1.448h.005c6.557 0 11.894-5.336 11.897-11.893a11.82 11.82 0 00-3.489-8.413Z"
+        ></path>
+      </svg>
+    </button>
+
+    <button
+      type="button"
+      class="bg-brand-500 border-brand-500 hover:bg-brand-600 hover:border-brand-600 copy-link-btn inline-flex h-9 w-9 items-center justify-center rounded-full border text-white transition-all"
+      aria-label={t('blog.copyLink', locale)}
+      data-url={url}
+    >
+      <svg
+        class="copy-icon h-4 w-4"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+        ></path>
+      </svg>
+      <svg
+        class="check-icon hidden h-4 w-4"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  function initShareButtons() {
+    document.querySelectorAll('.external-action-btn').forEach((button) => {
+      if (!(button instanceof HTMLButtonElement) || button.dataset.initialized) return;
+      button.dataset.initialized = 'true';
+
+      button.addEventListener('click', () => {
+        const destination = button.dataset.destination;
+        const title = button.dataset.title;
+        const url = button.dataset.url;
+        if (!destination || !title || !url) return;
+
+        const encodedTitle = encodeURIComponent(title);
+        const encodedUrl = encodeURIComponent(url);
+        const destinations = {
+          facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+          linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+          whatsapp: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
+        };
+        const destinationUrl = destinations[destination as keyof typeof destinations];
+        if (destinationUrl) window.open(destinationUrl, '_blank', 'noopener,noreferrer');
+      });
+    });
+
+    document.querySelectorAll('.copy-link-btn').forEach((button) => {
+      if (!(button instanceof HTMLButtonElement) || button.dataset.initialized) return;
+      button.dataset.initialized = 'true';
+
+      button.addEventListener('click', async () => {
+        const url = button.getAttribute('data-url');
+        if (!url) return;
+
+        try {
+          if (window.isSecureContext && navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(url);
+          } else {
+            const textarea = document.createElement('textarea');
+            textarea.value = url;
+            textarea.setAttribute('readonly', '');
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            textarea.setSelectionRange(0, textarea.value.length);
+            const legacyClipboard = document as unknown as {
+              execCommand(commandId: string): boolean;
+            };
+            const copied = legacyClipboard.execCommand('copy');
+            textarea.remove();
+            if (!copied) return;
+          }
+
+          const copyIcon = button.querySelector('.copy-icon');
+          const checkIcon = button.querySelector('.check-icon');
+
+          if (copyIcon && checkIcon) {
+            copyIcon.classList.add('hidden');
+            checkIcon.classList.remove('hidden');
+
+            setTimeout(() => {
+              copyIcon.classList.remove('hidden');
+              checkIcon.classList.add('hidden');
+            }, 2000);
+          }
+        } catch {
+          return;
+        }
+      });
+    });
+  }
+
+  initShareButtons();
+  document.addEventListener('astro:page-load', initShareButtons);
+</script>

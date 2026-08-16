@@ -1,0 +1,5 @@
+---
+import LegalPageView from '@/components/pages/views/LegalPageView.astro';
+import { legalContent } from '@/config/legal-content';
+---
+<LegalPageView locale="ro" {...legalContent.ro.terms} languageAlternates={{ ro: '/termeni-si-conditii', en: '/en/terms-and-conditions' }} />

@@ -1,0 +1,339 @@
+---
+/**
+ * AboutView — the About page body.
+ *
+ * Shared by the default-locale route (`/about`) and the locale-prefixed route
+ * (`/<locale>/about`). All copy is read from the `pages.about.*` keys in the
+ * locale dictionaries (`src/i18n/<locale>.json`) via `t()` / `tData()`, so
+ * translating the page is a matter of editing JSON — no markup changes — and
+ * any untranslated key falls back to the default locale automatically.
+ *
+ * Rendering with the default locale produces the same markup the page had
+ * before this was extracted.
+ */
+import PageLayout from '@/layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
+import bogdanPortrait from '@/assets/branding/bogdan-murasan.jpeg';
+import Icon from '@/components/ui/primitives/Icon/Icon.astro';
+import Badge from '@/components/ui/data-display/Badge/Badge.astro';
+import Card from '@/components/ui/data-display/Card/Card.astro';
+import ProofTile from '@/components/ui/data-display/ProofTile/ProofTile.astro';
+import Button from '@/components/ui/form/Button/Button.astro';
+import { Hero } from '@/components/hero';
+import TypingEffect from '@/components/ui/TypingEffect.astro';
+import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
+import { t, tData, defaultLocale, localizedPath } from '@/i18n';
+
+interface Props {
+  /** Locale whose copy this page renders. Defaults to the site default. */
+  locale?: string;
+}
+
+interface IconText {
+  icon: string;
+  title: string;
+  description: string;
+}
+interface TitleText {
+  title: string;
+  text: string;
+}
+
+const { locale = defaultLocale } = Astro.props;
+
+const hero = tData<{
+  badge: string;
+  intro: string;
+  titleLead: string;
+  typingWords: string[];
+  /** Shorter set for phones (below sm), dropping the one word wide enough to clip at the hero size. */
+  typingWordsMobile: string[];
+  description: string;
+}>('pages.about.hero', locale)!;
+const story = tData<{
+  badge: string;
+  heading: string;
+  paragraphs: string[];
+  facts: TitleText[];
+}>('pages.about.story', locale)!;
+const whatYouGet = tData<{ badge: string; heading: string; lead: string; items: IconText[] }>(
+  'pages.about.whatYouGet',
+  locale
+)!;
+const principles = tData<{ badge: string; heading: string; lead: string; items: IconText[] }>(
+  'pages.about.principles',
+  locale
+)!;
+const openSource = tData<{
+  badge: string;
+  heading: string;
+  description: string;
+  button: string;
+  cards: TitleText[];
+}>('pages.about.openSource', locale)!;
+const cta = tData<{ badge: string; heading: string; description: string; button: string }>(
+  'pages.about.cta',
+  locale
+)!;
+const contactUrl = localizedPath('/contact', locale);
+---
+
+<PageLayout
+  title={t('pages.about.meta.title', locale)}
+  description={t('pages.about.meta.description', locale)}
+  footerBackground="secondary"
+>
+  <Hero layout="centered" size="sm" class="isolate pb-[var(--space-section-md)]" showHeroHalo>
+    <Badge slot="badge" variant="brand" pill>
+      <Icon name="rocket" size="sm" />
+      {hero.badge}
+    </Badge>
+    <h1 slot="title">
+      <span class="text-foreground [-webkit-text-fill-color:currentColor]">{hero.titleLead}</span
+      ><br />
+      <span class="text-brand-500 [-webkit-text-fill-color:var(--color-brand-500)] sm:hidden">
+        <TypingEffect words={hero.typingWordsMobile} />
+      </span>
+      <span
+        class="text-brand-500 hidden [-webkit-text-fill-color:var(--color-brand-500)] sm:inline"
+      >
+        <TypingEffect words={hero.typingWords} />
+      </span>
+    </h1>
+
+    <p slot="description" class="!text-balance">
+      {hero.intro}
+    </p>
+
+    <!-- Hero's default slot renders directly under the actions, inside the
+         content column, which is `items-center text-center` on a centred
+         layout — so this needs no centring of its own.
+
+         Spacing is the same two-value scale the hero already runs on:
+         --space-section-md at the section edge, carried by the pb override
+         above, and --space-section-gap between the copy and the image.
+         --space-stack-lg is the block value and leaves an image this size
+         crowding the copy; a section-edge value above it would put a
+         boundary-scale gap inside a section.
+
+         The subtraction is why this is a calc rather than the token on its
+         own. Hero gives the description slot mb-[var(--space-stack-lg)],
+         because a row of buttons normally follows it. Nothing does here, so
+         that 32px stacks under the paragraph before this margin even starts,
+         and the token alone renders 80px at desktop and 64px on a phone
+         against the 48 and 32 it is meant to be. Taking --space-stack-lg back
+         off lands the total on the token at every width: 16 + 32 = 48 at
+         desktop, 0 + 32 = 32 on a phone. Delete the subtraction if the
+         paragraph ever gains buttons after it.
+
+         max-w-4xl also decides which of the two canvases renders, because
+         ProjectImageSVG switches on the image's own width rather than the
+         viewport's: 896px keeps the wide one, a phone's ~382px column takes
+         the tall one. -->
+  </Hero>
+
+  <section class="border-border bg-background-secondary border-t py-[var(--space-section-md)]">
+    <div class="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1.35fr_0.65fr] lg:items-center">
+      <div data-reveal>
+        <Badge variant="brand" pill class="mb-6">
+          <Icon name="user" size="sm" />
+          {story.badge}
+        </Badge>
+        <h2 class="font-display text-foreground mb-6 text-3xl font-bold text-balance md:text-4xl">
+          {story.heading}
+        </h2>
+        <div class="text-foreground-muted flex flex-col gap-4 text-lg leading-relaxed">
+          {story.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </div>
+      <div class="flex flex-col gap-5" data-reveal data-reveal-delay="1">
+        <div class="border-brand-500/50 bg-background overflow-hidden rounded-2xl border shadow-xl">
+          <Image
+            src={bogdanPortrait}
+            alt="Bogdan Murășan, fondatorul Tech cu Bogdan"
+            widths={[480, 720, 1086]}
+            sizes="(min-width: 1024px) 360px, calc(100vw - 3rem)"
+            format="webp"
+            quality={88}
+            loading="lazy"
+            class="aspect-[3/4] h-auto w-full object-cover"
+          />
+        </div>
+        <Card variant="elevated" padding="lg">
+          <div class="divide-border flex flex-col divide-y">
+            {
+              story.facts.map((fact) => (
+                <div class="py-4 first:pt-0 last:pb-0">
+                  <p class="text-foreground mb-1 font-semibold">{fact.title}</p>
+                  <p class="text-foreground-muted text-sm leading-relaxed">{fact.text}</p>
+                </div>
+              ))
+            }
+          </div>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get -->
+  <section class="bg-background-secondary border-border border-t py-[var(--space-section-md)]">
+    <div class="mx-auto flex max-w-6xl flex-col gap-8 px-6">
+      <div
+        class="flex flex-col items-center gap-4 text-center"
+        data-reveal
+        data-reveal-eager
+        data-reveal-ease="smooth"
+      >
+        <div class="flex flex-col items-center gap-6">
+          <Badge variant="brand" pill>
+            <Icon name="list-checks" size="sm" />
+            {whatYouGet.badge}
+          </Badge>
+          <h2 class="font-display text-foreground text-3xl font-bold text-balance md:text-4xl">
+            {whatYouGet.heading}
+          </h2>
+        </div>
+        <p class="text-foreground-muted mx-auto max-w-2xl text-lg text-balance">
+          {whatYouGet.lead}
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          whatYouGet.items.map((item, i) => (
+            <ProofTile
+              icon={item.icon}
+              title={item.title}
+              data-reveal
+              data-reveal-delay={i % 3 || undefined}
+            >
+              {item.description}
+            </ProofTile>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section class="bg-background border-border border-t py-[var(--space-section-md)]">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mb-8 flex flex-col items-center gap-4 text-center" data-reveal>
+        <div class="flex flex-col items-center gap-6">
+          <Badge variant="brand" pill>
+            <Icon name="pen-tool" size="sm" />
+            {principles.badge}
+          </Badge>
+          <h2 class="font-display text-foreground text-4xl font-bold">
+            {principles.heading}
+          </h2>
+        </div>
+        <p class="text-foreground-muted mx-auto max-w-2xl text-lg text-balance">
+          {principles.lead}
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-3">
+        {
+          principles.items.map((item, i) => (
+            <ProofTile
+              icon={item.icon}
+              title={item.title}
+              data-reveal
+              data-reveal-delay={i || undefined}
+            >
+              {item.description}
+            </ProofTile>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <!-- Open Source -->
+  <section class="bg-background-secondary border-border border-t py-[var(--space-section-md)]">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="glitch:grid-cols-2 glitch:items-center grid gap-8 sm:gap-10">
+        <!-- Text -->
+        <div
+          class="glitch:items-start glitch:justify-center glitch:text-left flex flex-col gap-4 sm:items-center sm:text-center"
+          data-reveal
+          data-reveal-ease="smooth"
+        >
+          <Badge variant="brand" pill class="glitch:self-start self-start sm:self-center">
+            <Icon name="award" size="sm" />
+            {openSource.badge}
+          </Badge>
+          <h2 class="font-display text-foreground text-3xl font-bold md:text-4xl">
+            {openSource.heading}
+          </h2>
+          <p
+            class="text-foreground-muted glitch:max-w-none glitch:mx-0 text-lg leading-relaxed sm:mx-auto sm:max-w-xl"
+          >
+            {openSource.description}
+          </p>
+          <div
+            class="glitch:self-start mt-2 flex flex-wrap gap-4 self-start sm:justify-center sm:self-center"
+          >
+            <Button variant="brand-outline" size="lg" href={contactUrl}>
+              {openSource.button}
+              <Icon name="arrow-right" size="sm" />
+            </Button>
+          </div>
+        </div>
+
+        <!-- Info card -->
+        <div
+          class="flex h-full flex-col"
+          data-reveal
+          data-reveal-delay="1"
+          data-reveal-ease="smooth"
+        >
+          <Card variant="elevated" padding="lg" class="flex flex-1 flex-col justify-center gap-6">
+            {
+              openSource.cards.map((card) => (
+                <div class="flex flex-col gap-2">
+                  <h3 class="text-foreground text-base font-semibold">{card.title}</h3>
+                  <p class="text-foreground-muted text-sm leading-relaxed" set:html={card.text} />
+                </div>
+              ))
+            }
+          </Card>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-background border-border relative z-10 border-t py-[var(--space-section-md)]">
+    <!-- Mobile: flat section, no card -->
+    <div class="glitch:hidden mx-auto max-w-2xl px-6 text-center" data-reveal>
+      <Badge variant="brand" pill class="mb-6">
+        <Icon name="message-circle" size="sm" />
+        {cta.badge}
+      </Badge>
+      <h2 class="font-display text-foreground mb-4 text-4xl font-bold text-balance">
+        {cta.heading}
+      </h2>
+      <p class="text-foreground-muted mb-8 text-lg text-balance">
+        {cta.description}
+      </p>
+      <Button size="lg" href={contactUrl} class="cta-btn-brand">
+        {cta.button}
+        <Icon name="arrow-right" size="sm" />
+      </Button>
+    </div>
+
+    <!-- Desktop: contained LetterGlitch band with glass card -->
+    <LetterGlitchBand>
+      <h2 class="font-display text-foreground mb-4 text-4xl font-bold text-balance">
+        {cta.heading}
+      </h2>
+      <p class="text-foreground-muted mb-8 text-lg text-balance">
+        {cta.description}
+      </p>
+      <Button size="lg" href={contactUrl} class="hero-btn-brand">
+        {cta.button}
+        <Icon name="arrow-right" size="sm" />
+      </Button>
+    </LetterGlitchBand>
+  </section>
+</PageLayout>

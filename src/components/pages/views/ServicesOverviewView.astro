@@ -1,0 +1,232 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import Icon from '@/components/ui/primitives/Icon/Icon.astro';
+import Badge from '@/components/ui/data-display/Badge/Badge.astro';
+import Card from '@/components/ui/data-display/Card/Card.astro';
+import ProofTile from '@/components/ui/data-display/ProofTile/ProofTile.astro';
+import Button from '@/components/ui/form/Button/Button.astro';
+import { Hero } from '@/components/hero';
+import LetterGlitchBand from '@/components/patterns/LetterGlitchBand.astro';
+import { defaultLocale, localizedPath, t, tData } from '@/i18n';
+import { getServiceNavItems } from '@/config/services.config';
+
+interface Props {
+  locale?: string;
+}
+
+interface ServiceCard {
+  eyebrow: string;
+  title: string;
+  description: string;
+  features: string[];
+  cta: string;
+}
+
+interface ProcessStep {
+  title: string;
+  description: string;
+}
+
+interface Overview {
+  hero: {
+    badge: string;
+    titleLead: string;
+    titleHighlight: string;
+    description: string;
+    primary: string;
+    secondary: string;
+  };
+  services: {
+    badge: string;
+    heading: string;
+    lead: string;
+    cards: ServiceCard[];
+  };
+  process: {
+    badge: string;
+    heading: string;
+    lead: string;
+    steps: ProcessStep[];
+  };
+  cta: {
+    heading: string;
+    description: string;
+    primary: string;
+    secondary: string;
+  };
+}
+
+const { locale = defaultLocale } = Astro.props;
+const overview = tData<Overview>('pages.services.overview', locale)!;
+const serviceLinks = getServiceNavItems(locale);
+const contactUrl = localizedPath('/contact', locale);
+const aboutUrl = localizedPath('/about', locale);
+---
+
+<PageLayout
+  title={t('pages.services.overviewMeta.title', locale)}
+  description={t('pages.services.overviewMeta.description', locale)}
+  footerBackground="secondary"
+>
+  <Hero layout="centered" size="md" class="isolate" showHeroHalo>
+    <Badge slot="badge" variant="brand" pill>
+      <Icon name="sparkles" size="sm" />
+      {overview.hero.badge}
+    </Badge>
+
+    <h1 slot="title">
+      <span class="text-foreground">{overview.hero.titleLead}</span><br />
+      <span class="text-brand-500">{overview.hero.titleHighlight}</span>
+    </h1>
+
+    <p slot="description">{overview.hero.description}</p>
+
+    <Fragment slot="actions">
+      <Button size="lg" href="#servicii">
+        {overview.hero.primary}
+        <Icon name="arrow-down" size="sm" />
+      </Button>
+      <Button size="lg" variant="outline" href={contactUrl}>
+        {overview.hero.secondary}
+        <Icon name="arrow-right" size="sm" />
+      </Button>
+    </Fragment>
+  </Hero>
+
+  <section
+    id="servicii"
+    class="border-border bg-background-secondary border-t py-[var(--space-section-md)]"
+  >
+    <div class="mx-auto flex max-w-6xl flex-col gap-10 px-6">
+      <div class="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center" data-reveal>
+        <Badge variant="brand" pill>
+          <Icon name="layers" size="sm" />
+          {overview.services.badge}
+        </Badge>
+        <h2 class="font-display text-foreground text-3xl font-bold text-balance md:text-4xl">
+          {overview.services.heading}
+        </h2>
+        <p class="text-foreground-muted text-lg leading-relaxed">{overview.services.lead}</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        {
+          overview.services.cards.map((service, index) => {
+            const link = serviceLinks[index];
+            return (
+              <Card
+                href={link.href}
+                variant="elevated"
+                padding="lg"
+                hover
+                class="service-overview-card group flex h-full flex-col"
+                data-reveal
+                data-reveal-delay={(index % 2) + 1}
+              >
+                <div class="mb-6 flex items-start gap-4">
+                  <div class="bg-brand-500/10 text-brand-500 flex size-12 items-center justify-center rounded-xl">
+                    <Icon name={link.icon} size="lg" />
+                  </div>
+                </div>
+
+                <p class="text-brand-500 mb-2 text-sm font-semibold tracking-wide uppercase">
+                  {service.eyebrow}
+                </p>
+                <h3 class="font-display text-foreground text-2xl font-bold">{service.title}</h3>
+                <p class="text-foreground-muted mt-3 leading-relaxed">{service.description}</p>
+
+                <ul class="border-border mt-6 flex flex-col gap-3 border-t pt-5">
+                  {service.features.map((feature) => (
+                    <li class="text-foreground-muted flex items-start gap-3 text-sm">
+                      <Icon name="check" size="sm" class="text-brand-500 mt-0.5 shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <span class="text-brand-500 mt-auto flex items-center gap-2 pt-7 text-sm font-semibold">
+                  {service.cta}
+                  <Icon
+                    name="arrow-right"
+                    size="sm"
+                    class="transition-transform group-hover:translate-x-1"
+                  />
+                </span>
+              </Card>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="border-border bg-background border-t py-[var(--space-section-md)]">
+    <div class="mx-auto flex max-w-6xl flex-col gap-9 px-6">
+      <div class="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center" data-reveal>
+        <Badge variant="brand" pill>
+          <Icon name="list-checks" size="sm" />
+          {overview.process.badge}
+        </Badge>
+        <h2 class="font-display text-foreground text-3xl font-bold text-balance md:text-4xl">
+          {overview.process.heading}
+        </h2>
+        <p class="text-foreground-muted text-lg">{overview.process.lead}</p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          overview.process.steps.map((step, index) => (
+            <ProofTile
+              number={index + 1}
+              title={step.title}
+              data-reveal
+              data-reveal-delay={index || undefined}
+            >
+              {step.description}
+            </ProofTile>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="border-border bg-background relative z-10 border-t py-[var(--space-section-md)]">
+    <div class="glitch:hidden mx-auto max-w-2xl px-6 text-center" data-reveal>
+      <h2 class="font-display text-foreground mb-4 text-4xl font-bold text-balance">
+        {overview.cta.heading}
+      </h2>
+      <p class="text-foreground-muted mb-8 text-lg text-balance">{overview.cta.description}</p>
+      <div class="flex flex-col justify-center gap-4 sm:flex-row">
+        <Button size="lg" href={contactUrl}>
+          {overview.cta.primary}
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+        <Button size="lg" variant="outline" href={aboutUrl}>{overview.cta.secondary}</Button>
+      </div>
+    </div>
+
+    <LetterGlitchBand>
+      <h2 class="font-display text-foreground mb-4 text-4xl font-bold text-balance">
+        {overview.cta.heading}
+      </h2>
+      <p class="text-foreground-muted mb-8 text-lg text-balance">{overview.cta.description}</p>
+      <div class="flex flex-col justify-center gap-4 sm:flex-row">
+        <Button size="lg" href={contactUrl} class="hero-btn-brand">
+          {overview.cta.primary}
+          <Icon name="arrow-right" size="sm" />
+        </Button>
+        <Button size="lg" variant="outline" href={aboutUrl}>{overview.cta.secondary}</Button>
+      </div>
+    </LetterGlitchBand>
+  </section>
+</PageLayout>
+
+<style>
+  .service-overview-card {
+    min-height: 34rem;
+  }
+
+  html {
+    scroll-padding-top: 5rem;
+  }
+</style>

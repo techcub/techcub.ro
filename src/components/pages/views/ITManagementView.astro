@@ -1,0 +1,19 @@
+---
+import ITSupportView from './ITSupportView.astro';
+
+interface Props {
+  locale?: string;
+  languageAlternates: Record<string, string>;
+}
+
+const { locale, languageAlternates } = Astro.props;
+---
+
+<ITSupportView
+  locale={locale}
+  languageAlternates={languageAlternates}
+  pageKey="itManagement"
+  heroIcon="settings"
+  problemsIcon="shield-check"
+  servicesIcon="panels-top-left"
+/>

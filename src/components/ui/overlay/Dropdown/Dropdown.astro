@@ -1,0 +1,220 @@
+---
+/**
+ * Dropdown Component
+ * Accessible dropdown menu with keyboard navigation and optional icons
+ */
+import { cn } from '@/lib/cn';
+import Icon from '../../primitives/Icon/Icon.astro';
+
+interface DropdownItem {
+  label: string;
+  href?: string;
+  icon?: string;
+  disabled?: boolean;
+  separator?: boolean;
+}
+
+interface Props {
+  items: DropdownItem[];
+  align?: 'start' | 'end';
+  openOnHover?: boolean;
+  class?: string;
+}
+
+const { items, align = 'start', openOnHover = false, class: className } = Astro.props;
+
+// Map common action names to icons
+const iconMap: Record<string, string> = {
+  edit: 'file-text',
+  copy: 'copy',
+  share: 'arrow-up-right',
+  archive: 'box',
+  trash: 'x',
+  delete: 'x',
+  download: 'download',
+  upload: 'upload',
+  settings: 'settings',
+  view: 'external-link',
+};
+---
+
+<div
+  class={cn('relative inline-block', className)}
+  data-dropdown
+  data-dropdown-hover={openOnHover ? 'true' : undefined}
+>
+  <div data-dropdown-trigger>
+    <slot name="trigger" />
+  </div>
+
+  <div
+    class={cn(
+      'absolute z-[100] mt-2 min-w-[180px] p-1.5',
+      'rounded-xl bg-background border border-border shadow-xl',
+      'opacity-0 invisible translate-y-1',
+      'transition-all duration-150 ease-out',
+      align === 'end' ? 'right-0' : 'left-0'
+    )}
+    data-dropdown-menu
+    role="menu"
+    aria-orientation="vertical"
+  >
+    {
+      items.map((item, index) =>
+        item.separator ? (
+          <div class="bg-border my-1.5 h-px" role="separator" />
+        ) : (
+          <a
+            href={item.href || '#'}
+            class={cn(
+              'flex items-center gap-2.5 rounded-md px-3 py-2 text-sm',
+              'transition-colors outline-none',
+              'focus-visible:ring-ring focus-visible:ring-2',
+              item.disabled
+                ? 'text-foreground-muted pointer-events-none cursor-not-allowed opacity-50'
+                : 'hover:bg-secondary focus:bg-secondary text-foreground-secondary hover:text-foreground'
+            )}
+            role="menuitem"
+            tabindex={item.disabled ? -1 : 0}
+            aria-disabled={item.disabled}
+            data-dropdown-item={index}
+          >
+            {item.icon && (
+              <Icon
+                name={iconMap[item.icon] || item.icon}
+                size="sm"
+                class={cn(
+                  'shrink-0',
+                  item.disabled ? 'text-foreground-subtle' : 'text-foreground-muted'
+                )}
+              />
+            )}
+            <span>{item.label}</span>
+          </a>
+        )
+      )
+    }
+  </div>
+</div>
+
+<script>
+  function initDropdowns() {
+    const dropdowns = document.querySelectorAll<HTMLElement>('[data-dropdown]');
+    dropdowns.forEach((dropdown) => {
+      if (dropdown.dataset.dropdownInit) return;
+      dropdown.dataset.dropdownInit = 'true';
+
+      const trigger = dropdown.querySelector('[data-dropdown-trigger]');
+      const triggerControl = trigger?.querySelector<HTMLElement>('[aria-haspopup="menu"]');
+      const toggle = trigger?.querySelector<HTMLElement>('[data-dropdown-toggle]') || trigger;
+      const menu = dropdown.querySelector<HTMLElement>('[data-dropdown-menu]');
+      const items = dropdown.querySelectorAll<HTMLElement>('[data-dropdown-item]');
+      const openOnHover = dropdown.dataset.dropdownHover === 'true';
+      let isOpen = false;
+      let focusedIndex = -1;
+      let closeTimer: number | undefined;
+
+      function cancelScheduledClose() {
+        if (closeTimer === undefined) return;
+        window.clearTimeout(closeTimer);
+        closeTimer = undefined;
+      }
+
+      function open(focusFirst = true) {
+        cancelScheduledClose();
+        isOpen = true;
+        triggerControl?.setAttribute('aria-expanded', 'true');
+        menu?.classList.remove('opacity-0', 'invisible', 'translate-y-1');
+        menu?.classList.add('opacity-100', 'visible', 'translate-y-0');
+        if (focusFirst) {
+          focusedIndex = 0;
+          items[0]?.focus();
+        }
+      }
+
+      function close() {
+        cancelScheduledClose();
+        isOpen = false;
+        triggerControl?.setAttribute('aria-expanded', 'false');
+        menu?.classList.add('opacity-0', 'invisible', 'translate-y-1');
+        menu?.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        focusedIndex = -1;
+      }
+
+      function focusItem(index: number) {
+        if (index < 0) index = items.length - 1;
+        if (index >= items.length) index = 0;
+        focusedIndex = index;
+        items[index]?.focus();
+      }
+
+      toggle?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (isOpen) {
+          close();
+        } else {
+          open();
+        }
+      });
+
+      toggle?.addEventListener('keydown', (event) => {
+        const e = event as KeyboardEvent;
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          open();
+        }
+      });
+
+      if (openOnHover) {
+        toggle?.addEventListener('mouseenter', () => open(false));
+        dropdown.addEventListener('mouseenter', cancelScheduledClose);
+        dropdown.addEventListener('mouseleave', () => {
+          if (dropdown.contains(document.activeElement)) return;
+          cancelScheduledClose();
+          closeTimer = window.setTimeout(close, 900);
+        });
+      }
+
+      menu?.addEventListener('keydown', (event) => {
+        const e = event as KeyboardEvent;
+        switch (e.key) {
+          case 'ArrowDown':
+            e.preventDefault();
+            focusItem(focusedIndex + 1);
+            break;
+          case 'ArrowUp':
+            e.preventDefault();
+            focusItem(focusedIndex - 1);
+            break;
+          case 'Home':
+            e.preventDefault();
+            focusItem(0);
+            break;
+          case 'End':
+            e.preventDefault();
+            focusItem(items.length - 1);
+            break;
+          case 'Escape':
+            e.preventDefault();
+            close();
+            triggerControl?.focus();
+            break;
+          case 'Tab':
+            close();
+            break;
+        }
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target as Node)) close();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isOpen) close();
+      });
+    });
+  }
+
+  initDropdowns();
+  document.addEventListener('astro:page-load', initDropdowns);
+</script>

@@ -1,0 +1,1483 @@
+{
+  "nav": {
+    "skipToContent": "Treci la conținut",
+    "openMenu": "Deschide meniul",
+    "closeMenu": "Închide meniul",
+    "selectLanguage": "Selectați limba",
+    "currentLanguage": "Limba actuală",
+    "mainNav": "Navigație principală",
+    "mobileNav": "Navigare mobil",
+    "toggleMenu": "Comutați meniul",
+    "sectionNavigate": "Navigați",
+    "searchSite": "Căutați acest site",
+    "sectionLanguage": "Limba",
+    "sectionConnect": "Urmărește-ne",
+    "items": {
+      "home": "Acasă",
+      "services": "Servicii",
+      "projects": "Proiecte",
+      "blog": "Blog",
+      "about": "Despre",
+      "contact": "Contact"
+    }
+  },
+  "common": {
+    "readMore": "Citiți mai multe",
+    "loading": "Se încarcă…",
+    "backToTop": "Înapoi sus",
+    "search": "Caută",
+    "submit": "Trimiteți",
+    "cancel": "Anulează",
+    "next": "În continuare",
+    "previous": "Anterior",
+    "home": "Acasă",
+    "map": "Harta",
+    "mapConsentPrompt": "Acceptați cookie-uri pentru a încărca harta interactivă.",
+    "viewOnGoogleMaps": "Vizualizați pe Google Maps",
+    "googleMaps": "Google Maps",
+    "progress": "Progres",
+    "browseByTag": "Răsfoiți după etichetă",
+    "togglePassword": "Comutați vizibilitatea parolei",
+    "breadcrumb": "Pesmet",
+    "copyCode": "Copiați codul în clipboard",
+    "dismiss": "Respingeți",
+    "notifications": "Notificări",
+    "closeDialog": "Închide caseta de dialog",
+    "tabs": "Filele",
+    "verticalTabs": "File verticale"
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Ultimele articole și actualizări",
+    "readingTime": "{minutes} min. citire",
+    "publishedOn": "Publicat pe {date}",
+    "updatedOn": "Actualizat pe {date}",
+    "writtenBy": "Scris de {author}",
+    "tagsLabel": "Etichete",
+    "featured": "Prezentare",
+    "draft": "Ciornă",
+    "noPostsFound": "Nu au fost găsite postări.",
+    "tableOfContents": "Cuprins",
+    "shareThisPost": "Distribuie această postare",
+    "relatedPosts": "Postări înrudite",
+    "share": "Distribuie:",
+    "shareOn": "Distribuie pe {platform}",
+    "copyLink": "Copiați linkul",
+    "metaTitle": "Blog",
+    "metaDescription": "Articole practice despre suport IT, securitate, administrarea sistemelor și dezvoltare web pentru persoane și organizații mici.",
+    "heroBadge": "Articole și resurse",
+    "heroDescription": "Idei practice despre tehnologie, suport IT, securitate și dezvoltare web.",
+    "allPosts": "Toate postările",
+    "noPosts": "Nu au fost găsite postări",
+    "pageMetaTitle": "Blog — Pagina {page}",
+    "pageMetaDescription": "Pagina {page} din {total} — articole despre suport IT, securitate, administrare IT și dezvoltare web.",
+    "pageBadge": "Pagina {page} din {total}",
+    "newestPosts": "Cele mai noi postări",
+    "tagMetaTitle": "#{tag} — Blog",
+    "tagMetaDescription": "Postări etichetate „{tag}”.",
+    "tagBadge": "Etichetați",
+    "tagCountOne": "Postarea {count} etichetată „{tag}”.",
+    "tagCountOther": "{count} postări etichetate „{tag}”.",
+    "tagEmpty": "Nu s-au găsit postări pentru această etichetă.",
+    "tagBackToAll": "Înapoi la toate postările",
+    "onThisPage": "Pe această pagină",
+    "tocShow": "Arată",
+    "tocHide": "Ascunde",
+    "backToBlog": "Înapoi la Blog",
+    "updated": "Actualizat",
+    "rssFeed": "RSS Feed",
+    "cta": {
+      "heading": "Ai nevoie de ajutor?",
+      "description": "Spune-mi ce vrei să rezolvi, iar prima discuție este gratuită și fără obligații.",
+      "button": "Trimite un mesaj"
+    }
+  },
+  "comments": {
+    "title": "Comentarii",
+    "loadError": "Comentariile nu s-au încărcat. Vă rugăm să actualizați și să încercați din nou.",
+    "requiresJs": "Comentariile necesită încărcarea JavaScript."
+  },
+  "projects": {
+    "title": "Proiecte",
+    "description": "Lucruri pe care le-am construit",
+    "viewProject": "Vizualizați proiectul",
+    "viewSource": "Vizualizați sursa",
+    "noProjectsFound": "Nu au fost găsite proiecte.",
+    "carouselChooseSlide": "Alege slide",
+    "carouselNextSlide": "Următorul slide",
+    "carouselPreviousSlide": "Diapozitivul anterior",
+    "galleryLabel": "Caseta de lumină media",
+    "galleryClose": "Închide caseta de lumină",
+    "galleryNextImage": "Următoarea imagine",
+    "galleryPreviousImage": "Imaginea anterioară",
+    "metaTitle": "Proiecte",
+    "metaDescription": "Proiecte și exemple de implementări realizate de Tech cu Bogdan.",
+    "heroBadge": "Lucrare aleasă",
+    "heroDescription": "Munca de care sunt cel mai mândru.",
+    "allProjects": "Toate proiectele",
+    "pageMetaTitle": "Proiecte — Pagina {page}",
+    "pageMetaDescription": "Pagina {page} din {total} — proiecte și exemple de implementări realizate de Tech cu Bogdan.",
+    "pageBadge": "Pagina {page} din {total}",
+    "tagMetaTitle": "#{tag} — Proiecte",
+    "tagMetaDescription": "Proiecte etichetate „{tag}”.",
+    "tagBadge": "Etichetați",
+    "tagCountOne": "Proiectul {count} etichetat „{tag}”.",
+    "tagCountOther": "Proiecte {count} etichetate „{tag}”.",
+    "tagEmpty": "Nu s-au găsit proiecte pentru această etichetă.",
+    "tagBackToAll": "Înapoi la toate proiectele",
+    "backToProjects": "Înapoi la Proiecte",
+    "moreProjects": "Mai multe proiecte",
+    "ctaBadge": "Să vorbim",
+    "ctaHeading": "Să vorbim despre ce ai nevoie",
+    "ctaLead": "Fiecare site web pe care îl construiesc are propriul design personalizat, realizat cu grija pe care o vedeți aici. Spune-mi ce ai în minte.",
+    "ctaPrimary": "Trimite un mesaj",
+    "ctaSecondary": "Mai multe despre mine",
+    "closingHeading": "Ai un proiect în minte?",
+    "closingLead": "Indiferent dacă este o construcție nouă sau ceva care are nevoie de o perspectivă nouă, mi-ar plăcea să aud despre asta."
+  },
+  "pagination": {
+    "page": "Pagina {current} din {total}",
+    "label": "Paginare",
+    "previousPage": "Pagina anterioară",
+    "nextPage": "Pagina următoare",
+    "morePages": "Mai multe pagini"
+  },
+  "errors": {
+    "pageNotFound": "Pagina nu a fost găsită",
+    "pageNotFoundMessage": "Pagina pe care o cauți nu există sau s-a mutat.",
+    "goHome": "Accesați pagina principală",
+    "metaTitle": "Pagina nu a fost găsită",
+    "metaDescription": "Această pagină a fost mutată, a fost eliminată sau nu a existat niciodată.",
+    "badge": "404 — pagina nu a fost găsită",
+    "titleLead": "Pagina nu",
+    "titleHighlight": "găsit.",
+    "description": "Această pagină a fost mutată, a fost eliminată sau nu a existat niciodată. Să te readucem pe drumul cel bun.",
+    "backHome": "Înapoi acasă",
+    "browseBlog": "Răsfoiți blogul",
+    "tryInstead": "Încearcă unul dintre acestea",
+    "projectsDesc": "Dezvoltare web, service calculatoare, suport și administrare IT.",
+    "blogDesc": "Note despre design, cod și meșteșug.",
+    "contactTitle": "Contact",
+    "contactDesc": "Începeți o conversație despre proiectul dvs."
+  },
+  "newsletter": {
+    "heading": "Abonați-vă la newsletter",
+    "description": "Primiți cele mai recente postări în căsuța dvs. de e-mail.",
+    "emailPlaceholder": "Introduceți adresa dvs. de e-mail",
+    "subscribe": "Abonați-vă",
+    "subscribing": "Se abonează…",
+    "success": "Multumesc pentru abonare!",
+    "genericError": "Ceva a mers prost",
+    "notConfigured": "Neconfigurat încă — setează RESEND_API_KEY și RESEND_SEGMENT_ID pentru activare. Numai tu poți vedea această linie.",
+    "unavailable": "Înscrierile nu sunt disponibile momentan.",
+    "error": "Abonamentul a eșuat. Vă rugăm să încercați din nou."
+  },
+  "contact": {
+    "heading": "Luați legătura",
+    "name": "Nume",
+    "email": "E-mail",
+    "subject": "Subiect",
+    "message": "Mesaj",
+    "send": "Trimite mesaj",
+    "sending": "Se trimite…",
+    "success": "Mesaj trimis cu succes!",
+    "genericError": "Ceva a mers prost",
+    "notConfigured": "Neconfigurat încă — setați RESEND_API_KEY să pornească acest lucru. Numai tu poți vedea această linie.",
+    "unavailable": "Acest formular nu este disponibil momentan.",
+    "error": "Trimiterea mesajului a eșuat. Vă rugăm să încercați din nou."
+  },
+  "search": {
+    "placeholder": "Căutați postări, proiecte și pagini...",
+    "inputLabel": "Interogare de căutare",
+    "resultsLabel": "Rezultatele căutării",
+    "hint": "Începeți să tastați pentru a căuta pe site.",
+    "noResults": "Niciun rezultat pentru „{query}”",
+    "unavailable": "Indexul de căutare este generat în momentul construirii și nu este disponibil în <code class=\"rounded bg-secondary px-1.5 py-0.5 text-xs\">astro dev</code>.<br />Run <code class=\"rounded bg-secondary px-1.5 py-0.5 text-xs\">pnpm build && pnpm preview</code> pentru a-l încerca local."
+  },
+  "video": {
+    "playLabel": "Redați videoclipul: {title}",
+    "watchOn": "Urmărește pe YouTube"
+  },
+  "footer": {
+    "copyright": "© {year} {siteName}",
+    "groups": {
+      "site": "Site",
+      "topics": "Subiecte",
+      "projects": "Proiecte",
+      "questions": "Ai întrebări?"
+    },
+    "followOn": "Urmărește-ne pe {platform}"
+  },
+  "pages": {
+    "about": {
+      "meta": {
+        "title": "Despre Bogdan Murășan",
+        "description": "Povestea, experiența și modul de lucru din spatele Tech cu Bogdan. Dezvoltare web și servicii IT oferite direct, cu atenție la detalii."
+      },
+      "hero": {
+        "badge": "Despre mine",
+        "intro": "Sunt Bogdan Murășan. Transform pasiunea pentru tehnologie în servicii web și IT lucrate atent, de la prima discuție până la rezultatul final.",
+        "titleLead": "Tehnologie abordată",
+        "typingWords": [
+          "cu atenție la detalii.",
+          "corect, nu aproximativ.",
+          "cu responsabilitate.",
+          "aproape de client."
+        ],
+        "typingWordsMobile": ["cu atenție.", "corect.", "responsabil."],
+        "description": "Sunt Bogdan Murășan. Transform pasiunea pentru tehnologie în servicii web și IT lucrate atent, de la prima discuție până la rezultatul final."
+      },
+      "story": {
+        "badge": "De unde am început",
+        "heading": "De la dischete și Windows XP la Tech cu Bogdan",
+        "paragraphs": [
+          "Pasiunea mea pentru tehnologie a început în copilărie, pe vremea dischetelor. Îmi copiam jocuri, experimentam cu calculatoare și îmi construiam propriile imagini de instalare pentru Windows XP.",
+          "Mult timp am fost și sunt omul la care apelează familia și prietenii când ceva tehnic nu funcționează. De trei ani lucrez oficial în industria IT, iar Tech cu Bogdan este pasul prin care îmi dezvolt experiența într-o activitate independentă.",
+          "Îmi place ceea ce fac și vreau să construiesc fiecare serviciu temeinic, fără să accept mai mult decât pot duce și fără să tratez nimic ca fiind de la sine înțeles."
+        ],
+        "facts": [
+          {
+            "title": "Experiență profesională",
+            "text": "3 ani în industria IT"
+          },
+          {
+            "title": "Bază",
+            "text": "Cluj-Napoca, cu suport disponibil și la distanță"
+          }
+        ]
+      },
+      "whatYouGet": {
+        "badge": "Cum lucrez",
+        "heading": "Atenția la detalii nu este opțională",
+        "lead": "Nu urmăresc volumul. Prefer să înțeleg problema, să stabilesc corect limitele și să duc lucrarea până la capăt.",
+        "items": [
+          {
+            "icon": "component",
+            "title": "Nu presupun",
+            "description": "Verific informațiile și contextul înainte să aleg o soluție."
+          },
+          {
+            "icon": "layout",
+            "title": "Lucrez metodic",
+            "description": "Prefer implementările făcute corect, documentate și ușor de urmărit."
+          },
+          {
+            "icon": "palette",
+            "title": "Observ detaliile",
+            "description": "Verific inclusiv lucrurile mici care pot deveni probleme mari mai târziu."
+          },
+          {
+            "icon": "book-open",
+            "title": "Stabilesc o limită realistă",
+            "description": "Nu accept mai mult decât pot duce la standardul pe care mi-l asum."
+          },
+          {
+            "icon": "image",
+            "title": "Păstrezi controlul",
+            "description": "Conturile, licențele și echipamentele rămân ale tale, nu dependente de mine."
+          },
+          {
+            "icon": "globe",
+            "title": "Comunicare directă",
+            "description": "Vorbești cu aceeași persoană care analizează și execută lucrarea."
+          },
+          {
+            "icon": "search",
+            "title": "Recomandări independente",
+            "description": "Nu vând licențe sau echipamente și nu împing achiziții inutile."
+          },
+          {
+            "icon": "trending-up",
+            "title": "Învățare continuă",
+            "description": "Tehnologia se schimbă, iar pregătirea nu se termină odată cu o certificare."
+          },
+          {
+            "icon": "server",
+            "title": "Relație apropiată cu clientul",
+            "description": "Înțeleg contextul înainte să tratez problema ca pe un simplu ticket."
+          }
+        ]
+      },
+      "principles": {
+        "badge": "Principii de lucru",
+        "heading": "Trei reguli care îmi ghidează munca",
+        "lead": "Nu sunt sloganuri; sunt criteriile după care iau decizii într-un proiect sau într-o intervenție IT.",
+        "items": [
+          {
+            "icon": "zap",
+            "title": "Nu lua nimic ca garantat",
+            "description": "Verific înainte să presupun și caut cauza, nu doar simptomul."
+          },
+          {
+            "icon": "award",
+            "title": "Cât mai aproape de corect",
+            "description": "Perfecțiunea absolută nu există, dar standardul poate rămâne ridicat."
+          },
+          {
+            "icon": "rocket",
+            "title": "După reguli, nu improvizat",
+            "description": "Prefer procese verificabile și implementări care pot fi întreținute ulterior."
+          }
+        ]
+      },
+      "openSource": {
+        "badge": "Experiență și formare",
+        "heading": "O bază practică, aflată în dezvoltare continuă",
+        "description": "Am trei ani de experiență profesională în industria IT și continui să îmi extind competențele prin practică, documentație și formare structurată.",
+        "button": "Discută cu mine",
+        "cards": [
+          {
+            "title": "Experiență profesională",
+            "text": "Trei ani de activitate oficială în industria IT, peste o experiență practică începută cu mult înainte."
+          },
+          {
+            "title": "Google Network Architecture",
+            "text": "Certificare Google obținută prin Coursera, orientată spre arhitectură și fundamente de rețea."
+          },
+          {
+            "title": "Direcții actuale",
+            "text": "Dezvoltare web, suport tehnic, administrare Microsoft 365 și Google Workspace, securitate și managementul dispozitivelor."
+          }
+        ]
+      },
+      "cta": {
+        "badge": "Hai să discutăm",
+        "heading": "Ai o problemă tehnică sau un proiect în minte?",
+        "description": "Prima discuție este gratuită și fără obligații. Îți spun direct dacă te pot ajuta și care sunt pașii următori.",
+        "button": "Trimite un mesaj"
+      }
+    },
+    "services": {
+      "overviewMeta": {
+        "title": "Servicii IT și dezvoltare web",
+        "description": "Dezvoltare web, service pentru calculatoare, suport IT și administrare IT pentru persoane, profesioniști și echipe mici din Cluj-Napoca sau la distanță."
+      },
+      "overview": {
+        "hero": {
+          "badge": "Servicii",
+          "titleLead": "Tehnologia trebuie să ajute.",
+          "titleHighlight": "Nu să te încurce.",
+          "description": "De la un site nou și un laptop care nu mai pornește până la conturi, securitate și administrarea întregului mediu IT. Ai un singur punct de contact și o soluție potrivită situației tale.",
+          "primary": "Vezi serviciile",
+          "secondary": "Discută cu mine"
+        },
+        "services": {
+          "badge": "Ce pot face pentru tine",
+          "heading": "Patru servicii, în funcție de ce ai nevoie",
+          "lead": "Poți apela la mine pentru o intervenție punctuală sau pentru o colaborare continuă. Nu trebuie să ai o companie mare și nici un departament IT intern.",
+          "cards": [
+            {
+              "eyebrow": "Prezență online",
+              "title": "Dezvoltare web",
+              "description": "Site-uri moderne, rapide și construite în jurul obiectivelor tale, de la structură și design până la lansare.",
+              "features": [
+                "Design adaptat identității și conținutului tău",
+                "Dezvoltare performantă cu Astro",
+                "SEO tehnic, accesibilitate și optimizare",
+                "Configurare domeniu, hosting și lansare"
+              ],
+              "cta": "Descoperă serviciul"
+            },
+            {
+              "eyebrow": "Diagnostic și reparații",
+              "title": "Service calculatoare",
+              "description": "Diagnostic, reparații și upgrade-uri pentru laptopuri și desktopuri, explicate clar înainte de intervenție.",
+              "features": [
+                "Diagnostic hardware și software",
+                "Reparații și înlocuirea componentelor",
+                "Upgrade-uri de memorie și stocare",
+                "Curățare, reinstalare și optimizare"
+              ],
+              "cta": "Descoperă serviciul"
+            },
+            {
+              "eyebrow": "Ajutor când apare o problemă",
+              "title": "Suport IT",
+              "description": "Asistență practică pentru problemele IT de zi cu zi, de la distanță sau prin intervenție fizică în Cluj-Napoca.",
+              "features": [
+                "Probleme cu sistemul, aplicațiile sau perifericele",
+                "Configurarea calculatoarelor și conturilor",
+                "Asistență pentru utilizatori",
+                "Intervenții punctuale, fără abonament obligatoriu"
+              ],
+              "cta": "Descoperă serviciul"
+            },
+            {
+              "eyebrow": "Prevenție și control",
+              "title": "Administrare IT",
+              "description": "Configurarea și administrarea continuă a conturilor, dispozitivelor și serviciilor digitale folosite în activitatea ta.",
+              "features": [
+                "Microsoft 365 și Google Workspace",
+                "Conturi, permisiuni și acces securizat",
+                "Securizarea și administrarea dispozitivelor",
+                "MDM, politici, backup și documentație"
+              ],
+              "cta": "Descoperă serviciul"
+            }
+          ]
+        },
+        "process": {
+          "badge": "Cum lucrăm",
+          "heading": "Un proces simplu și transparent",
+          "lead": "Prima discuție este gratuită și fără obligații.",
+          "steps": [
+            {
+              "title": "Discuție",
+              "description": "Îmi explici situația, obiectivul și ce nu funcționează în prezent."
+            },
+            {
+              "title": "Evaluare",
+              "description": "Clarific problema, contextul tehnic și opțiunile realiste de rezolvare."
+            },
+            {
+              "title": "Propunere",
+              "description": "Primești recomandarea, pașii de lucru și costurile înainte să începem."
+            },
+            {
+              "title": "Implementare",
+              "description": "Execut lucrarea și îți explic ce am făcut și ce urmează."
+            }
+          ]
+        },
+        "cta": {
+          "heading": "Nu știi exact ce serviciu îți trebuie?",
+          "description": "Descrie-mi situația. Stabilim împreună dacă este o intervenție punctuală, un proiect sau o nevoie de administrare continuă.",
+          "primary": "Trimite un mesaj",
+          "secondary": "Despre mine"
+        }
+      },
+      "meta": {
+        "title": "Dezvoltare web și optimizare",
+        "description": "Design web independent, dezvoltare și optimizare: site-uri web personalizate Astro elegante, rapide. O primă discuție gratuită, o propunere clară, un preț fix."
+      },
+      "includedLabel": "Ce primești",
+      "hero": {
+        "badge": "Servicii",
+        "titleLead": "Web design, dezvoltare,",
+        "titleHighlight": "si optimizare",
+        "description": "Trei servicii, un singur produs: un site web personalizat Astro elegant, fulgerător, pe care ești mândru să-ți pui numele.",
+        "jumpLabels": ["Web design", "Dezvoltare web", "Optimizare web"]
+      },
+      "design": {
+        "badge": "Design",
+        "heading": "Web design",
+        "paragraphs": [
+          "Designul web este modul în care arată și se simte site-ul dvs.: aspectul, culorile, imaginile și modul în care vizitatorii își găsesc drumul.",
+          "Proiectez fiecare site web în jurul afacerii dvs. - marca dvs., conținutul dvs. și clienții pe care doriți să îi ajungeți - astfel încât să facă o primă impresie puternică și să-i îndrume pe oameni direct către ceea ce contează. Curat, modern și făcut să funcționeze pe fiecare ecran, de la un monitor desktop la un telefon."
+        ],
+        "included": [
+          {
+            "lead": "Un design care este al tău",
+            "text": "modelat în jurul afacerii dvs., al mărcii dvs. și al clienților pe care doriți să îi ajungeți."
+          },
+          {
+            "lead": "O primă impresie puternică",
+            "text": "un aspect curat, modern, care arată oamenilor cine ești în momentul în care pagina ta se deschide."
+          },
+          {
+            "lead": "Navigare clară",
+            "text": "un aspect care ghidează vizitatorii direct către ceea ce contează pentru ei."
+          },
+          {
+            "lead": "Un design pentru fiecare ecran",
+            "text": "arată și funcționează frumos pe telefon, tabletă și desktop."
+          },
+          {
+            "lead": "Conținutul tău la maxim",
+            "text": "cuvintele și imaginile dvs. având un aspect care le face ușor de citit și bune de privit."
+          }
+        ],
+        "ctaLabel": "Discutați un proiect de design"
+      },
+      "development": {
+        "badge": "Dezvoltare",
+        "heading": "Dezvoltare web",
+        "paragraphs": [
+          "Dezvoltarea web este construirea site-ului dvs.: transformarea designului în codul care rulează în browserul vizitatorului dvs.",
+          "Construiesc cu Astro, un cadru modern de încredere pentru unele dintre cele mai rapide site-uri online. Acest lucru face ca site-ul dvs. să fie rapid de încărcat, sigur și ușor de îngrijit pentru anii următori. Și este al tău din prima zi, cu codul, domeniul și găzduirea, toate pe numele tău."
+        ],
+        "included": [
+          {
+            "lead": "Un site web fulgerător",
+            "text": "construit cu Astro, cadrul din spatele unora dintre cele mai rapide site-uri web online."
+          },
+          {
+            "lead": "Un site sigur, de încredere",
+            "text": "unul care rămâne în siguranță și continuă să funcționeze, an de an."
+          },
+          {
+            "lead": "Proprietate deplină",
+            "text": "codul, domeniul și găzduirea toate pe numele tău din prima zi."
+          },
+          {
+            "lead": "Atenție după lansare",
+            "text": "site-ul dvs. a fost actualizat și securizat cu planul lunar de îngrijire, în timp ce vă conduceți afacerea."
+          },
+          {
+            "lead": "Cameră să crească",
+            "text": "spațiu pentru a adăuga pagini și funcții noi ori de câte ori afacerea dvs. are nevoie de ele."
+          }
+        ],
+        "ctaLabel": "Vezi proiecte recente"
+      },
+      "performance": {
+        "badge": "Optimizare",
+        "heading": "Optimizare web",
+        "paragraphs": [
+          "Optimizarea web este munca care face ca site-ul dvs. să funcționeze: se încarcă rapid, se clasifică bine în căutare și funcționează pentru toată lumea.",
+          "Construiesc viteza, SEO și accesibilitatea încă de la prima linie, nu ca o idee ulterioară. Aceasta înseamnă că site-ul dvs. este ușor de găsit și de înțeles de către Google, se deschide rapid pentru fiecare vizitator și poate fi folosit de toți cei care ajung pe el."
+        ],
+        "included": [
+          {
+            "lead": "Un site web pe care Google și AI îl pot găsi",
+            "text": "construit astfel încât motoarele de căutare și asistenții AI să poată citi, înțelege și recomanda paginile dvs."
+          },
+          {
+            "lead": "Viteză pe fiecare dispozitiv",
+            "text": "pagini care rămân rapide, chiar și pe un telefon sau o conexiune mai lentă."
+          },
+          {
+            "lead": "Un site pentru toată lumea",
+            "text": "accesibil pentru fiecare vizitator, indiferent de dispozitivul sau capacitatea acestuia."
+          },
+          {
+            "lead": "Scoruri înalte de performanță",
+            "text": "note puternice asupra verificărilor Google privind viteza și calitatea (Lighthouse)."
+          },
+          {
+            "lead": "Optimizare din prima zi",
+            "text": "viteza, SEO și accesibilitatea încorporate de la prima linie."
+          }
+        ],
+        "ctaLabel": "Începeți un proiect"
+      },
+      "process": {
+        "badge": "Cum funcționează",
+        "heading": "Cum se derulează un proiect",
+        "lead": "De la primul mesaj la un site web live.",
+        "steps": [
+          {
+            "title": "Primul contact",
+            "description": "Trimiți un mesaj prin formularul de contact. Răspund într-o zi lucrătoare și plănuim o discuție gratuită, informativă despre ceea ce aveți nevoie. Fara obligatii."
+          },
+          {
+            "title": "Propunere",
+            "description": "După discuția noastră, obțineți un document clar: ce voi construi, când va fi gata și prețul fix. Tu decizi cu tot ce este pe masă."
+          },
+          {
+            "title": "Proiectați și construiți",
+            "description": "Lucrez în cicluri scurte. Urmărește progresul pe un link de punere în scenă și vezi site-ul tău prinde contur."
+          },
+          {
+            "title": "Lansare și asistență",
+            "description": "Site-ul dvs. este disponibil pe propriul domeniu și găzduire, în numele dvs. După aceea, rămân accesibil și există un plan lunar de îngrijire dacă doriți actualizări regulate."
+          }
+        ]
+      },
+      "faq": {
+        "badge": "Întrebări",
+        "heading": "Întrebări și răspunsuri",
+        "lead": "Lucrurile pe care clienții le întreabă înainte de a începe.",
+        "cards": [
+          {
+            "icon": "tag",
+            "title": "Înainte de a începe",
+            "items": [
+              {
+                "question": "Cât costă un site web?",
+                "answer": "Fiecare proiect primește un preț fix, convenit înainte de a începe. Fără facturare orară, fără surprize după aceea. Discuția gratuită - și verificarea gratuită, dacă există deja un site web - îmi spune de ce are nevoie proiectul dvs. și obțineți prețul într-o propunere clară."
+              },
+              {
+                "question": "Cât durează un proiect?",
+                "answer": "Asta depinde de dimensiunea site-ului. Propunerea numește cronologia împreună cu prețul, așa că le știți pe amândouă înainte de a începe."
+              },
+              {
+                "question": "Ce se întâmplă cu site-ul meu actual?",
+                "answer": "Rămâne online până când cel nou este gata. Conținutul dvs., adresa dvs. web și clasamentele dvs. Google vin de-a lungul. Vă verific site-ul actual înainte de prima noastră discuție, astfel încât să primiți răspunsuri clare de la început."
+              },
+              {
+                "question": "Trebuie să aranjez găzduirea sau un domeniu?",
+                "answer": "Nu. Am configurat găzduirea și domeniul pentru tine, în nume propriu. Dacă aveți deja un domeniu, pur și simplu îl păstrăm."
+              },
+              {
+                "question": "Trebuie să ne întâlnim personal?",
+                "answer": "Nu este nevoie. Majoritatea proiectelor rulează în întregime prin telefon, video și e-mail. Lucrez cu clienți din întreaga lume, iar fusurile orare sunt rareori o problemă."
+              }
+            ]
+          },
+          {
+            "icon": "user",
+            "title": "Lucrez cu mine",
+            "items": [
+              {
+                "question": "Sunteți o companie sau o agenție?",
+                "answer": "Sunt o afacere cu o singură persoană: un freelancer, nu o agenție. Lucrezi direct cu persoana care lucrează, de la prima discuție până la site-ul final. Fără echipă de vânzări, fără manageri de cont, fără transferuri."
+              },
+              {
+                "question": "Pot să schimb personal site-ul după lansare?",
+                "answer": "Pur și simplu îmi poți trimite modificările tale, iar planul lunar de îngrijire există exact pentru asta. Dacă doriți să editați singur site-ul, spuneți-o în prima discuție și am configurat site-ul pentru asta."
+              },
+              {
+                "question": "Construiți și magazine web?",
+                "answer": "Nu. Marile magazine online sunt singurul lucru pe care nu îl construiesc. Orice altceva care are nevoie de un site web personalizat Astro, construiesc: spuneți-mi în prima discuție ce aveți în vedere și voi fi sincer dacă sunt constructorul potrivit pentru asta."
+              },
+              {
+                "question": "Site-ul este într-adevăr al meu?",
+                "answer": "Complet. Domeniul, găzduirea și codul sunt în numele tău din prima zi. Dacă vrei vreodată să mergi mai departe, iei totul cu tine: nu ești niciodată blocat."
+              },
+              {
+                "question": "Ce se întâmplă dacă ceva se rupe după lansare?",
+                "answer": "Foarte puțin se poate rupe: site-ul nu are pluginuri și nicio bază de date care să eșueze. Și rămân accesibil după lansare; pentru actualizări periodice și monitorizare există planul lunar de îngrijire."
+              }
+            ]
+          }
+        ]
+      },
+      "cta": {
+        "badge": "Să vorbim",
+        "heading": "Să vorbim despre ce ai nevoie",
+        "description": "Prima discuție este gratuită și informativă, fără obligații: prin telefon, video sau e-mail. Primești răspunsuri sincere, iar după discuție o propunere clară, cu o cronologie și un preț fix.",
+        "primary": "Trimite un mesaj",
+        "secondary": "Mai multe despre mine"
+      }
+    },
+    "computerRepair": {
+      "meta": {
+        "title": "Service calculatoare în Cluj-Napoca",
+        "description": "Diagnostic gratuit, reparații, mentenanță și upgrade-uri pentru laptopuri și desktopuri în Cluj-Napoca. Costul este confirmat înainte de intervenție."
+      },
+      "hero": {
+        "badge": "Service calculatoare",
+        "titleLead": "Laptopul sau calculatorul",
+        "titleHighlight": "nu mai funcționează corect?",
+        "description": "Diagnostic gratuit, reparații și upgrade-uri pentru laptopuri și desktopuri. Îți explic problema și costul înainte de orice intervenție.",
+        "primary": "Solicită o diagnosticare",
+        "secondary": "Scrie pe WhatsApp",
+        "facts": [
+          "Diagnostic gratuit",
+          "Programare în Cluj-Napoca",
+          "Garanție 30 de zile pentru manoperă"
+        ]
+      },
+      "problems": {
+        "badge": "Cu ce te pot ajuta",
+        "heading": "Probleme frecvente, rezolvate clar",
+        "lead": "Spune-mi ce observi. Identificăm cauza înainte să decidem dacă și cum merită reparat dispozitivul.",
+        "items": [
+          {
+            "icon": "power",
+            "title": "Nu pornește",
+            "description": "Nu reacționează, se oprește sau rămâne blocat la pornire."
+          },
+          {
+            "icon": "gauge",
+            "title": "Funcționează lent",
+            "description": "Pornește greu, se blochează sau răspunde lent în utilizare."
+          },
+          {
+            "icon": "thermometer",
+            "title": "Se supraîncălzește",
+            "description": "Temperaturi ridicate, zgomot excesiv sau opriri neașteptate."
+          },
+          {
+            "icon": "monitor-cog",
+            "title": "Erori software",
+            "description": "Windows, drivere sau aplicații care nu mai funcționează corect."
+          },
+          {
+            "icon": "keyboard",
+            "title": "Display sau tastatură",
+            "description": "Componente deteriorate care trebuie evaluate și înlocuite."
+          },
+          {
+            "icon": "battery",
+            "title": "Probleme cu bateria",
+            "description": "Autonomie redusă, încărcare incorectă sau baterie degradată."
+          },
+          {
+            "icon": "hard-drive",
+            "title": "Ai nevoie de upgrade",
+            "description": "SSD sau memorie RAM pentru performanță și utilizare mai bună."
+          },
+          {
+            "icon": "folder-sync",
+            "title": "Transfer de date",
+            "description": "Salvare și transfer atunci când mediul poate fi citit în siguranță."
+          }
+        ]
+      },
+      "services": {
+        "badge": "Servicii oferite",
+        "heading": "De la diagnostic la dispozitiv funcțional",
+        "lead": "Intervenții hardware și software pentru laptopuri și desktopuri, fără reparații electronice la nivel de placă.",
+        "items": [
+          {
+            "icon": "scan-search",
+            "title": "Diagnostic și înlocuire componente",
+            "description": "Identific problema, verific compatibilitatea și înlocuiesc componente modulare precum SSD, RAM, baterie, display sau tastatură. Nu efectuez lipituri sau reparații de circuite."
+          },
+          {
+            "icon": "monitor-cog",
+            "title": "Windows și software",
+            "description": "Instalare Windows, drivere și actualizări, remedierea erorilor, eliminarea programelor nedorite și optimizarea pornirii și funcționării sistemului."
+          },
+          {
+            "icon": "rocket",
+            "title": "Upgrade și asamblare",
+            "description": "Recomand componente compatibile pentru bugetul tău, montez SSD sau RAM și asamblez sisteme desktop complete."
+          },
+          {
+            "icon": "fan",
+            "title": "Curățare și mentenanță",
+            "description": "Curățare internă, verificarea răcirii și înlocuirea pastei termice atunci când modelul și intervenția o permit."
+          }
+        ]
+      },
+      "pricing": {
+        "badge": "Prețuri orientative",
+        "heading": "Știi costul înainte să încep",
+        "lead": "Diagnosticul inițial este gratuit. Prețul final este comunicat și confirmat înainte de intervenție.",
+        "rows": [
+          {
+            "service": "Diagnostic inițial",
+            "price": "Gratuit"
+          },
+          {
+            "service": "Curățare și mentenanță desktop",
+            "price": "de la 150 lei"
+          },
+          {
+            "service": "Curățare și mentenanță laptop",
+            "price": "de la 180 lei"
+          },
+          {
+            "service": "Laptop gaming sau construcție complexă",
+            "price": "de la 250 lei"
+          },
+          {
+            "service": "Instalare Windows, drivere și actualizări",
+            "price": "100 lei"
+          },
+          {
+            "service": "Remediere probleme și optimizare software",
+            "price": "de la 100 lei"
+          },
+          {
+            "service": "Eliminare malware",
+            "price": "de la 150 lei"
+          },
+          {
+            "service": "Montare SSD sau RAM",
+            "price": "de la 80 lei"
+          },
+          {
+            "service": "Montare SSD cu transfer sau clonare",
+            "price": "de la 200 lei"
+          },
+          {
+            "service": "Transfer și salvare de date",
+            "price": "de la 100 lei"
+          },
+          {
+            "service": "Asamblare desktop",
+            "price": "de la 300 lei"
+          },
+          {
+            "service": "Înlocuire display",
+            "price": "de la 200 lei"
+          },
+          {
+            "service": "Înlocuire tastatură",
+            "price": "de la 200 lei"
+          },
+          {
+            "service": "Înlocuire baterie",
+            "price": "de la 80 lei"
+          },
+          {
+            "service": "Preluare și returnare în Cluj-Napoca",
+            "price": "de la 80 lei"
+          }
+        ],
+        "note": "Prețurile reprezintă manopera și pot varia în funcție de model, complexitate și starea dispozitivului. Piesele și licențele software nu sunt incluse."
+      },
+      "process": {
+        "badge": "Cum lucrăm",
+        "heading": "Fără lucrări sau costuri neconfirmate",
+        "lead": "Dispozitivele sunt preluate pe bază de programare.",
+        "steps": [
+          {
+            "title": "Descrii problema",
+            "description": "Îmi trimiți modelul dispozitivului și simptomele observate."
+          },
+          {
+            "title": "Diagnostic gratuit",
+            "description": "Verific dispozitivul și stabilesc cauza probabilă a problemei."
+          },
+          {
+            "title": "Confirmi intervenția",
+            "description": "Primești recomandarea și costul înainte să încep lucrarea."
+          },
+          {
+            "title": "Repar și testez",
+            "description": "Execut intervenția, testez rezultatul și îți explic ce am făcut."
+          }
+        ]
+      },
+      "practical": {
+        "badge": "Informații practice",
+        "heading": "Ce trebuie să știi înainte",
+        "items": [
+          {
+            "icon": "map-pin",
+            "title": "Predare pe bază de programare",
+            "description": "Adresa nu este punct comercial. În general, dispozitivul este adus de client; preluarea poate fi stabilită separat în Cluj-Napoca."
+          },
+          {
+            "icon": "package",
+            "title": "Piesele rămân pe numele tău",
+            "description": "Îți recomand componente compatibile, iar achiziția este făcută de regulă direct de tine, cu factura și garanția piesei pe numele tău."
+          },
+          {
+            "icon": "apple",
+            "title": "Dispozitive Apple",
+            "description": "Disponibilitatea intervenției se confirmă după identificarea exactă a modelului și evaluarea problemei. Reparațiile complexe pot fi direcționate către un service specializat."
+          },
+          {
+            "icon": "shield-check",
+            "title": "Garanția manoperei",
+            "description": "Manopera beneficiază de 30 de zile garanție pentru aceeași intervenție. Componentele cumpărate de client au garanția oferită de vânzător."
+          }
+        ]
+      },
+      "faq": {
+        "badge": "Întrebări frecvente",
+        "heading": "Înainte să aduci dispozitivul",
+        "items": [
+          {
+            "question": "Diagnosticul este într-adevăr gratuit?",
+            "answer": "Da. Verific dispozitivul și îți comunic problema și opțiunile înainte să decizi dacă dorești intervenția."
+          },
+          {
+            "question": "Trebuie să cumpăr eu piesele?",
+            "answer": "În majoritatea cazurilor, da. Îți indic exact ce componentă este compatibilă, iar factura și garanția piesei rămân direct pe numele tău."
+          },
+          {
+            "question": "Cât durează reparația?",
+            "answer": "Diagnosticul este realizat, de regulă, în 1–2 zile lucrătoare. Durata lucrării depinde de problemă, model și disponibilitatea pieselor."
+          },
+          {
+            "question": "Repari plăci de bază sau conectori?",
+            "answer": "Nu efectuez lipituri sau reparații electronice la nivel de placă. Pot diagnostica problema și, dacă este necesar, recomand un service specializat."
+          },
+          {
+            "question": "Primești și MacBook-uri?",
+            "answer": "Da, pentru evaluare și servicii compatibile cu experiența și instrumentele disponibile. Intervenția hardware se confirmă separat după model; lucrările complexe sunt direcționate către un specialist."
+          },
+          {
+            "question": "Datele mele sunt în siguranță?",
+            "answer": "Recomand un backup înaintea oricărei intervenții, când dispozitivul permite. Transferul sau salvarea datelor este posibilă doar dacă mediul de stocare poate fi citit în siguranță."
+          }
+        ]
+      },
+      "cta": {
+        "heading": "Spune-mi ce problemă are dispozitivul",
+        "description": "Trimite modelul, simptomele observate și, dacă ajută, câteva fotografii. Îți spun care este următorul pas.",
+        "primary": "Scrie pe WhatsApp",
+        "secondary": "Trimite un mesaj"
+      }
+    },
+    "itSupport": {
+      "meta": {
+        "title": "Suport IT în Cluj-Napoca și la distanță",
+        "description": "Asistență IT pentru persoane fizice și organizații: intervenții remote, suport la sediu în Cluj-Napoca și pachete de ore."
+      },
+      "hero": {
+        "badge": "Suport IT",
+        "titleLead": "Problema IT te blochează?",
+        "titleHighlight": "O rezolvăm clar și eficient.",
+        "description": "Asistență pentru Windows, conturi, e-mail, aplicații, imprimante și rețele. Remote oriunde sau la locație în Cluj-Napoca, pentru persoane și organizații.",
+        "primary": "Solicită suport",
+        "secondary": "Scrie pe WhatsApp",
+        "facts": [
+          "Pentru persoane și organizații",
+          "Remote sau la locație",
+          "Cost confirmat înainte"
+        ]
+      },
+      "problems": {
+        "badge": "Cu ce te pot ajuta",
+        "heading": "Ajutor concret când tehnologia îți întrerupe activitatea",
+        "lead": "Pornim de la simptom, identificăm cauza și alegem intervenția potrivită fără să complicăm inutil lucrurile.",
+        "items": [
+          {
+            "icon": "monitor-cog",
+            "title": "Windows și aplicații",
+            "description": "Erori, actualizări, programe care nu pornesc sau setări care nu mai funcționează."
+          },
+          {
+            "icon": "mail",
+            "title": "E-mail pe dispozitiv",
+            "description": "Configurarea în Outlook sau Gmail a unui cont existent și remedierea problemelor locale de sincronizare."
+          },
+          {
+            "icon": "printer",
+            "title": "Imprimante și periferice",
+            "description": "Conectare, drivere, partajare și remedierea problemelor uzuale."
+          },
+          {
+            "icon": "wifi",
+            "title": "Internet și rețea",
+            "description": "Conectivitate, Wi-Fi, routere și rețele locale de bază."
+          },
+          {
+            "icon": "key-round",
+            "title": "Probleme de autentificare",
+            "description": "Diagnostic local, configurarea MFA pentru propriul cont și îndrumare prin fluxurile oficiale de recuperare."
+          },
+          {
+            "icon": "shield-alert",
+            "title": "Securitatea dispozitivului",
+            "description": "Verificări locale, eliminarea programelor malițioase și configurări de protecție la nivelul dispozitivului."
+          },
+          {
+            "icon": "video",
+            "title": "Apeluri și colaborare",
+            "description": "Teams, Meet, Zoom, camere, microfoane și partajarea documentelor."
+          },
+          {
+            "icon": "cloud",
+            "title": "Fișiere și cloud",
+            "description": "OneDrive, Google Drive, sincronizare, partajare și acces la fișiere."
+          }
+        ]
+      },
+      "services": {
+        "badge": "Tipuri de intervenții",
+        "heading": "Suport punctual, adaptat problemei",
+        "lead": "Alegi intervenția potrivită situației. Pentru nevoi recurente stabilim separat o soluție personalizată, iar administrarea continuă rămâne un serviciu distinct.",
+        "items": [
+          {
+            "icon": "screen-share",
+            "title": "Suport remote",
+            "description": "Conectare la distanță numai cu acordul tău, pentru probleme care pot fi diagnosticate și rezolvate fără deplasare."
+          },
+          {
+            "icon": "map-pin",
+            "title": "Intervenție la locație",
+            "description": "Pentru situațiile care necesită prezență fizică, disponibilă în Cluj-Napoca pe bază de programare."
+          },
+          {
+            "icon": "list-checks",
+            "title": "Operațiuni cu preț fix",
+            "description": "Configurările previzibile au un cost estimat clar, confirmat înainte să încep intervenția."
+          },
+          {
+            "icon": "clock-3",
+            "title": "Suport recurent",
+            "description": "Pentru solicitări periodice, volumul de ore și condițiile se stabilesc în funcție de nevoile reale."
+          }
+        ]
+      },
+      "pricing": {
+        "badge": "Prețuri orientative",
+        "heading": "Plătești pentru intervenția potrivită",
+        "lead": "Lucrările previzibile au preț fix; diagnosticul și situațiile variabile sunt tarifate în funcție de timpul necesar.",
+        "rows": [
+          {
+            "service": "Suport IT remote",
+            "price": "120 lei / oră"
+          },
+          {
+            "service": "Intervenție la locație în Cluj-Napoca",
+            "price": "de la 150 lei / oră"
+          },
+          {
+            "service": "Configurare e-mail pe dispozitiv",
+            "price": "de la 100 lei"
+          },
+          {
+            "service": "Instalare și configurare aplicație",
+            "price": "de la 100 lei"
+          },
+          {
+            "service": "Configurare imprimantă sau periferic",
+            "price": "de la 100 lei"
+          },
+          {
+            "service": "Configurare rețea de bază",
+            "price": "de la 200 lei"
+          }
+        ],
+        "note": "Prețurile nu se cumulează pentru aceeași lucrare. La locație se aplică tariful orar, care include operațiunile efectuate în timpul intervenției. Tarifele fixe se aplică lucrărilor remote sau celor stabilite separat. Licențele și serviciile terțe nu sunt incluse."
+      },
+      "process": {
+        "badge": "Cum lucrăm",
+        "heading": "De la problemă la soluție, fără surprize",
+        "lead": "Intervenția începe numai după ce stabilim contextul și modul de tarifare.",
+        "steps": [
+          {
+            "title": "Descrii problema",
+            "description": "Trimiți simptomele, dispozitivul implicat și impactul asupra activității."
+          },
+          {
+            "title": "Alegem intervenția",
+            "description": "Stabilim dacă problema poate fi rezolvată remote sau necesită deplasare."
+          },
+          {
+            "title": "Confirmi costul",
+            "description": "Primești tariful sau estimarea înainte să înceapă lucrul."
+          },
+          {
+            "title": "Rezolv și verific",
+            "description": "Aplic soluția, testăm rezultatul și explic ce s-a schimbat."
+          }
+        ]
+      },
+      "practical": {
+        "badge": "Condiții clare",
+        "heading": "Ce trebuie să știi înainte",
+        "items": [
+          {
+            "icon": "lock-keyhole",
+            "title": "Acces remote controlat de tine",
+            "description": "Conexiunea pornește numai cu acordul tău și poate fi oprită oricând. Nu solicit parolele tale în mesaje."
+          },
+          {
+            "icon": "calendar-clock",
+            "title": "În afara programului",
+            "description": "Suportul poate fi disponibil și în afara programului, în funcție de posibilități. Tariful este confirmat înainte."
+          },
+          {
+            "icon": "rotate-ccw",
+            "title": "Reverificare în 7 zile",
+            "description": "Dacă reapare exact aceeași problemă în același mediu, intervenția este reverificată fără cost suplimentar."
+          },
+          {
+            "icon": "laptop",
+            "title": "Configurarea completă a calculatorului",
+            "description": "Instalarea Windows, a driverelor și pregătirea completă a unui calculator nou sunt incluse în serviciul Service calculatoare."
+          }
+        ]
+      },
+      "faq": {
+        "badge": "Întrebări frecvente",
+        "heading": "Înainte să solicităm accesul remote",
+        "items": [
+          {
+            "question": "Oferi suport și persoanelor fizice?",
+            "answer": "Da. Suportul este disponibil atât persoanelor fizice, cât și profesioniștilor, cabinetelor și organizațiilor."
+          },
+          {
+            "question": "Poți rezolva orice problemă de la distanță?",
+            "answer": "Nu. Problemele hardware, cablarea și unele situații de rețea necesită intervenție fizică. Stabilim acest lucru înainte de conectare."
+          },
+          {
+            "question": "Oferi suport în aceeași zi?",
+            "answer": "Uneori, dar nu este garantat. Termenul depinde de program, complexitatea problemei și necesitatea unei deplasări."
+          },
+          {
+            "question": "Ce acoperă reverificarea de 7 zile?",
+            "answer": "Reapariția aceleiași probleme în configurația în care am încheiat intervenția. Nu acoperă actualizări ulterioare, modificări făcute de utilizator sau indisponibilitatea serviciilor externe."
+          },
+          {
+            "question": "Când am nevoie de Administrare IT în loc de Suport IT?",
+            "answer": "Când ai nevoie de administrare recurentă, politici de securitate, onboarding, monitorizare și responsabilitate continuă pentru mediul IT."
+          }
+        ]
+      },
+      "cta": {
+        "heading": "Spune-mi ce nu funcționează",
+        "description": "Trimite problema, dispozitivul sau serviciul afectat și cât de urgentă este situația. Îți spun dacă putem interveni remote și care este costul.",
+        "primary": "Scrie pe WhatsApp",
+        "secondary": "Trimite un mesaj"
+      }
+    },
+    "itManagement": {
+      "meta": {
+        "title": "Administrare IT",
+        "description": "Administrare Microsoft 365, Google Workspace, dispozitive, backup și rețele locale pentru profesioniști și organizații mici."
+      },
+      "hero": {
+        "badge": "Administrare IT",
+        "titleLead": "Un mediu IT organizat,",
+        "titleHighlight": "securizat și administrat corect.",
+        "description": "Administrare pentru profesioniști independenți, cabinete, birouri și organizații mici: conturi, dispozitive, backup, rețea și procese clare.",
+        "primary": "Solicită o evaluare",
+        "secondary": "Scrie pe WhatsApp",
+        "facts": [
+          "Microsoft 365 și Google Workspace",
+          "Windows, macOS, Android și iOS",
+          "Licențele rămân direct la client"
+        ]
+      },
+      "problems": {
+        "badge": "Semne că ai nevoie de ajutor",
+        "heading": "Când merită ca cineva să se ocupe constant de IT",
+        "lead": "Dacă recunoști situațiile de mai jos, nu mai este vorba despre o singură problemă tehnică, ci despre organizarea întregului mediu de lucru.",
+        "items": [
+          {
+            "icon": "user-plus",
+            "title": "Un coleg nou trebuie pregătit",
+            "description": "Are nevoie de conturi, licențe, acces la fișiere și un dispozitiv configurat corect din prima zi."
+          },
+          {
+            "icon": "user-minus",
+            "title": "Cineva a plecat din echipă",
+            "description": "Trebuie închise conturile, retrase permisiunile și protejate datele la care a avut acces."
+          },
+          {
+            "icon": "key-round",
+            "title": "Nu știi cine are acces",
+            "description": "Fișierele, aplicațiile și conturile administrative sunt partajate fără o evidență clară."
+          },
+          {
+            "icon": "laptop",
+            "title": "Fiecare dispozitiv este configurat diferit",
+            "description": "Laptopurile și telefoanele au setări, actualizări și niveluri de protecție diferite."
+          },
+          {
+            "icon": "database-backup",
+            "title": "Există backup, dar nu a fost testat",
+            "description": "Copiile par să ruleze, însă nimeni nu a verificat dacă datele pot fi restaurate."
+          },
+          {
+            "icon": "wifi",
+            "title": "Nimeni nu răspunde de rețea",
+            "description": "Când Wi-Fi-ul, routerul sau VPN-ul au probleme, nu există configurații salvate și o persoană responsabilă."
+          },
+          {
+            "icon": "smartphone",
+            "title": "Nu poți controla un dispozitiv pierdut",
+            "description": "Nu există o soluție MDM pentru blocare, ștergere, aplicarea regulilor și retragerea accesului de la distanță."
+          },
+          {
+            "icon": "receipt-text",
+            "title": "Licențele nu sunt urmărite",
+            "description": "Nu este clar ce abonamente sunt active, cine le folosește și dacă se plătesc licențe care nu mai sunt necesare."
+          }
+        ]
+      },
+      "services": {
+        "badge": "Ce administrez",
+        "heading": "Conturi, dispozitive și infrastructura de bază",
+        "lead": "Configurația este adaptată dimensiunii și activității clientului, fără a impune un furnizor sau un pachet de licențe.",
+        "items": [
+          {
+            "icon": "cloud-cog",
+            "title": "Microsoft 365 și Google Workspace",
+            "description": "Domenii, DNS, utilizatori, licențe, grupuri, permisiuni, securitate și migrări de e-mail sau fișiere."
+          },
+          {
+            "icon": "user-round-check",
+            "title": "Onboarding și offboarding",
+            "description": "Crearea și retragerea accesului, atribuirea licențelor și pregătirea dispozitivelor după o procedură documentată."
+          },
+          {
+            "icon": "smartphone",
+            "title": "Administrarea dispozitivelor",
+            "description": "Politici și înrolare prin Intune, Google Endpoint Management, Apple Business Manager, Mosyle sau Jamf, după caz."
+          },
+          {
+            "icon": "shield-check",
+            "title": "Securitate și conformitate de bază",
+            "description": "MFA, reguli de acces, actualizări, criptare, protecția dispozitivelor și reducerea privilegiilor inutile."
+          },
+          {
+            "icon": "database-backup",
+            "title": "Backup și restaurare",
+            "description": "Alegerea și configurarea soluției, monitorizarea alertelor și teste periodice de restaurare, fără accesarea conținutului clientului."
+          },
+          {
+            "icon": "network",
+            "title": "Rețea locală de bază",
+            "description": "Router, Wi-Fi, DHCP, DNS, rețea pentru oaspeți, firmware, salvarea configurației și VPN unde echipamentul permite."
+          }
+        ]
+      },
+      "pricing": {
+        "badge": "Modele de colaborare",
+        "heading": "Oferta pornește de la mediul tău real",
+        "lead": "Costul depinde de utilizatori, dispozitive, platforme, nivelul de securitate, infrastructură și timpul de răspuns necesar.",
+        "rows": [
+          {
+            "service": "Evaluare și configurare inițială",
+            "price": "ofertă pe proiect"
+          },
+          {
+            "service": "Migrare sau implementare",
+            "price": "ofertă separată"
+          },
+          {
+            "service": "Administrare recurentă",
+            "price": "ofertă lunară personalizată"
+          }
+        ],
+        "note": "Prima discuție este gratuită. Auditul tehnic, implementarea și documentația sunt servicii facturabile. Licențele, abonamentele și echipamentele sunt achiziționate direct de client de la furnizorul ales."
+      },
+      "process": {
+        "badge": "Procesul de preluare",
+        "heading": "Înțelegem mediul înainte să îl schimbăm",
+        "lead": "Preluarea administrării începe cu acces autorizat, inventariere și un plan agreat.",
+        "steps": [
+          {
+            "title": "Discuție inițială",
+            "description": "Stabilim utilizatorii, dispozitivele, platformele și problemele prioritare."
+          },
+          {
+            "title": "Audit și inventariere",
+            "description": "Verific mediul existent, accesul administrativ, licențele, backupul și rețeaua."
+          },
+          {
+            "title": "Plan de remediere",
+            "description": "Primești priorități, responsabilități, costuri și etapele propuse."
+          },
+          {
+            "title": "Implementare și administrare",
+            "description": "Aplicăm schimbările aprobate, documentăm mediul și stabilim rutina recurentă."
+          }
+        ]
+      },
+      "practical": {
+        "badge": "Limite și responsabilități",
+        "heading": "Controlul rămâne la client",
+        "items": [
+          {
+            "icon": "receipt-text",
+            "title": "Licențe cumpărate direct",
+            "description": "Recomand soluțiile potrivite, dar contractele, licențele și facturile rămân direct între client și furnizor."
+          },
+          {
+            "icon": "user-cog",
+            "title": "Acces administrativ autorizat",
+            "description": "Administrarea necesită roluri aprobate și acces documentat. Conturile principale trebuie să rămână sub controlul clientului."
+          },
+          {
+            "icon": "server-off",
+            "title": "Fără infrastructură enterprise",
+            "description": "Serverele, firewallurile enterprise, cablarea structurată și arhitecturile complexe se evaluează separat sau se direcționează către specialiști."
+          },
+          {
+            "icon": "clock",
+            "title": "Fără promisiune 24/7",
+            "description": "Programul, timpul de răspuns și suportul inclus se stabilesc în ofertă. Serviciul nu presupune permanență implicită."
+          }
+        ]
+      },
+      "faq": {
+        "badge": "Întrebări frecvente",
+        "heading": "Înainte să începem administrarea",
+        "items": [
+          {
+            "question": "Serviciul este doar pentru firme?",
+            "answer": "Nu. Este potrivit și profesioniștilor independenți, designerilor, avocaților, topografilor, cabinetelor, birourilor și ONG-urilor."
+          },
+          {
+            "question": "Trebuie să cumpăr licențele de la tine?",
+            "answer": "Nu. Licențele și abonamentele sunt cumpărate direct de client. Eu recomand opțiunea potrivită și mă ocup de configurare și administrare."
+          },
+          {
+            "question": "Poți administra atât Microsoft 365, cât și Google Workspace?",
+            "answer": "Da. Platforma este aleasă după modul de lucru, cerințele și bugetul clientului, nu după un pachet revândut."
+          },
+          {
+            "question": "Ce platforme MDM poți folosi?",
+            "answer": "Microsoft Intune, Google Endpoint Management, Apple Business Manager împreună cu Mosyle sau Jamf, în funcție de dispozitive și licențele clientului."
+          },
+          {
+            "question": "Monitorizarea backupului garantează recuperarea datelor?",
+            "answer": "Nu există o garanție absolută. Monitorizarea verifică execuția, alertele și restaurarea prin teste periodice, reducând riscul ca o copie nefuncțională să rămână nedetectată."
+          },
+          {
+            "question": "Care este diferența față de Suport IT?",
+            "answer": "Suportul IT rezolvă solicitări punctuale ale utilizatorilor. Administrarea IT gestionează continuu conturile, dispozitivele, politicile, backupul și infrastructura de bază."
+          }
+        ]
+      },
+      "cta": {
+        "heading": "Hai să înțelegem mediul tău IT",
+        "description": "Spune-mi câți utilizatori și dispozitive ai, ce platforme folosești și ce vrei să funcționeze mai bine. Prima discuție este gratuită și fără obligații.",
+        "primary": "Scrie pe WhatsApp",
+        "secondary": "Solicită o evaluare"
+      }
+    },
+    "contact": {
+      "meta": {
+        "title": "Contact",
+        "description": "Contactează Tech cu Bogdan pentru dezvoltare web, service calculatoare, suport IT sau administrare IT în Cluj-Napoca și la distanță."
+      },
+      "hero": {
+        "badge": "Hai să discutăm",
+        "titleLead": "Spune-mi cu ce",
+        "titleHighlight": "te pot ajuta",
+        "description": "Ai nevoie de ajutor sau vrei să discutăm despre un proiect? Trimite-mi un mesaj prin formular ori alege unul dintre canalele de contact de mai jos."
+      },
+      "formTitle": "Detalii proiect",
+      "channelsTitle": "Alte canale",
+      "channelsSubtitle": "Preferi un canal direct? Alegeți care funcționează cel mai bine.",
+      "whatsappLabel": "WhatsApp",
+      "whatsappNote": "Scrie-ne pe WhatsApp",
+      "emailLabel": "E-mail",
+      "emailNote": "Dă-ne un rând",
+      "socialNote": "Urmăriți",
+      "basedIn": "Bazat în {country}"
+    },
+    "home": {
+      "meta": {
+        "title": "Dezvoltare web și servicii IT",
+        "description": "Dezvoltare web, service calculatoare, suport și administrare IT pentru persoane, profesioniști și organizații mici."
+      },
+      "hero": {
+        "badge": "Tehnologie explicată simplu",
+        "titleLead": "Tehnologie care",
+        "typingWords": [
+          "lucrează pentru tine.",
+          "nu te încetinește.",
+          "rămâne sigură.",
+          "crește odată cu tine."
+        ],
+        "typingWordsMobile": ["lucrează pentru tine.", "rămâne sigură.", "crește cu tine."],
+        "description": "Dezvoltare web, service calculatoare, suport și administrare IT pentru persoane, profesioniști și organizații mici — în Cluj-Napoca sau la distanță.",
+        "descriptionMobile": "Dezvoltare web și servicii IT pentru persoane, profesioniști și organizații mici.",
+        "primary": "Vezi serviciile",
+        "secondary": "Discută cu mine"
+      },
+      "services": {
+        "badge": "Cu ce te pot ajuta",
+        "heading": "Patru servicii, explicate clar",
+        "lead": "Alegi serviciul potrivit situației tale, fără pachete inutile sau soluții împinse artificial.",
+        "learnMore": "Descoperă serviciul",
+        "cards": [
+          {
+            "icon": "code",
+            "title": "Dezvoltare web",
+            "description": "Site-uri rapide, clare și ușor de administrat, construite în jurul obiectivelor tale."
+          },
+          {
+            "icon": "wrench",
+            "title": "Service calculatoare",
+            "description": "Diagnostic, mentenanță și reparații pentru laptopuri și calculatoare desktop."
+          },
+          {
+            "icon": "life-buoy",
+            "title": "Suport IT",
+            "description": "Ajutor punctual, remote sau la locație, când o problemă tehnică îți întrerupe activitatea."
+          },
+          {
+            "icon": "settings",
+            "title": "Administrare IT",
+            "description": "Conturi, dispozitive, acces, securitate și procese IT gestionate coerent."
+          }
+        ]
+      },
+      "workWithMe": {
+        "badge": "Alege mai ușor",
+        "heading": "Nu știi ce serviciu îți trebuie?",
+        "lead": "Pornește de la problema pe care vrei să o rezolvi.",
+        "cards": [
+          {
+            "icon": "monitor",
+            "title": "Dispozitiv defect",
+            "description": "Problemă hardware sau software: Service calculatoare."
+          },
+          {
+            "icon": "help-circle",
+            "title": "Problemă punctuală",
+            "description": "Ajutor cu o imprimantă, aplicație sau configurație: Suport IT."
+          },
+          {
+            "icon": "shield-check",
+            "title": "Mediu IT de administrat",
+            "description": "Conturi, dispozitive și acces gestionate constant: Administrare IT."
+          },
+          {
+            "icon": "globe",
+            "title": "Site nou sau modernizat",
+            "description": "O prezență online construită corect: Dezvoltare web."
+          }
+        ],
+        "cta": "Vezi toate serviciile"
+      },
+      "process": {
+        "badge": "Cum lucrăm",
+        "heading": "De la problemă la o soluție clară",
+        "lead": "Fără etape inutile și fără costuri neexplicate.",
+        "cards": [
+          {
+            "icon": "message-circle",
+            "title": "Discutăm situația",
+            "description": "Îmi explici ce vrei să rezolvi și cât de urgent este."
+          },
+          {
+            "icon": "clipboard-check",
+            "title": "Stabilim soluția",
+            "description": "Îți explic opțiunile, costul și pașii înainte să încep."
+          },
+          {
+            "icon": "check-circle",
+            "title": "Rezolvăm și verificăm",
+            "description": "Implementez soluția și verificăm împreună rezultatul."
+          }
+        ]
+      },
+      "why": {
+        "badge": "De ce Tech cu Bogdan",
+        "heading": "Lucrezi direct cu omul care rezolvă",
+        "lead": "Comunicare directă, recomandări argumentate și soluții potrivite situației tale.",
+        "cards": [
+          {
+            "icon": "user",
+            "title": "Un singur punct de contact",
+            "description": "De la prima discuție până la rezolvarea finală, vorbești direct cu mine."
+          },
+          {
+            "icon": "message-square",
+            "title": "Explicații înainte de lucru",
+            "description": "Știi ce voi face, de ce este necesar și cât costă."
+          },
+          {
+            "icon": "scale",
+            "title": "Recomandări independente",
+            "description": "Nu vând licențe sau echipamente și nu împing produse inutile."
+          },
+          {
+            "icon": "map-pin",
+            "title": "Local sau la distanță",
+            "description": "Intervenții în Cluj-Napoca și suport remote pentru problemele potrivite."
+          }
+        ]
+      },
+      "reviews": {
+        "badge": "Review-uri",
+        "heading": "Experiențele clienților vor apărea aici",
+        "description": "Secțiunea este pregătită pentru recenziile Google. Până la activarea integrării, poți folosi linkul direct.",
+        "cta": "Lasă un review pe Google"
+      },
+      "portfolio": {
+        "badge": "Lucrare aleasă",
+        "heading": "Proiectele pe care le-am construit",
+        "lead": "O selecție a lucrărilor recente.",
+        "viewAll": "Vezi toate proiectele"
+      },
+      "reviewCta": "Lasă-ne un review pe Google",
+      "aboutTeaser": {
+        "badge": "Despre mine",
+        "heading": "Eu sunt Bogdan Murășan",
+        "description": "Ajut persoane, profesioniști și organizații mici cu dezvoltare web și servicii IT. Lucrezi direct cu mine, de la prima discuție până la rezolvarea finală.",
+        "moreAboutMe": "Află mai multe despre mine"
+      },
+      "blog": {
+        "badge": "De pe blog",
+        "heading": "Articole și explicații practice",
+        "viewAll": "Vezi toate articolele"
+      },
+      "cta": {
+        "badge": "Să vorbim",
+        "heading": "Spune-mi ce problemă vrei să rezolvi",
+        "description": "Prima discuție este gratuită și fără obligații. Îți spun direct dacă te pot ajuta și care sunt pașii următori.",
+        "primary": "Trimite un mesaj",
+        "secondary": "Scrie-mi pe WhatsApp"
+      }
+    }
+  }
+}

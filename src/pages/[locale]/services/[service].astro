@@ -1,0 +1,33 @@
+---
+import ServicesView from '@/components/pages/views/ServicesView.astro';
+import ComputerRepairView from '@/components/pages/views/ComputerRepairView.astro';
+import ITSupportView from '@/components/pages/views/ITSupportView.astro';
+import ITManagementView from '@/components/pages/views/ITManagementView.astro';
+import BlankServiceView from '@/components/pages/views/BlankServiceView.astro';
+import { getServiceAlternates, serviceRoutes, type ServiceKey } from '@/config/services.config';
+
+export function getStaticPaths() {
+  return serviceRoutes.map((service) => ({
+    params: { locale: 'en', service: service.en.slug },
+    props: { serviceKey: service.key },
+  }));
+}
+
+const { serviceKey } = Astro.props as { serviceKey: ServiceKey };
+const service = serviceRoutes.find((entry) => entry.key === serviceKey)!;
+const languageAlternates = getServiceAlternates(service);
+---
+
+{
+  service.key === 'webDevelopment' ? (
+    <ServicesView locale="en" languageAlternates={languageAlternates} />
+  ) : service.key === 'computerRepair' ? (
+    <ComputerRepairView locale="en" languageAlternates={languageAlternates} />
+  ) : service.key === 'itSupport' ? (
+    <ITSupportView locale="en" languageAlternates={languageAlternates} />
+  ) : service.key === 'itManagement' ? (
+    <ITManagementView locale="en" languageAlternates={languageAlternates} />
+  ) : (
+    <BlankServiceView title={service.en.title} languageAlternates={languageAlternates} />
+  )
+}
