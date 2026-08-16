@@ -289,7 +289,7 @@
           {
             "icon": "trending-up",
             "title": "Învățare continuă",
-            "description": "Tehnologia se schimbă, iar pregătirea nu se termină odată cu o certificare."
+            "description": "Tehnologia se schimbă, iar învățarea continuă face parte din munca mea."
           },
           {
             "icon": "server",
@@ -321,18 +321,14 @@
         ]
       },
       "openSource": {
-        "badge": "Experiență și formare",
+        "badge": "Experiență și direcție",
         "heading": "O bază practică, aflată în dezvoltare continuă",
-        "description": "Am trei ani de experiență profesională în industria IT și continui să îmi extind competențele prin practică, documentație și formare structurată.",
+        "description": "Am trei ani de experiență profesională în industria IT și continui să îmi dezvolt competențele prin practică și documentație.",
         "button": "Discută cu mine",
         "cards": [
           {
             "title": "Experiență profesională",
             "text": "Trei ani de activitate oficială în industria IT, peste o experiență practică începută cu mult înainte."
-          },
-          {
-            "title": "Google Network Architecture",
-            "text": "Certificare Google obținută prin Coursera, orientată spre arhitectură și fundamente de rețea."
           },
           {
             "title": "Direcții actuale",

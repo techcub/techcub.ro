@@ -293,7 +293,7 @@
           {
             "icon": "trending-up",
             "title": "Continuous learning",
-            "description": "Technology changes, and training does not end with a certificate."
+            "description": "Technology changes, and continuous learning is part of my work."
           },
           {
             "icon": "server",
@@ -325,18 +325,14 @@
         ]
       },
       "openSource": {
-        "badge": "Experience and training",
+        "badge": "Experience and direction",
         "heading": "A practical foundation that keeps developing",
-        "description": "I have three years of professional IT experience and continue to expand my skills through practice, documentation and structured training.",
+        "description": "I have three years of professional IT experience and continue to develop my skills through practice and documentation.",
         "button": "Talk to me",
         "cards": [
           {
             "title": "Professional experience",
             "text": "Three years of official work in IT, built on practical experience that started much earlier."
-          },
-          {
-            "title": "Google Network Architecture",
-            "text": "A Google certificate completed through Coursera, focused on network architecture and fundamentals."
           },
           {
             "title": "Current directions",
