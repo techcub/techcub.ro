@@ -19,6 +19,7 @@ import {
   disagreementMessage,
 } from './scripts/site-url-agreement.mjs';
 import { SITE_NAME, THEME_COLOR } from './src/config/branding.ts';
+import { renderFaviconPng, renderFaviconIco } from './src/lib/favicon/raster.ts';
 
 /**
  * Load `.env` into `process.env` before anything below reads it.
@@ -160,10 +161,6 @@ function faviconAssets() {
     name: 'favicon-assets',
     hooks: {
       'astro:build:done': async ({ dir, logger }) => {
-        // Imported here rather than at the top of this file: a static import
-        // of the sharp-backed module makes pagefind's own dynamic import above
-        // fail with "Vite module runner has been closed" (#600).
-        const { renderFaviconPng, renderFaviconIco } = await import('./src/lib/favicon/raster.ts');
         const out = fileURLToPath(dir);
 
         for (const [name, size] of Object.entries(pngSizes)) {
