@@ -91,12 +91,6 @@
     "wrangler": "4.123.0",
     "zod": "^4.0.0"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "sharp"
-    ]
-  },
   "engines": {
     "node": ">=22.12.0"
   }

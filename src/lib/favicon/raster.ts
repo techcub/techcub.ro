@@ -13,23 +13,23 @@ import { buildFaviconSvg } from './svg.ts';
 
 /** Rasterise the favicon SVG to a square PNG buffer of the given pixel size. */
 export async function renderFaviconPng(
-  letter: string,
+  logoMark: string,
   bgColor: string,
   size: number,
   fgColor = '#ffffff'
 ): Promise<Buffer> {
-  const svg = buildFaviconSvg(letter, bgColor, fgColor, size);
+  const svg = buildFaviconSvg(logoMark, bgColor, fgColor, size);
   return sharp(Buffer.from(svg)).resize(size, size).png().toBuffer();
 }
 
 /** Build a multi-size favicon.ico (16/32/48) from the outlined SVG. */
 export async function renderFaviconIco(
-  letter: string,
+  logoMark: string,
   bgColor: string,
   fgColor = '#ffffff'
 ): Promise<Buffer> {
   const pngs = await Promise.all(
-    [16, 32, 48].map((s) => renderFaviconPng(letter, bgColor, s, fgColor))
+    [16, 32, 48].map((s) => renderFaviconPng(logoMark, bgColor, s, fgColor))
   );
   return pngToIco(pngs);
 }

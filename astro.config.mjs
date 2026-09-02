@@ -20,6 +20,12 @@ import {
 } from './scripts/site-url-agreement.mjs';
 import { SITE_NAME, THEME_COLOR } from './src/config/branding.ts';
 import { renderFaviconPng, renderFaviconIco } from './src/lib/favicon/raster.ts';
+import { buildFaviconSvg } from './src/lib/favicon/svg.ts';
+
+const logoMark = await readFile(
+  fileURLToPath(new URL('./src/assets/branding/logo-mark.svg', import.meta.url)),
+  'utf8'
+);
 import { renderOgPng } from './src/lib/og/raster.ts';
 
 /**
@@ -142,15 +148,10 @@ function pagefind() {
  * files land in the same place on all three targets, with no native module
  * anywhere near a page.
  *
- * `favicon.svg` is written here too, rather than staying a route. It needs no
- * *native* module, so keeping it as a route looked safe — but `buildFaviconSvg`
- * decodes an embedded font subset with `Buffer` and parses it with fontkit,
- * and neither exists in workerd without `nodejs_compat`. As a route it emitted
- * a 0-byte file on Cloudflare while the build reported success. The cost is
- * that `astro dev` has no favicon, since build hooks do not run there.
+ * `favicon.svg` is written here too so the vector and raster variants are
+ * always generated from the same brand mark.
  */
 function faviconAssets() {
-  const letter = SITE_NAME.charAt(0).toUpperCase();
   const pngSizes = {
     'favicon-32x32.png': 32,
     'apple-touch-icon.png': 180,
@@ -165,9 +166,10 @@ function faviconAssets() {
         const out = fileURLToPath(dir);
 
         for (const [name, size] of Object.entries(pngSizes)) {
-          await writeFile(join(out, name), await renderFaviconPng(letter, THEME_COLOR, size));
+          await writeFile(join(out, name), await renderFaviconPng(logoMark, THEME_COLOR, size));
         }
-        await writeFile(join(out, 'favicon.ico'), await renderFaviconIco(letter, THEME_COLOR));
+        await writeFile(join(out, 'favicon.svg'), buildFaviconSvg(logoMark, THEME_COLOR));
+        await writeFile(join(out, 'favicon.ico'), await renderFaviconIco(logoMark, THEME_COLOR));
 
         logger.info(`wrote ${Object.keys(pngSizes).length + 1} raster favicon files to ${out}`);
       },

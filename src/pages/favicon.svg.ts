@@ -1,12 +1,11 @@
 import logoMark from '@/assets/branding/logo-mark.svg?raw';
+import { THEME_COLOR } from '@/config/branding';
+import { buildFaviconSvg } from '@/lib/favicon/svg';
 
 export const prerender = true;
 
 export function GET(): Response {
-  const favicon = logoMark.replace(
-    '</svg>',
-    '<style>svg{color:#000}@media(prefers-color-scheme:dark){svg{color:#fff}}</style></svg>'
-  );
+  const favicon = buildFaviconSvg(logoMark, THEME_COLOR);
 
   return new Response(favicon, {
     headers: {
