@@ -19,6 +19,9 @@ const copy = newsletterCopy.ro;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="referrer" content="no-referrer" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=techcub-transparent-2" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=transparent-2" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <title>
       {action === 'confirm' ? copy.confirmTitle : copy.unsubscribeTitle} — {
         businessConfig.brandName
@@ -30,7 +33,9 @@ const copy = newsletterCopy.ro;
       class="mx-auto flex min-h-screen max-w-xl flex-col justify-center gap-6 px-6 py-16"
       data-newsletter-action={action}
     >
-      <a href="/" class="font-display flex items-center gap-3 text-xl font-semibold"><Logo size="xl" />{businessConfig.brandName}</a>
+      <a href="/" class="font-display flex items-center gap-3 text-xl font-semibold"
+        ><Logo size="xl" />{businessConfig.brandName}</a
+      >
       <h1 class="font-display text-3xl font-semibold" id="action-title">
         {action === 'confirm' ? copy.confirmTitle : copy.unsubscribeTitle}
       </h1>
