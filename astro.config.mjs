@@ -166,10 +166,11 @@ function faviconAssets() {
         const out = fileURLToPath(dir);
 
         for (const [name, size] of Object.entries(pngSizes)) {
-          await writeFile(join(out, name), await renderFaviconPng(logoMark, THEME_COLOR, size));
+          await writeFile(join(out, name), await renderFaviconPng(logoMark, size));
         }
-        await writeFile(join(out, 'favicon.svg'), buildFaviconSvg(logoMark, THEME_COLOR));
-        await writeFile(join(out, 'favicon.ico'), await renderFaviconIco(logoMark, THEME_COLOR));
+        await writeFile(join(out, 'logo-email-transparent.png'), await renderFaviconPng(logoMark, 192));
+        await writeFile(join(out, 'favicon.svg'), buildFaviconSvg(logoMark));
+        await writeFile(join(out, 'favicon.ico'), await renderFaviconIco(logoMark));
 
         logger.info(`wrote ${Object.keys(pngSizes).length + 1} raster favicon files to ${out}`);
       },

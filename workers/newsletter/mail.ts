@@ -99,7 +99,7 @@ export function composeEmail(
 <tr><td bgcolor="#7c3aed" height="6" style="height:6px;font-size:0;line-height:0">&nbsp;</td></tr>
 <tr><td style="padding:28px 24px 24px;border-bottom:1px solid #39274f">
 <table role="presentation" cellspacing="0" cellpadding="0"><tr>
-<td width="64"><a href="${escapeHtml(businessConfig.website)}"><img src="${escapeHtml(businessConfig.website)}/apple-touch-icon.png" width="48" height="48" alt="" style="display:block;border:0;border-radius:12px"></a></td>
+<td width="64"><a href="${escapeHtml(businessConfig.website)}"><img src="${escapeHtml(businessConfig.website)}/logo-email-transparent.png" width="48" height="48" alt="" style="display:block;border:0"></a></td>
 <td style="color:#f5f3ff;font-size:19px;font-weight:bold;line-height:1.4">${escapeHtml(businessConfig.brandName)}</td>
 </tr></table></td></tr>
 <tr><td style="padding:28px 24px 32px">

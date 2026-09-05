@@ -338,7 +338,7 @@ const siteConfig: SiteConfig = {
       imageUrl: '/favicon.svg',
     },
     favicon: {
-      svg: '/favicon.svg?v=techcub-mark-1',
+      svg: '/favicon.svg?v=techcub-transparent-2',
     },
     colors: {
       themeColor: THEME_COLOR,
