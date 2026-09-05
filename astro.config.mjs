@@ -404,7 +404,7 @@ export default defineConfig({
       RESEND_FROM_EMAIL: envField.string({ context: 'server', access: 'secret', optional: true }),
       NEWSLETTER_SERVICE_URL: envField.string({ context: 'server', access: 'secret', optional: true }),
       NEWSLETTER_SERVICE_TOKEN: envField.string({ context: 'server', access: 'secret', optional: true }),
-      PUBLIC_NEWSLETTER_ENABLED: envField.boolean({ context: 'client', access: 'public', default: false }),
+      PUBLIC_NEWSLETTER_ENABLED: envField.boolean({ context: 'client', access: 'public', default: true }),
       GOOGLE_SITE_VERIFICATION: envField.string({
         context: 'server',
         access: 'public',
