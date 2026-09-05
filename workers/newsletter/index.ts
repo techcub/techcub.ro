@@ -125,7 +125,7 @@ async function liveItems(): Promise<NotificationItem[]> {
 }
 
 async function verifyPage(item: NotificationItem): Promise<boolean> {
-  const response = await fetch(new URL(item.path, businessConfig.website), {
+  const response = await fetch(new URL(`${item.path.replace(/\/$/, '')}/`, businessConfig.website), {
     redirect: 'manual',
     cache: 'no-store',
     signal: AbortSignal.timeout(15000),
@@ -244,7 +244,7 @@ async function deliver(
           env,
           subscriber.email,
           subscriber.locale,
-          new URL(item.path, businessConfig.website).href,
+          new URL(`${item.path.replace(/\/$/, '')}/`, businessConfig.website).href,
           item,
           unsubscribeUrl
         );
