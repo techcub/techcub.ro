@@ -6,7 +6,7 @@
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
   "vars": {
-    "NEWSLETTER_ENABLED": "false",
+    "NEWSLETTER_ENABLED": "true",
     "RESEND_DOMAIN_ID": "55d6cfd0-5037-4859-acce-e0f8d499fab7",
     "RESEND_FROM_EMAIL": "noutati@notify.techcub.ro",
   },
