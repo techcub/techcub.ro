@@ -113,7 +113,7 @@ async function applyToken(
 
 async function liveItems(): Promise<NotificationItem[]> {
   const response = await fetch(`${businessConfig.website}/notifications.json`, {
-    redirect: 'error',
+    redirect: 'manual',
     cache: 'no-store',
     signal: AbortSignal.timeout(15000),
   });
@@ -126,7 +126,7 @@ async function liveItems(): Promise<NotificationItem[]> {
 
 async function verifyPage(item: NotificationItem): Promise<boolean> {
   const response = await fetch(new URL(item.path, businessConfig.website), {
-    redirect: 'error',
+    redirect: 'manual',
     cache: 'no-store',
     signal: AbortSignal.timeout(15000),
   });

@@ -12,7 +12,10 @@ export async function forwardNewsletter(
       { success: false, error: status === 400 ? copy.invalidToken : copy.error },
       { status, headers: { 'Cache-Control': 'no-store' } }
     );
-  if (!NEWSLETTER_SERVICE_URL || !NEWSLETTER_SERVICE_TOKEN) return failure();
+  if (!NEWSLETTER_SERVICE_URL || !NEWSLETTER_SERVICE_TOKEN) {
+    console.error(JSON.stringify({ event: 'newsletter_proxy_unconfigured' }));
+    return failure();
+  }
   try {
     const base = new URL(NEWSLETTER_SERVICE_URL);
     if (
@@ -27,10 +30,11 @@ export async function forwardNewsletter(
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
-      redirect: 'error',
+      redirect: 'manual',
       signal: AbortSignal.timeout(25000),
     });
     if (!response.ok) {
+      console.error(JSON.stringify({ event: 'newsletter_proxy_upstream', status: response.status }));
       await response.body?.cancel();
       return failure(response.status === 400 ? 400 : 503);
     }
@@ -38,6 +42,7 @@ export async function forwardNewsletter(
     if (result.success !== true) return failure();
     return Response.json({ success: true }, { headers: { 'Cache-Control': 'no-store' } });
   } catch {
+    console.error(JSON.stringify({ event: 'newsletter_proxy_fetch_failed' }));
     return failure();
   }
 }
