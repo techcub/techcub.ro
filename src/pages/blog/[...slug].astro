@@ -1,6 +1,7 @@
 ---
 import BlogLayout from '@/layouts/BlogLayout.astro';
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
+import { getCollection } from '@/lib/content';
 import { assertNoSlugCollisions } from '@/lib/content-validation';
 import { assertValidPostUids } from '@/lib/post-links';
 import { getPostSlug } from '@/lib/blog';

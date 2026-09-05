@@ -141,7 +141,7 @@ export function formatSlugCollisions(collisions: SlugCollision[]): string {
  * `getStaticPaths`; a throw here aborts `astro build`.
  */
 export async function assertNoSlugCollisions(): Promise<void> {
-  const { getCollection } = await import('astro:content');
+  const { getCollection } = await import('@/lib/content');
   const [posts, pages, projects] = await Promise.all([
     getCollection('blog'),
     getCollection('pages'),

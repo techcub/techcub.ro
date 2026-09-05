@@ -6,7 +6,8 @@
  * The default locale stays at the site root (`/projects/...`); additional
  * locales live under a prefix (`/<locale>/projects/...`).
  */
-import { getCollection, type CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from '@/lib/content';
 import siteConfig from '@/config/site.config';
 import { defaultLocale, localizedPath, isEnabled, getLocales } from '@/i18n';
 import { tagToSlug, findTagBySlug } from '@/lib/tags';

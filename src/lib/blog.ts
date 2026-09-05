@@ -5,7 +5,8 @@
  * archive pages can share post fetching, page-size config, and tag-slug
  * conventions without drifting.
  */
-import { getCollection, type CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from '@/lib/content';
 import siteConfig from '@/config/site.config';
 import { defaultLocale, localizedPath, isEnabled, getLocales } from '@/i18n';
 import { tagToSlug, findTagBySlug } from '@/lib/tags';

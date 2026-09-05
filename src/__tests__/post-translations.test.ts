@@ -9,7 +9,7 @@ const MOCK_POSTS = [
   { id: 'en/singur', data: { locale: 'en', title: 'Solo', draft: true } },
 ];
 
-vi.mock('astro:content', () => ({ getCollection: vi.fn(async () => MOCK_POSTS) }));
+vi.mock('@/lib/content', () => ({ getCollection: vi.fn(async () => MOCK_POSTS) }));
 vi.mock('@/config/i18n.config', () => ({
   default: {
     enabled: true,

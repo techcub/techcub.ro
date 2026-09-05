@@ -1,6 +1,7 @@
 ---
 import ProjectLayout from '@/layouts/ProjectLayout.astro';
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
+import { getCollection } from '@/lib/content';
 import { getProjectSlug, getSecondaryLocales, getVisibleProjects, getRoutableProjects } from '@/lib/projects';
 
 // Locale-prefixed project detail pages (`/<locale>/projects/<slug>`). One page

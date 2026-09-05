@@ -1,4 +1,4 @@
-import { getCollection } from 'astro:content';
+import { getCollection } from '@/lib/content';
 import siteConfig from '@/config/site.config';
 import { getPostUrl } from '@/lib/blog';
 import { defaultLocale } from '@/i18n';

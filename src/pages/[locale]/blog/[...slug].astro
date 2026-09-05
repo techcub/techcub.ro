@@ -1,6 +1,7 @@
 ---
 import BlogLayout from '@/layouts/BlogLayout.astro';
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
+import { getCollection } from '@/lib/content';
 import { getPostSlug, getSecondaryLocales } from '@/lib/blog';
 import PostLink from '@/components/blog/PostLink.astro';
 

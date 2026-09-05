@@ -2,6 +2,7 @@ import { defineCollection } from 'astro:content';
 import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 import i18nConfig from './config/i18n.config';
+import { hasContent } from './lib/content-files';
 
 // Locale field shared across content collections. Derived from your i18n
 // config (src/config/i18n.config.ts) rather than a hard-coded list, so adding
@@ -16,7 +17,9 @@ const localeSchema = z
 
 // Blog collection with Content Layer API
 const blog = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
+  loader: hasContent('blog')
+    ? glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' })
+    : async () => [],
   schema: ({ image }) =>
     z.object({
       title: z.string().max(100),
@@ -61,7 +64,9 @@ const blog = defineCollection({
 
 // Pages collection for static pages
 const pages = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/pages' }),
+  loader: hasContent('pages')
+    ? glob({ pattern: '**/*.{md,mdx}', base: './src/content/pages' })
+    : async () => [],
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -72,7 +77,9 @@ const pages = defineCollection({
 
 // Projects collection — one MDX file per project
 const projects = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/projects' }),
+  loader: hasContent('projects')
+    ? glob({ pattern: '**/*.{md,mdx}', base: './src/content/projects' })
+    : async () => [],
   schema: ({ image }) =>
     z.object({
       title: z.string(),

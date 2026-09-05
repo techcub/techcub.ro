@@ -67,7 +67,7 @@ let cachedPosts: UidEntryLike[] | null = null;
 /** Load and cache the published (non-draft) blog entries for build-time resolution. */
 async function loadPublishedPosts(): Promise<UidEntryLike[]> {
   if (cachedPosts) return cachedPosts;
-  const { getCollection } = await import('astro:content');
+  const { getCollection } = await import('@/lib/content');
   cachedPosts = (await getCollection('blog')).filter((post) => post.data.draft !== true);
   return cachedPosts;
 }
