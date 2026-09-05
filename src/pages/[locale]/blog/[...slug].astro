@@ -36,6 +36,7 @@ const { Content, headings } = await render(post);
 ---
 
 <BlogLayout
+  notification={post.data.notification}
   title={post.data.title}
   description={post.data.description}
   publishedAt={post.data.publishedAt}

@@ -7,3 +7,7 @@
 export const SITE_URL: string | undefined = undefined;
 export const GOOGLE_SITE_VERIFICATION: string | undefined = undefined;
 export const BING_SITE_VERIFICATION: string | undefined = undefined;
+
+export const RESEND_API_KEY: string | undefined = undefined;
+export const NEWSLETTER_SERVICE_URL: string | undefined = undefined;
+export const NEWSLETTER_SERVICE_TOKEN: string | undefined = undefined;

@@ -1,0 +1,92 @@
+---
+import '@/styles/global.css';
+import Button from '@/components/ui/form/Button/Button.astro';
+import { businessConfig } from '@/config/business.config';
+import { newsletterCopy } from '@/lib/newsletter/shared';
+
+export function getStaticPaths() {
+  return [{ params: { action: 'confirm' } }, { params: { action: 'unsubscribe' } }];
+}
+const action = Astro.params.action;
+const copy = newsletterCopy.ro;
+---
+
+<!doctype html>
+<html lang="ro" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <title>
+      {action === 'confirm' ? copy.confirmTitle : copy.unsubscribeTitle} — {
+        businessConfig.brandName
+      }
+    </title>
+  </head>
+  <body class="bg-background text-foreground">
+    <main
+      class="mx-auto flex min-h-screen max-w-xl flex-col justify-center gap-6 px-6 py-16"
+      data-newsletter-action={action}
+    >
+      <a href="/" class="font-display text-xl font-semibold">{businessConfig.brandName}</a>
+      <h1 class="font-display text-3xl font-semibold" id="action-title">
+        {action === 'confirm' ? copy.confirmTitle : copy.unsubscribeTitle}
+      </h1>
+      <p class="text-foreground-muted" id="action-intro">
+        {action === 'confirm' ? copy.confirmIntro : copy.unsubscribeIntro}
+      </p>
+      <Button id="action-button" type="button" disabled
+        >{action === 'confirm' ? copy.confirmButton : copy.unsubscribeButton}</Button
+      >
+      <p id="action-status" role="status" aria-live="polite"></p>
+      <a id="action-home" href="/" class="underline">{copy.backHome}</a>
+      <noscript>{copy.javascriptRequired} / {newsletterCopy.en.javascriptRequired}</noscript>
+    </main>
+  </body>
+</html>
+<script>
+  import { newsletterCopy } from '@/lib/newsletter/shared';
+  const parameters = new URLSearchParams(location.hash.slice(1));
+  const token = parameters.get('token');
+  const locale = parameters.get('locale') === 'en' ? 'en' : 'ro';
+  const copy = newsletterCopy[locale];
+  const action = document.querySelector<HTMLElement>('[data-newsletter-action]')?.dataset
+    .newsletterAction;
+  const button = document.querySelector<HTMLButtonElement>('#action-button')!;
+  const status = document.querySelector<HTMLElement>('#action-status')!;
+  const heading = action === 'confirm' ? copy.confirmTitle : copy.unsubscribeTitle;
+  history.replaceState(null, '', location.pathname);
+  document.documentElement.lang = locale;
+  document.title = heading;
+  document.querySelector('#action-title')!.textContent = heading;
+  document.querySelector('#action-intro')!.textContent =
+    action === 'confirm' ? copy.confirmIntro : copy.unsubscribeIntro;
+  document.querySelector('#action-home')!.textContent = copy.backHome;
+  document.querySelector('#action-home')!.setAttribute('href', locale === 'en' ? '/en/' : '/');
+  button.textContent = action === 'confirm' ? copy.confirmButton : copy.unsubscribeButton;
+  button.disabled = !token;
+  if (!token) status.textContent = copy.invalidToken;
+  button.addEventListener('click', async () => {
+    button.disabled = true;
+    status.textContent = copy.working;
+    try {
+      const response = await fetch(`/api/newsletter/${action}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token, locale }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        status.textContent = response.status === 400 ? copy.invalidToken : copy.error;
+        button.disabled = response.status === 400;
+        return;
+      }
+      status.textContent = action === 'confirm' ? copy.confirmed : copy.unsubscribed;
+      button.hidden = true;
+    } catch {
+      status.textContent = copy.error;
+      button.disabled = false;
+    }
+  });
+</script>

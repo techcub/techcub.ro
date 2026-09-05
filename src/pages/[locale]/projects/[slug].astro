@@ -44,6 +44,7 @@ const { Content, headings } = await render(project);
 ---
 
 <ProjectLayout
+  notification={project.data.notification}
   title={project.data.title}
   description={project.data.description}
   meta={project.data.meta}

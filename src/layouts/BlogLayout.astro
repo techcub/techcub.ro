@@ -21,10 +21,8 @@ import BlogCta from '@/components/blog/BlogCta.astro';
 
 const locale = getLocaleFromPath(Astro.url.pathname);
 
-
-// Newsletter signup — opt-in, since the endpoint needs Resend keys to work.
-
 interface Props {
+  notification?: { id: string };
   title: string;
   description: string;
   publishedAt: Date;
@@ -50,6 +48,7 @@ interface Props {
 }
 
 const {
+  notification,
   title,
   description,
   publishedAt,
@@ -141,6 +140,7 @@ const languageAlternates = Object.fromEntries(
 ---
 
 <BaseLayout
+  newsletterId={notification ? `${notification.id}:${locale}` : undefined}
   title={title}
   description={description}
   image={ogImage}

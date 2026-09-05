@@ -401,8 +401,9 @@ export default defineConfig({
       }),
       RESEND_API_KEY: envField.string({ context: 'server', access: 'secret', optional: true }),
       RESEND_FROM_EMAIL: envField.string({ context: 'server', access: 'secret', optional: true }),
-      RESEND_SEGMENT_ID: envField.string({ context: 'server', access: 'secret', optional: true }),
-      NEWSLETTER_API_KEY: envField.string({ context: 'server', access: 'secret', optional: true }),
+      NEWSLETTER_SERVICE_URL: envField.string({ context: 'server', access: 'secret', optional: true }),
+      NEWSLETTER_SERVICE_TOKEN: envField.string({ context: 'server', access: 'secret', optional: true }),
+      PUBLIC_NEWSLETTER_ENABLED: envField.boolean({ context: 'client', access: 'public', default: false }),
       GOOGLE_SITE_VERIFICATION: envField.string({
         context: 'server',
         access: 'public',
@@ -445,6 +446,7 @@ export default defineConfig({
       filter: (page) => {
         const pathname = new URL(page).pathname.replace(/\/$/, '') || '/';
         return !(
+          pathname.startsWith('/newsletter/') ||
           pathname === '/projects' ||
           pathname.startsWith('/projects/') ||
           pathname === '/en/projects' ||

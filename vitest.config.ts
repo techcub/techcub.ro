@@ -10,6 +10,7 @@ export default defineConfig({
       '@': resolve(__dirname, './src'),
       // `astro:env/server` only exists during an Astro build; stub it so
       // modules that import `site.config.ts` (e.g. `lib/blog`) load in tests.
+      'astro:env/client': resolve(__dirname, './src/test/stubs/astro-env-client.ts'),
       'astro:env/server': resolve(__dirname, './src/test/stubs/astro-env-server.ts'),
     },
   },

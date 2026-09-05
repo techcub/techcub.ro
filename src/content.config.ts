@@ -3,6 +3,7 @@ import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 import i18nConfig from './config/i18n.config';
 import { hasContent } from './lib/content-files';
+import { notificationSchema } from './lib/newsletter/shared';
 
 // Locale field shared across content collections. Derived from your i18n
 // config (src/config/i18n.config.ts) rather than a hard-coded list, so adding
@@ -43,6 +44,7 @@ const blog = defineCollection({
           'uid must be lowercase kebab-case, e.g. "getting-started"'
         )
         .optional(),
+      notification: notificationSchema.optional(),
       draft: z.boolean().default(false),
       featured: z.boolean().default(false),
       locale: localeSchema,
@@ -131,6 +133,7 @@ const projects = defineCollection({
       services: z.array(z.string()).default([]),
       /** Optional editorial tagline — short facts rendered as a single line under the hero description with brand-coloured dot separators. */
       meta: z.array(z.string()).default([]),
+      notification: notificationSchema.optional(),
       draft: z.boolean().default(false),
       placeholder: z.boolean().default(false),
       /** Per-project override: hide table of contents on this project */

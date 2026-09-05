@@ -1,41 +1,39 @@
 import { describe, it, expect } from 'vitest';
-import { z } from 'zod';
+import { CONSENT_VERSION, subscriptionSchema, manifestSchema } from '../lib/newsletter/shared';
 
-// Schema mirroring src/pages/api/newsletter.ts
-const newsletterSchema = z.object({
-  email: z.email('Please enter a valid email address'),
-  honeypot: z.string().max(0).optional(),
-});
-
-describe('Newsletter form validation', () => {
-  it('accepts a valid email address', () => {
-    const result = newsletterSchema.safeParse({ email: 'user@example.com', honeypot: '' });
-    expect(result.success).toBe(true);
+describe('Notification subscriptions', () => {
+  it('normalizes addresses and requires the current consent', () => {
+    expect(
+      subscriptionSchema.parse({
+        email: ' User@Example.com ',
+        locale: 'ro',
+        consent: CONSENT_VERSION,
+      }).email
+    ).toBe('user@example.com');
+    expect(subscriptionSchema.safeParse({ email: 'user@example.com', locale: 'ro' }).success).toBe(
+      false
+    );
+    expect(
+      subscriptionSchema.safeParse({ email: 'user@example.com', locale: 'ro', consent: 'old' })
+        .success
+    ).toBe(false);
   });
-
-  it('rejects an invalid email address', () => {
-    const result = newsletterSchema.safeParse({ email: 'not-an-email' });
-    expect(result.success).toBe(false);
-    if (!result.success) {
-      expect(result.error.issues[0].message).toBe('Please enter a valid email address');
-    }
-  });
-
-  it('rejects an empty email field', () => {
-    const result = newsletterSchema.safeParse({ email: '' });
-    expect(result.success).toBe(false);
-  });
-
-  it('rejects filled honeypot field (bot detection)', () => {
-    const result = newsletterSchema.safeParse({ email: 'user@example.com', honeypot: 'bot' });
-    expect(result.success).toBe(false);
-    if (!result.success) {
-      expect(result.error.issues[0].path[0]).toBe('honeypot');
-    }
-  });
-
-  it('accepts missing honeypot field (it is optional)', () => {
-    const result = newsletterSchema.safeParse({ email: 'user@example.com' });
-    expect(result.success).toBe(true);
+  it('rejects unsafe content URLs and duplicate publication identities', () => {
+    const item = {
+      id: 'intune-lab:ro',
+      locale: 'ro',
+      title: 'Intune',
+      description: 'Lab',
+      publishedAt: '2026-09-05T00:00:00.000Z',
+      path: '/projects/intune',
+    };
+    expect(manifestSchema.safeParse({ version: 1, items: [item] }).success).toBe(true);
+    expect(manifestSchema.safeParse({ version: 1, items: [item, item] }).success).toBe(false);
+    expect(
+      manifestSchema.safeParse({
+        version: 1,
+        items: [{ ...item, path: 'https://other.example/test' }],
+      }).success
+    ).toBe(false);
   });
 });

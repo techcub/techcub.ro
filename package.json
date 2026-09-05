@@ -4,7 +4,7 @@
   "packageManager": "pnpm@10.33.0",
   "description": "Site-ul oficial Tech cu Bogdan",
   "type": "module",
-  "author": "Bogdan Murășan",
+  "author": "Bogdan Mur\u0103\u0219an",
   "license": "MIT",
   "keywords": [
     "astro",
@@ -40,7 +40,9 @@
     "format:check": "prettier --check .",
     "validate": "pnpm lint && pnpm check && pnpm test:run && pnpm build && pnpm verify",
     "test": "vitest",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "newsletter:check": "tsc -p workers/newsletter/tsconfig.json",
+    "newsletter:build": "wrangler deploy --dry-run --config workers/newsletter/wrangler.jsonc --outdir .wrangler/newsletter-build"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.0.1",

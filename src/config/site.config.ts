@@ -173,16 +173,6 @@ export interface SiteConfig {
       };
     };
   };
-  /**
-   * Newsletter signup, shown in the "follow along" section of the blog index
-   * and the foot of every post.
-   *
-   * Off by default, and deliberately so: the form posts to `/api/newsletter`,
-   * which needs `RESEND_API_KEY` and `RESEND_SEGMENT_ID`. Without those the
-   * endpoint answers "Newsletter service is not configured", so a site that
-   * showed the form before its owner had a mailing list would be collecting
-   * failures. Set your keys, then turn this on.
-   */
   newsletter?: {
     /** Master switch — set to true to show the signup site-wide */
     enabled: boolean;
@@ -330,8 +320,6 @@ const siteConfig: SiteConfig = {
     },
   },
   newsletter: {
-    // On by default: the form knows whether it has keys and says so itself,
-    // in dev only. Set RESEND_API_KEY and RESEND_SEGMENT_ID to make it work.
     enabled: true,
   },
   blog: {

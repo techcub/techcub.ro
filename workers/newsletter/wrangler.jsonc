@@ -1,0 +1,27 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "techcub-newsletter",
+  "main": "index.ts",
+  "compatibility_date": "2026-09-05",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "vars": {
+    "NEWSLETTER_ENABLED": "false",
+    "RESEND_DOMAIN_ID": "55d6cfd0-5037-4859-acce-e0f8d499fab7",
+    "RESEND_FROM_EMAIL": "noutati@notify.techcub.ro",
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "techcub-newsletter",
+      "database_id": "f5f9722a-5865-437e-9e10-01f57e377601",
+      "migrations_dir": "migrations",
+    },
+  ],
+  "triggers": { "crons": ["*/10 * * * *"] },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+    "logs": { "invocation_logs": false },
+  },
+}

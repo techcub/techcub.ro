@@ -24,7 +24,7 @@ export default [
     },
   },
   {
-    ignores: ['dist/', 'node_modules/', '.astro/', '.vercel/', '.netlify/', 'public/pagefind/'],
+    ignores: ['dist/', 'node_modules/', '.astro/', '.vercel/', '.netlify/', 'public/pagefind/', '**/.wrangler/**', 'workers/newsletter/worker-configuration.d.ts'],
   },
   {
     rules: {

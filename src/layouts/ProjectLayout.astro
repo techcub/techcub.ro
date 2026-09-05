@@ -19,6 +19,7 @@ import { t, getLocaleFromPath, localizedPath, getLocales } from '@/i18n';
 import { getProjectSlug, getProjectsBaseUrl, getProjectTranslations } from '@/lib/projects';
 
 interface Props {
+  notification?: { id: string };
   title: string;
   description: string;
   meta?: string[];
@@ -37,6 +38,7 @@ interface Props {
 }
 
 const {
+  notification,
   title,
   description,
   meta = [],
@@ -102,6 +104,7 @@ const languageAlternates = Object.fromEntries(
 ---
 
 <BaseLayout
+  newsletterId={notification ? `${notification.id}:${locale}` : undefined}
   noindex
   title={title}
   description={description}

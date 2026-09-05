@@ -18,6 +18,7 @@ import { t, getLocaleFromPath } from '@/i18n';
 import { getRssUrl } from '@/lib/blog';
 
 interface Props {
+  newsletterId?: string;
   title?: string;
   description?: string;
   image?: string;
@@ -40,6 +41,7 @@ interface Props {
 }
 
 const {
+  newsletterId,
   title,
   description,
   image,
@@ -94,6 +96,7 @@ if (commentsConfig?.enabled) {
 <!doctype html>
 <html lang={locale} class="dark scroll-smooth">
   <head>
+    {newsletterId && <meta name="newsletter-id" content={newsletterId} />}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />

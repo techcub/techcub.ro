@@ -1,0 +1,3 @@
+NEWSLETTER_SERVICE_TOKEN=replace-with-a-random-secret-at-least-32-characters
+NEWSLETTER_TOKEN_SECRET=replace-with-another-random-secret-at-least-32-characters
+RESEND_API_KEY=replace-with-a-resend-key

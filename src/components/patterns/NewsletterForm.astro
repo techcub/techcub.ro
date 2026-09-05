@@ -1,22 +1,8 @@
 ---
-/**
- * NewsletterForm — email signup, ready to drop anywhere.
- *
- * Posts to `/api/newsletter`, which adds the address to a Resend segment.
- * Every string comes from the `newsletter.*` keys in the locale files, so the
- * component needs no props at all; each one is an override for a single usage.
- *
- * Layout: the field and the button stack on a phone and sit side by side from
- * `sm` up, where the button keeps its natural width. `layout="stacked"` forces
- * the stacked form at every width — the right choice inside a narrow column
- * such as a sidebar or a footer link group.
- *
- * The optional `heading`, `description` and `note` slots-as-props make it a
- * complete block on its own; leave them out and you get the bare field.
- */
 import Input from '@/components/ui/form/Input/Input.astro';
 import Button from '@/components/ui/form/Button/Button.astro';
 import { cn } from '@/lib/cn';
+import { CONSENT_VERSION } from '@/lib/newsletter/shared';
 import { t, getLocaleFromPath } from '@/i18n';
 import { newsletterConfigured } from '@/lib/email';
 
@@ -93,6 +79,7 @@ const showDevNotice = unconfigured && import.meta.env.DEV;
     data-generic-error={t('newsletter.genericError', locale)}
     data-error-message={t('newsletter.error', locale)}
   >
+    <input type="hidden" name="locale" value={locale} />
     <div class:list={['flex flex-col gap-3', !stacked && 'sm:flex-row sm:items-start']}>
       <div class:list={['min-w-0', !stacked && 'sm:flex-1']}>
         <Input
@@ -116,7 +103,10 @@ const showDevNotice = unconfigured && import.meta.env.DEV;
       </Button>
     </div>
 
-    <!-- Honeypot field for spam protection -->
+    <label class="mt-3 flex items-start gap-2 text-xs text-foreground-muted">
+      <input type="checkbox" name="consent" value={CONSENT_VERSION} required class="mt-0.5 accent-brand-500" />
+      <span>{t('newsletter.consent', locale)} <a class="underline" href={locale === 'en' ? '/en/privacy' : '/confidentialitate'}>{t('newsletter.privacyLink', locale)}</a></span>
+    </label>
     <div class="hidden" aria-hidden="true">
       <input type="text" name="honeypot" tabindex="-1" autocomplete="off" />
     </div>

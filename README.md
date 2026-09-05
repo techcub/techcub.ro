@@ -35,6 +35,8 @@ Navigatia se afla in `src/config/nav.config.ts`, iar textele publice RO si EN in
 
 Variabilele necesare pentru formulare, newsletter, analytics si verificarea motoarelor de cautare sunt documentate in `.env.example`.
 
+Configurarea notificărilor pentru proiecte și articole, activarea și regulile de publicare sunt în [docs/newsletter.md](docs/newsletter.md).
+
 ## Publicare
 
 Domeniul de productie este `https://techcub.ro`. Build-ul Cloudflare foloseste:
